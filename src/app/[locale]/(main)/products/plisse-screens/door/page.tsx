@@ -153,8 +153,9 @@ export default async function PlisseHordeurConfiguratorPage() {
     ],
   };
 
-  <div className="container mx-auto px-4 py-8">
-    <ProductConfigurator product={productData} />
-  </div>
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <ProductConfigurator product={productData} />
+    </div>
   );
 }
