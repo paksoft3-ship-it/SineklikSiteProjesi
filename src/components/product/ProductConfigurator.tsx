@@ -376,7 +376,9 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
                   const rect = e.currentTarget.getBoundingClientRect();
                   const x = (rect.left + rect.width / 2) / window.innerWidth;
                   const y = (rect.top + rect.height / 2) / window.innerHeight;
-                  triggerAddToCartCelebration(x, y);
+                  const w = rect.width / window.innerWidth;
+                  const h = rect.height / window.innerHeight;
+                  triggerAddToCartCelebration(x, y, w, h);
                   setTimeout(() => {
                     router.push('/cart');
                   }, 1000);
