@@ -85,14 +85,15 @@ const Header = () => {
                   ) : isAuthenticated ? (
                     <UserDropdown />
                   ) : (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <button
                         onClick={() => {
                           setAuthMode('login');
                           setIsAuthModalOpen(true);
                         }}
-                        className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition font-medium"
+                        className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition font-medium border border-gray-200 dark:border-gray-600 rounded-lg hover:border-primary"
                       >
+                        <i className="fas fa-sign-in-alt mr-2"></i>
                         Inloggen
                       </button>
                       <button
@@ -100,8 +101,9 @@ const Header = () => {
                           setAuthMode('signup');
                           setIsAuthModalOpen(true);
                         }}
-                        className="px-4 py-2 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg transition"
+                        className="flex items-center px-4 py-2 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:shadow-md transition"
                       >
+                        <i className="fas fa-user-plus mr-2"></i>
                         Registreren
                       </button>
                     </div>
@@ -145,7 +147,7 @@ const Header = () => {
         <div className="hidden lg:block border-b border-gray-200 dark:border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center h-14">
-              <nav className="flex space-x-1 items-center w-full">
+              <nav className="flex space-x-1 items-center w-full justify-center">
                 {/* Plissé Horren Dropdown */}
                 <div
                   className="relative"
