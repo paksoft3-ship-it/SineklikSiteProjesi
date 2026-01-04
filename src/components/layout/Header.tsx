@@ -94,7 +94,7 @@ const Header = () => {
                         className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition font-medium border border-gray-200 dark:border-gray-600 rounded-lg hover:border-primary"
                       >
                         <i className="fas fa-sign-in-alt mr-2"></i>
-                        Inloggen
+                        {t('nav.auth.login')}
                       </button>
                       <button
                         onClick={() => {
@@ -104,7 +104,7 @@ const Header = () => {
                         className="flex items-center px-4 py-2 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:shadow-md transition"
                       >
                         <i className="fas fa-user-plus mr-2"></i>
-                        Registreren
+                        {t('nav.auth.register')}
                       </button>
                     </div>
                   )}

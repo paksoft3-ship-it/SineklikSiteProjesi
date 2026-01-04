@@ -165,7 +165,11 @@
             "meetgids": "Meetgids",
             "over_ons": "Over Ons",
             "view_all_horren": "Alle horren bekijken",
-            "view_all_gordijnen": "Alle gordijnen bekijken"
+            "view_all_gordijnen": "Alle gordijnen bekijken",
+            "auth": {
+                "login": "Inloggen",
+                "register": "Registreren"
+            }
         },
         "actions": {},
         "items": {

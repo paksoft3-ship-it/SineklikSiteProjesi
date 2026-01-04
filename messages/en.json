@@ -162,7 +162,11 @@
             "meetgids": "Measurement Guide",
             "over_ons": "About Us",
             "view_all_horren": "View all screens",
-            "view_all_gordijnen": "View all curtains"
+            "view_all_gordijnen": "View all curtains",
+            "auth": {
+                "login": "Login",
+                "register": "Register"
+            }
         },
         "actions": {},
         "items": {
