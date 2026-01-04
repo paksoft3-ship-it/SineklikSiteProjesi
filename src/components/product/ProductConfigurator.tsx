@@ -159,7 +159,7 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
                 className="mt-6 w-full flex items-center justify-center gap-2 px-4 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-xl hover:border-primary hover:bg-primary/5 transition group"
               >
                 <div className="w-10 h-10 border-2 border-gray-300 group-hover:border-primary rounded-lg flex items-center justify-center">
-                  <span className="font-bold text-gray-400 group-hover:text-primary text-sm">AR</span>
+                  <i className="fas fa-cube text-gray-400 group-hover:text-primary text-lg"></i>
                 </div>
                 <span className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-primary">
                   {t('view_ar')}
@@ -221,7 +221,7 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
                   className="flex-shrink-0 w-20 h-20 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center hover:border-primary hover:bg-primary/5 transition group"
                 >
                   <div className="w-8 h-8 border border-gray-300 group-hover:border-primary rounded flex items-center justify-center mb-1">
-                    <span className="text-xs font-bold text-gray-400 group-hover:text-primary">AR</span>
+                    <i className="fas fa-cube text-xs text-gray-400 group-hover:text-primary"></i>
                   </div>
                 </button>
               </div>
@@ -364,10 +364,9 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
                 className="flex items-center gap-2 px-4 py-2 border-2 border-gray-200 dark:border-gray-600 rounded-xl hover:border-primary hover:bg-primary/5 transition group"
               >
                 <div className="w-10 h-10 border-2 border-gray-300 group-hover:border-primary rounded-lg flex items-center justify-center">
-                  <span className="font-bold text-gray-400 group-hover:text-primary text-sm">AR</span>
+                  <i className="fas fa-cube text-gray-400 group-hover:text-primary text-lg"></i>
                 </div>
                 <div className="text-left">
-                  <span className="block text-xs text-gray-500">AR Button</span>
                   <span className="block text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-primary">
                     {t('view_ar')}
                   </span>
@@ -543,7 +542,7 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
 
               <div className="text-center py-8">
                 <div className="w-24 h-24 bg-gray-100 dark:bg-gray-700 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-gray-400">AR</span>
+                  <i className="fas fa-cube text-4xl text-gray-400"></i>
                 </div>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   {t('ar_modal_desc')}

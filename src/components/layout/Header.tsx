@@ -74,23 +74,34 @@ const Header = () => {
                   ) : isAuthenticated ? (
                     <UserDropdown />
                   ) : (
-                    <button
-                      onClick={() => {
-                        setAuthMode('login');
-                        setIsAuthModalOpen(true);
-                      }}
-                      className="group flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-full hover:shadow-md transition-all duration-300 hover:border-primary/50"
-                    >
-                      <div className="flex items-center gap-2 pr-3 border-r border-gray-200 dark:border-gray-600">
+                    <div className="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-full hover:shadow-md transition-all duration-300 hover:border-primary/50">
+                      <button
+                        onClick={() => {
+                          setAuthMode('signup');
+                          setIsAuthModalOpen(true);
+                        }}
+                        className="group flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-l-full"
+                      >
                         <img src="https://www.google.com/favicon.ico" alt="Google" className="w-4 h-4" />
                         <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
                           Sign up with Google
                         </span>
-                      </div>
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
-                        Login / Sign up
-                      </span>
-                    </button>
+                      </button>
+
+                      <div className="h-4 w-px bg-gray-200 dark:bg-gray-600"></div>
+
+                      <button
+                        onClick={() => {
+                          setAuthMode('login');
+                          setIsAuthModalOpen(true);
+                        }}
+                        className="group pl-3 pr-4 py-2.5 rounded-r-full"
+                      >
+                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">
+                          Login / Sign up
+                        </span>
+                      </button>
+                    </div>
                   )}
 
                   <LanguageSwitcher />
