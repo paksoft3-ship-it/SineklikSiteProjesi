@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -87,6 +88,8 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
 
     return breakdown;
   };
+
+  const [buttonState, setButtonState] = useState<'idle' | 'celebrating' | 'done'>('idle');
 
   return (
     <div className="bg-bg-light-1 dark:bg-bg-dark-1">
@@ -371,21 +374,34 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
             {/* Add to Cart */}
             <div className="mt-8 space-y-3">
               <button
-                className="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+                className={cn(
+                  "w-full py-4 font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2",
+                  buttonState === 'idle' && "bg-primary hover:bg-blue-600 text-white shadow-blue-500/30",
+                  buttonState === 'celebrating' && "bg-[#FF1493] text-white scale-105 shadow-pink-500/50", // Deep Pink
+                  buttonState === 'done' && "bg-gray-500 text-white scale-95"
+                )}
                 onClick={(e) => {
+                  if (buttonState !== 'idle') return;
+
                   const rect = e.currentTarget.getBoundingClientRect();
                   const x = (rect.left + rect.width / 2) / window.innerWidth;
                   const y = (rect.top + rect.height / 2) / window.innerHeight;
                   const w = rect.width / window.innerWidth;
                   const h = rect.height / window.innerHeight;
+
+                  setButtonState('celebrating');
                   triggerAddToCartCelebration(x, y, w, h);
+
                   setTimeout(() => {
-                    router.push('/cart');
-                  }, 1000);
+                    setButtonState('done');
+                    setTimeout(() => {
+                      router.push('/cart');
+                    }, 500);
+                  }, 1500); // 1.5s celebrating
                 }}
               >
-                <i className="fas fa-shopping-cart"></i>
-                {t('add_to_cart')}
+                <i className={cn("fas", buttonState === 'celebrating' ? "fa-heart" : "fa-shopping-cart")}></i>
+                {buttonState === 'celebrating' ? 'Toegevoegd!' : t('add_to_cart')}
               </button>
               <button className="w-full py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition flex items-center justify-center gap-2">
                 <i className="fas fa-file-alt"></i>

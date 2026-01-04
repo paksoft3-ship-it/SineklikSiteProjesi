@@ -72,6 +72,7 @@ const ProductConfigurator = () => {
     },
     quantity: 1,
   });
+  const [buttonState, setButtonState] = useState<'idle' | 'celebrating' | 'done'>('idle');
 
   // Get selected room data
   const selectedRoomData = useMemo(() => {
@@ -578,22 +579,34 @@ const ProductConfigurator = () => {
 
         <div className="space-y-3">
           <Button
-            className="w-full transition-transform active:scale-95"
+            className={cn(
+              "w-full transition-all duration-300 active:scale-95",
+              buttonState === 'idle' && "", // Default style from Button component
+              buttonState === 'celebrating' && "!bg-[#FF1493] !text-white scale-105 !border-[#FF1493]",
+              buttonState === 'done' && "!bg-gray-500 !text-white scale-95 !border-gray-500"
+            )}
             size="lg"
-            leftIcon={<ShoppingCart className="w-5 h-5" />}
+            leftIcon={buttonState === 'celebrating' ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
             onClick={(e) => {
+              if (buttonState !== 'idle') return;
               const rect = e.currentTarget.getBoundingClientRect();
               const x = (rect.left + rect.width / 2) / window.innerWidth;
               const y = (rect.top + rect.height / 2) / window.innerHeight;
               const w = rect.width / window.innerWidth;
               const h = rect.height / window.innerHeight;
+
+              setButtonState('celebrating');
               triggerAddToCartCelebration(x, y, w, h);
+
               setTimeout(() => {
-                router.push('/cart');
-              }, 1000);
+                setButtonState('done');
+                setTimeout(() => {
+                  router.push('/cart');
+                }, 500);
+              }, 1500);
             }}
           >
-            Toevoegen aan winkelwagen
+            {buttonState === 'celebrating' ? 'Toegevoegd!' : 'Toevoegen aan winkelwagen'}
           </Button>
           <Button
             variant="secondary"
