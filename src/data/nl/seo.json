@@ -1,0 +1,197 @@
+{
+  "seoKeywords": {
+    "primary": [
+      "horren op maat",
+      "insectenhorren",
+      "raamdecoratie op maat",
+      "plissé hordeuren",
+      "inzethorren",
+      "dakraamhorren",
+      "jaloezieën op maat",
+      "rolgordijnen op maat"
+    ],
+    "secondary": [
+      "horren kopen",
+      "horren bestellen",
+      "horren online",
+      "insectenwering raam",
+      "hordeur op maat",
+      "hor voor dakraam",
+      "vliegenhor",
+      "muggenhor",
+      "raamdecoratie goedkoop",
+      "jaloezieën goedkoop",
+      "verduisterende rolgordijnen"
+    ],
+    "longTail": [
+      "horren op maat bestellen nederland",
+      "plissé hordeur op maat kopen",
+      "inzethorren zonder boren",
+      "dakraamhor velux",
+      "verduisterend rolgordijn slaapkamer",
+      "houten jaloezieën op maat",
+      "raamdecoratie woonkamer modern"
+    ]
+  },
+  "landingPages": {
+    "horren-op-maat": {
+      "slug": "horren-op-maat",
+      "metaTitle": "Horren op Maat Bestellen | Gratis Meetadvies | Window Specialist",
+      "metaDescription": "Bestel horren op maat voor elk raam en deur. ✓ Gratis meetadvies ✓ Snelle levering ✓ 5 jaar garantie. Bekijk onze collectie!",
+      "h1": "Horren op Maat",
+      "heroSubtitle": "Bescherm uw huis tegen insecten met perfect passende horren",
+      "usps": [
+        { "icon": "ruler", "title": "Op maat gemaakt", "description": "Elke hor wordt precies op uw maten geproduceerd" },
+        { "icon": "shield", "title": "5 jaar garantie", "description": "Zorgeloos genieten van uw horren" },
+        { "icon": "truck", "title": "Gratis verzending", "description": "Bij bestellingen vanaf €50,-" },
+        { "icon": "headphones", "title": "Gratis meetadvies", "description": "Onze experts helpen u graag" }
+      ],
+      "sections": [
+        {
+          "title": "Waarom horren op maat?",
+          "content": "Standaard horren passen zelden perfect. Met horren op maat krijgt u een perfecte afsluiting zonder kieren waar insecten doorheen kunnen. Onze horren worden geproduceerd op basis van uw exacte afmetingen, voor een perfecte pasvorm."
+        },
+        {
+          "title": "Onze horren collectie",
+          "content": "Van inzethorren voor draairamen tot plissé hordeuren voor uw balkon - wij hebben de perfecte oplossing voor elke situatie. Kies uit verschillende gaastypes waaronder standaard gaas, Poll-Tex® pollengaas en huisdierbestendig Pet Screen."
+        }
+      ],
+      "ctaPrimary": "Bekijk alle horren",
+      "ctaSecondary": "Vraag offerte aan",
+      "schema": {
+        "@type": "Product",
+        "name": "Horren op Maat",
+        "description": "Op maat gemaakte horren voor ramen en deuren",
+        "brand": "Window Specialist"
+      }
+    },
+    "insectenhorren": {
+      "slug": "insectenhorren",
+      "metaTitle": "Insectenhorren Bestellen | Bescherm Uw Huis | Window Specialist",
+      "metaDescription": "Insectenhorren op maat voor elk raam. ✓ Effectieve bescherming ✓ Eenvoudige montage ✓ Diverse gaastypes. Bestel nu!",
+      "h1": "Insectenhorren",
+      "heroSubtitle": "Houd muggen, vliegen en andere insecten buiten",
+      "usps": [
+        { "icon": "bug", "title": "100% insectvrij", "description": "Effectieve bescherming tegen alle insecten" },
+        { "icon": "wind", "title": "Frisse lucht", "description": "Geniet van ventilatie zonder ongewenste gasten" },
+        { "icon": "tool", "title": "Zelf te monteren", "description": "Eenvoudige montage zonder boren" },
+        { "icon": "check", "title": "Gratis meetverzekering", "description": "Verkeerd gemeten? Wij vervangen gratis" }
+      ],
+      "sections": [
+        {
+          "title": "Effectieve insectenwering",
+          "content": "Onze insectenhorren bieden effectieve bescherming tegen alle soorten insecten. Het fijnmazige gaas houdt zelfs de kleinste muggen buiten, terwijl u optimaal kunt genieten van frisse lucht."
+        }
+      ],
+      "ctaPrimary": "Configureer uw hor",
+      "ctaSecondary": "Vraag advies aan",
+      "schema": {
+        "@type": "Product",
+        "name": "Insectenhorren",
+        "description": "Effectieve insectenhorren op maat",
+        "brand": "Window Specialist"
+      }
+    },
+    "raamdecoratie-op-maat": {
+      "slug": "raamdecoratie-op-maat",
+      "metaTitle": "Raamdecoratie op Maat | Jaloezieën & Rolgordijnen | Window Specialist",
+      "metaDescription": "Raamdecoratie op maat bestellen. ✓ Jaloezieën ✓ Rolgordijnen ✓ Plissé gordijnen. Gratis advies & snelle levering!",
+      "h1": "Raamdecoratie op Maat",
+      "heroSubtitle": "Creëer de perfecte sfeer in elke ruimte",
+      "usps": [
+        { "icon": "palette", "title": "Grote keuze", "description": "Honderden kleuren en materialen" },
+        { "icon": "sun", "title": "Lichtregulatie", "description": "Van lichtdoorlatend tot 100% verduisterend" },
+        { "icon": "home", "title": "Voor elke ruimte", "description": "Woonkamer, slaapkamer, keuken en meer" },
+        { "icon": "euro", "title": "Scherpe prijzen", "description": "Kwaliteit hoeft niet duur te zijn" }
+      ],
+      "sections": [
+        {
+          "title": "Raamdecoratie voor elk interieur",
+          "content": "Of u nu op zoek bent naar strakke jaloezieën voor uw kantoor of sfeervolle rolgordijnen voor uw woonkamer - wij hebben de perfecte raamdecoratie voor uw interieur. Al onze producten worden op maat gemaakt voor een perfecte pasvorm."
+        }
+      ],
+      "ctaPrimary": "Ontdek onze collectie",
+      "ctaSecondary": "Gratis advies aanvragen",
+      "schema": {
+        "@type": "Product",
+        "name": "Raamdecoratie op Maat",
+        "description": "Op maat gemaakte raamdecoratie - jaloezieën, rolgordijnen en meer",
+        "brand": "Window Specialist"
+      }
+    },
+    "plisse-hordeuren": {
+      "slug": "plisse-hordeuren",
+      "metaTitle": "Plissé Hordeuren op Maat | Ruimtebesparend | Window Specialist",
+      "metaDescription": "Plissé hordeuren op maat voor balkon of achterdeur. ✓ Ruimtebesparend ✓ Elegant design ✓ Soepele bediening. Bestel online!",
+      "h1": "Plissé Hordeuren",
+      "heroSubtitle": "Elegante en ruimtebesparende hordeuren",
+      "usps": [
+        { "icon": "minimize", "title": "Ruimtebesparend", "description": "Vouwt volledig weg wanneer niet in gebruik" },
+        { "icon": "sparkles", "title": "Elegant design", "description": "Past in elk interieur" },
+        { "icon": "hand", "title": "Soepele bediening", "description": "Fluisterstille werking" },
+        { "icon": "shield", "title": "Duurzaam", "description": "Hoogwaardige materialen" }
+      ],
+      "sections": [
+        {
+          "title": "De voordelen van plissé hordeuren",
+          "content": "Plissé hordeuren zijn de ideale oplossing voor balkons en terrasdeuren. Het plisséeffect zorgt ervoor dat de deur volledig wegvouwt wanneer u deze niet gebruikt, waardoor u optimaal van uw uitzicht kunt genieten."
+        }
+      ],
+      "ctaPrimary": "Configureer uw hordeur",
+      "ctaSecondary": "Vraag offerte aan",
+      "schema": {
+        "@type": "Product",
+        "name": "Plissé Hordeuren",
+        "description": "Ruimtebesparende plissé hordeuren op maat",
+        "brand": "Window Specialist"
+      }
+    }
+  },
+  "schemaOrg": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Window Specialist",
+      "url": "https://www.windowspecialist.nl",
+      "logo": "https://www.windowspecialist.nl/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+31-20-123-4567",
+        "contactType": "customer service",
+        "availableLanguage": ["Dutch", "English"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Industrieweg 123",
+        "addressLocality": "Amsterdam",
+        "postalCode": "1234 AB",
+        "addressCountry": "NL"
+      },
+      "sameAs": [
+        "https://www.facebook.com/windowspecialist",
+        "https://www.instagram.com/windowspecialist"
+      ]
+    },
+    "localBusiness": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Window Specialist",
+      "image": "https://www.windowspecialist.nl/images/storefront.jpg",
+      "priceRange": "€€",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "14:00"
+        }
+      ]
+    }
+  }
+}

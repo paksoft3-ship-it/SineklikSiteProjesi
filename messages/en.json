@@ -1,0 +1,470 @@
+{
+    "HomePage": {
+        "hero": {
+            "title": "Window Solutions per Room",
+            "subtitle": "Create the perfect atmosphere in every room. From blackout for the bedroom to ambient light in the living room.",
+            "cta_primary": "Choose Your Room",
+            "cta_secondary": "Start Configurator",
+            "badge": "New Collection 2024",
+            "cta_room": "Choose your room",
+            "cta_config": "Start configurator"
+        },
+        "collections": {
+            "title": "Our Collections",
+            "description": "Choose between our pleated screens for insect protection or pleated curtains for sun protection and privacy.",
+            "horren": {
+                "title": "Pleated Screens",
+                "description": "Keep insects out with style. Our pleated screens are space-saving, elegant and custom-made for doors, windows, and balconies.",
+                "link": "View Screens"
+            },
+            "gordijnen": {
+                "title": "Pleated Curtains",
+                "description": "Privacy and style in every fold. Choose from blackout, light-filtering or insulating honeycomb. Custom-made for your exact dimensions.",
+                "link": "View Curtains"
+            }
+        },
+        "rooms": {
+            "title": "Discover by Room",
+            "description": "Select a room to see the best combinations of window decoration and screens.",
+            "items": {
+                "woonkamer": "Living Room",
+                "slaapkamer": "Bedroom",
+                "keuken": "Kitchen",
+                "balkon": "Balcony",
+                "zolder": "Attic"
+            },
+            "tags": {
+                "insect_protection": "Insect Protection",
+                "light_privacy": "Light & Privacy",
+                "blackout": "Blackout",
+                "moisture_proof": "Moisture Proof",
+                "privacy": "Privacy",
+                "door_screens": "Door Screens",
+                "heat_protection": "Heat Protection"
+            }
+        },
+        "popular": {
+            "title": "Popular Products",
+            "subtitle": "Our most frequently chosen solutions.",
+            "view_all": "View all",
+            "view_btn": "View product",
+            "from": "From",
+            "products": {
+                "door_desc": "Space-saving for balconies",
+                "honey_desc": "Maximum insulation",
+                "blackout_desc": "100% light blocking",
+                "window_desc": "Compact and elegant"
+            }
+        },
+        "combinations": {
+            "title": "Popular Combinations",
+            "subtitle": "Frequently chosen solutions by our customers.",
+            "view_deals": "View all deals",
+            "from": "From",
+            "packages": {
+                "bedroom": {
+                    "name": "Bedroom Comfort Pack",
+                    "desc": "Blackout roller blind + Custom screen."
+                },
+                "living": {
+                    "name": "Living Room Style Pack",
+                    "desc": "Wooden blinds (50mm) + Pleated door screen."
+                },
+                "attic": {
+                    "name": "Attic Insulation Pack",
+                    "desc": "Duette® Shades + Roof window screen."
+                }
+            },
+            "cta": {
+                "view_packages": "View packages"
+            },
+            "view_all_packages": "View all packages"
+        },
+        "calculator": {
+            "title": "No hidden costs.",
+            "title_highlight": "Full transparency.",
+            "description": "Enter your dimensions and receive an honest price indication immediately. No surprises, everything included including installation service.",
+            "badge_inclusive": "All-inclusive service",
+            "badges": {
+                "delivery": "Free delivery",
+                "warranty": "5 Year Warranty",
+                "install": "Fast Installation"
+            },
+            "form": {
+                "title": "Calculate Price Directly",
+                "product_label": "Product Selection",
+                "width": "Width (cm)",
+                "height": "Height (cm)",
+                "install_title": "Professional Installation",
+                "install_desc": "By expert team",
+                "estimated_price": "Estimated Price",
+                "vat_included": "Incl. VAT",
+                "cta": "Request Free Quote",
+                "disclaimer": "No obligation • Response within 24 hours"
+            },
+            "products": {
+                "plisse_hor_deur": "Pleated Door Screen",
+                "plisse_hor_raam": "Pleated Window Screen",
+                "plisse_hor_balcony": "Glass Balcony Screen",
+                "plisse_hor_fixed": "Fixed Pleated Screen",
+                "plisse_hor_inside": "Inside Mount Screen",
+                "plisse_hor_combi": "Screen + Curtain Combo",
+                "plisse_hor_threshold": "Threshold-free Screen",
+                "plisse_curtain_honeycomb": "Honeycomb / Duette",
+                "plisse_curtain_blackout": "Blackout Plissé",
+                "plisse_curtain_light": "Light filtering Plissé (70%)",
+                "plisse_curtain_standard": "Standard Pleated Curtain"
+            }
+        },
+        "measurement": {
+            "title": "Measuring is knowing",
+            "description": "No worries about measurements. With our simple measuring instructions, anyone can provide the right dimensions. We guide you step by step.",
+            "alert": "Always measure in <bold>cm</bold> and in 3 places for certainty.",
+            "image_alt": "Person measuring window frame",
+            "steps": {
+                "video_title": "Clear video instructions",
+                "video_desc": "A video for every window type.",
+                "insurance_title": "Free measurement insurance",
+                "insurance_desc": "Measured wrong? We replace the product for free."
+            },
+            "cta": "View measurement guide"
+        },
+        "testimonials": {
+            "title": "What our customers say",
+            "reviews": {
+                "review1": {
+                    "text": "The configurator works super simply. Exactly what I needed for my new apartment in Utrecht.",
+                    "location": "Amsterdam",
+                    "name": "Jan de Vries"
+                },
+                "review2": {
+                    "text": "Great quality screens. Fast delivery and everything fits perfectly thanks to the measuring instructions.",
+                    "location": "Rotterdam",
+                    "name": "Sophie Jansen"
+                },
+                "review3": {
+                    "text": "Beautiful blinds for a fair price. Customer service was very helpful with a question about installation.",
+                    "location": "Eindhoven",
+                    "name": "Mark Bakker"
+                }
+            },
+            "trustpilot": {
+                "excellent": "Excellent",
+                "score": "4.8 out of 5 on Trustpilot"
+            }
+        }
+    },
+    "Header": {
+        "nav": {
+            "horren": "Pleated Screens",
+            "gordijnen": "Pleated Curtains",
+            "configurator": "Configurator",
+            "meetgids": "Measurement Guide",
+            "over_ons": "About Us",
+            "view_all_horren": "View all screens",
+            "view_all_gordijnen": "View all curtains"
+        },
+        "actions": {},
+        "items": {
+            "horren": {
+                "deur": "Pleated Door Screen",
+                "raam": "Pleated Window Screen",
+                "balkon": "Glass Balcony Screen",
+                "vaste": "Fixed Pleated Screen",
+                "binnen": "Inner Mount Screen",
+                "combi": "Screen + Curtain Combi",
+                "drempel": "Thresholdless Screen"
+            },
+            "gordijnen": {
+                "honeycomb": "Honeycomb / Duette",
+                "verduisterend": "Blackout Pleated",
+                "licht": "Light Filtering (70%)",
+                "kleur": "Color Options & Samples"
+            }
+        },
+        "badges": {
+            "populair": "Popular",
+            "bestseller": "Bestseller"
+        }
+    },
+    "Footer": {
+        "trust": {
+            "risk_free": {
+                "title": "No Risk, Certainty",
+                "desc": "All our products come with a 5-year warranty. Carefree use."
+            },
+            "returns": {
+                "title": "Free Returns",
+                "desc": "Standard sizes can be returned free of charge within 30 days."
+            }
+        },
+        "columns": {
+            "company_desc": "For over 10 years the specialist in pleated screens and curtains for Dutch homes. Craftsmanship, quality and personal service.",
+            "service": "Service",
+            "specialist": "The Pleated Specialist"
+        },
+        "specialist_points": {
+            "price": "Competitive prices, no hidden costs",
+            "delivery": "Free delivery from €50",
+            "advice": "Expert advice via chat/phone"
+        }
+    },
+    "ProductConfigurator": {
+        "summary_title": "Configuration Summary",
+        "option_header": "Option",
+        "price_header": "Price",
+        "total": "Total",
+        "view_ar": "View in AR",
+        "ar_modal_title": "View in Augmented Reality",
+        "ar_modal_desc": "Scan the QR code with your smartphone to view this product in augmented reality in your own space.",
+        "ar_modal_link": "Or open this link on your mobile device",
+        "close": "Close",
+        "standard_included": "Standard Included:",
+        "configure_title": "Configure:",
+        "choose_option": "Choose an option...",
+        "add_to_cart": "Add to Cart",
+        "request_quote": "Request Quote",
+        "delivery_time": "Delivery time: within {days} working days",
+        "ar_scan_instruction": "Scan the QR code"
+    },
+    "Products": {
+        "plisse_hordeur": {
+            "name": "Pleated Door Screen - Custom Made",
+            "description": "Space-saving pleated door screen for balconies, terraces and garden doors. Easy to operate with one hand.",
+            "options": {
+                "width": {
+                    "label": "Width",
+                    "infoTitle": "Width dimensions pleated door screen"
+                },
+                "height": {
+                    "label": "Height",
+                    "infoTitle": "Height dimensions pleated door screen"
+                },
+                "execution": {
+                    "label": "Execution",
+                    "infoTitle": "Execution options",
+                    "infoContent": "Choose between a single or double execution. A double execution opens to two sides and is ideal for wider openings.",
+                    "single": "Single execution (1-sided)",
+                    "double": "Double execution (2-sided)"
+                },
+                "profile": {
+                    "label": "Profile Width",
+                    "infoTitle": "Profile width information",
+                    "infoContent": "The 3.5cm profile is suitable for most standard situations. Choose the 4cm profile for larger openings or when extra sturdiness is desired.",
+                    "std": "3.5 cm (standard)",
+                    "sturdy": "4 cm (extra sturdy)"
+                },
+                "mesh": {
+                    "label": "Mesh Type",
+                    "infoTitle": "Mesh type options",
+                    "infoContent": "Standard polyester mesh is suitable for most situations. Pet-Screen is extra strong and pet-resistant. Poll-Tex also filters pollen for hay fever sufferers.",
+                    "std": "Standard polyester",
+                    "pet": "Pet-Screen (pet friendly)",
+                    "poll": "Poll-Tex (pollen resistant)",
+                    "rvs": "Stainless steel mesh (extra durable)"
+                },
+                "threshold": {
+                    "label": "Threshold Option",
+                    "infoTitle": "Threshold options",
+                    "infoContent": "Choose a threshold-free system when you want no tripping hazard or for accessibility with wheelchair/walker. The magnet system holds the screen in place without a fixed threshold.",
+                    "std": "Standard threshold",
+                    "low": "Low threshold (15mm)",
+                    "none": "Threshold-free (magnet)"
+                },
+                "color": {
+                    "label": "Frame Color",
+                    "infoTitle": "Available frame colors",
+                    "infoContent": "Choose the color of the aluminum frame. All colors are available in matte finish for a stylish look.",
+                    "white": "White (RAL 9016)",
+                    "cream": "Cream (RAL 9001)",
+                    "anthracite": "Anthracite (RAL 7016)",
+                    "black": "Black (RAL 9005)"
+                },
+                "mounting": {
+                    "label": "Installation Service",
+                    "infoTitle": "Installation Service",
+                    "infoContent": "Have your pleated door screen professionally installed by our expert installers. Includes measuring, installation and instruction.",
+                    "self": "Self installation",
+                    "pro": "Professional installation"
+                }
+            },
+            "standard_items": {
+                "rails": "Top and bottom rail",
+                "profile": "Glass profile incl. wheels"
+            }
+        },
+        "honeycomb_gordijn": {
+            "name": "Honeycomb / Duette Curtain - Custom Made",
+            "description": "The Honeycomb curtain has a unique honeycomb structure that traps air for optimal insulation.",
+            "options": {
+                "width": {
+                    "label": "Width",
+                    "infoTitle": "Width dimensions Honeycomb curtain"
+                },
+                "height": {
+                    "label": "Height",
+                    "infoTitle": "Height dimensions Honeycomb curtain"
+                },
+                "cell_structure": {
+                    "label": "Cell Structure",
+                    "infoTitle": "Single Cell vs Double Cell",
+                    "infoContent": "Single Cell has one layer of honeycomb and offers good insulation. Double Cell has two layers and offers maximum insulation with up to 25% energy savings.",
+                    "single": "Single Cell (standard insulation)",
+                    "double": "Double Cell (maximum insulation)"
+                },
+                "transparency": {
+                    "label": "Transparency",
+                    "infoTitle": "Transparency options",
+                    "infoContent": "Choose the desired transparency. Transparent lets through a lot of light, semi-transparent filters the light, blackout blocks all light.",
+                    "transparent": "Transparent (70%)",
+                    "semi": "Semi-transparent (40%)",
+                    "blackout": "Blackout (0%)"
+                },
+                "operation": {
+                    "label": "Operation Type",
+                    "infoTitle": "Operation options",
+                    "infoContent": "Cord operation is standard and reliable. Smartcord is a cordless solution, safe for children. Electric offers maximum comfort.",
+                    "cord": "Cord operation",
+                    "smartcord": "Smartcord (cordless)",
+                    "electric": "Electric (with remote control)"
+                },
+                "execution": {
+                    "label": "Execution",
+                    "infoTitle": "Execution options",
+                    "infoContent": "Standard: curtain moves from top to bottom. Top-down/Bottom-up: curtain can be opened from both top and bottom for more flexibility.",
+                    "standard": "Standard (top to bottom)",
+                    "tdbu": "Top-down / Bottom-up",
+                    "day_night": "Day & Night (two fabrics)"
+                },
+                "color": {
+                    "label": "Color",
+                    "infoTitle": "Color options",
+                    "infoContent": "Choose from over 100 colors. Order free samples to view the color at home before deciding.",
+                    "white": "White",
+                    "cream": "Cream",
+                    "grey": "Light Grey",
+                    "anthracite": "Anthracite",
+                    "beige": "Beige",
+                    "other": "Other color (see samples)"
+                },
+                "mounting": {
+                    "label": "Installation Service",
+                    "infoTitle": "Installation Service",
+                    "infoContent": "Have your Honeycomb curtain professionally installed by our expert installers. Includes measuring, installation and instruction.",
+                    "self": "Self installation (incl. instruction)",
+                    "pro": "Professional installation"
+                }
+            }
+        },
+        "glazen_balkon_hor": {
+            "name": "Glass Balcony Pleated Screen - Custom Made",
+            "description": "Specially designed for glass balcony systems. Minimally visible profiles for maximum view.",
+            "options": {
+                "height": {
+                    "label": "Height",
+                    "infoTitle": "Height dimensions of the pleated screen"
+                },
+                "foundation_beam": {
+                    "label": "Foundation Beam",
+                    "infoTitle": "Foundation beam information",
+                    "infoContent": "The foundation beam provides a stable base for your pleated screen. Choose a foundation beam when the surface is not level or extra stability is desired.",
+                    "none": "No foundation beam",
+                    "aluminum": "Aluminum foundation beam",
+                    "rvs": "Stainless steel foundation beam"
+                },
+                "glass_catch": {
+                    "label": "Glass Catch (U-profiles against the upright)",
+                    "infoTitle": "Glass Catch U-profiles",
+                    "infoContent": "The U-profiles are mounted against the uprights and catch the glass. This ensures a neat finish and protects the edges of the glass.",
+                    "none": "No glass catch",
+                    "standard": "Standard U-profile",
+                    "wide": "Wide U-profile"
+                },
+                "steel_look": {
+                    "label": "Steel Look Strips",
+                    "infoTitle": "Steel Look Strips",
+                    "infoContent": "Give your pleated screen an industrial look with our Steel Look strips. These black strips are mounted on the frame for a modern sleek design.",
+                    "none": "No Steel Look",
+                    "horizontal": "Horizontal strips",
+                    "vertical": "Vertical strips",
+                    "both": "Horizontal + Vertical"
+                },
+                "draft_strip": {
+                    "label": "Draft Strip",
+                    "infoTitle": "Draft Strip information",
+                    "infoContent": "A draft strip prevents cold air from entering along the edges of the screen. Recommended for optimal insulation.",
+                    "none": "No draft strip",
+                    "standard": "Standard draft strip",
+                    "premium": "Premium draft strip (extra insulation)"
+                },
+                "carrier": {
+                    "label": "Carrier",
+                    "infoTitle": "Carrier information",
+                    "infoContent": "The carrier ensures that multiple panels move simultaneously when you move one panel. Ideal for systems with multiple sliding panels.",
+                    "none": "No carrier",
+                    "single": "Single carrier",
+                    "double": "Double carrier"
+                },
+                "handle": {
+                    "label": "Door Handle",
+                    "infoTitle": "Door Handle options",
+                    "infoContent": "Choose a door handle that fits your interior. From minimalist to classic, we have various options available.",
+                    "standard": "Standard handle (silver)",
+                    "black": "Modern handle (black)",
+                    "rvs": "Stainless steel handle (brushed)",
+                    "premium": "Premium handle (matte black)"
+                },
+                "color": {
+                    "label": "Frame Color",
+                    "infoTitle": "Available frame colors",
+                    "infoContent": "Choose the color of the aluminum frame. All colors are available in matte finish for a stylish look.",
+                    "white": "White (RAL 9016)",
+                    "cream": "Cream (RAL 9001)",
+                    "anthracite": "Anthracite (RAL 7016)",
+                    "black": "Black (RAL 9005)"
+                }
+            }
+        }
+    },
+    "Chatbot": {
+        "buttons": {
+            "phone": "Call us",
+            "whatsapp": "WhatsApp",
+            "chat": "Chat"
+        },
+        "chat": {
+            "title": "Window Specialist",
+            "status": "Online - Instant response",
+            "welcome": "Hello! 👋 Welcome to Window Specialist. How can I help you today?\n\nI can provide information about our products, prices, delivery times and more.",
+            "placeholder": "Type your question...",
+            "source": "Source",
+            "footer": "Responses are based on our website information"
+        },
+        "quick_actions": {
+            "products": "Products",
+            "prices": "Prices",
+            "delivery": "Delivery",
+            "contact": "Contact"
+        },
+        "quick_queries": {
+            "products": "What products do you sell?",
+            "prices": "What are the prices?",
+            "delivery": "What is the delivery time?",
+            "contact": "How can I contact you?"
+        },
+        "responses": {
+            "products_horren": "High-quality pleated screens for doors, windows and balconies. Space-saving and elegant.",
+            "products_gordijnen": "Stylish pleated curtains with various light-filtering options.",
+            "available_types": "Available types",
+            "prices_label": "Prices",
+            "features": "Features",
+            "shipping": "Shipping",
+            "installation": "Installation",
+            "samples": "Samples",
+            "warranty": "Warranty",
+            "returns": "Returns",
+            "contact_reach": "You can reach us via",
+            "default_response": "Thank you for your question! I can help you with information about:\n\n• **Products**: Pleated screens and curtains\n• **Prices**: From €69\n• **Services**: Delivery, installation, samples\n• **Contact**: Phone, email, address\n\nCould you be more specific with your question? Or contact us directly:"
+        }
+    }
+}

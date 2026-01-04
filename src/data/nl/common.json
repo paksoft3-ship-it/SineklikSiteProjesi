@@ -1,0 +1,254 @@
+{
+  "meta": {
+    "siteName": "Window Specialist",
+    "siteDescription": "De specialist in raamdecoratie en horren op maat. Hoge kwaliteit voor een scherpe prijs.",
+    "siteUrl": "https://www.windowspecialist.nl",
+    "locale": "nl_NL",
+    "language": "nl"
+  },
+  "navigation": {
+    "menu": [
+      { "label": "Raamdecoratie", "href": "/producten/raamdecoratie" },
+      { "label": "Horren", "href": "/producten/horren" },
+      { "label": "Configurator", "href": "/configurator" },
+      { "label": "Over Ons", "href": "/over-ons" }
+    ],
+    "mobileMenu": {
+      "open": "Menu openen",
+      "close": "Menu sluiten"
+    },
+    "cart": "Winkelwagen",
+    "search": "Zoeken",
+    "searchPlaceholder": "Zoek producten..."
+  },
+  "hero": {
+    "badge": "Nieuwe Collectie 2024",
+    "title": "Raamoplossingen",
+    "titleHighlight": "per ruimte",
+    "description": "Creëer de perfecte sfeer in elke kamer. Van verduistering voor de slaapkamer tot sfeerlicht in de woonkamer.",
+    "ctaPrimary": "Kies je kamer",
+    "ctaSecondary": "Start configurator",
+    "backgroundAlt": "Moderne woonkamer met grote ramen"
+  },
+  "rooms": {
+    "sectionTitle": "Ontdek per kamer",
+    "sectionSubtitle": "Selecteer een ruimte om de beste combinaties van raamdecoratie en horren te bekijken.",
+    "items": [
+      {
+        "id": "woonkamer",
+        "name": "Woonkamer",
+        "slug": "woonkamer",
+        "image": "/images/rooms/woonkamer.jpg",
+        "tags": [
+          { "label": "Insectenwering", "type": "green", "icon": "bug" },
+          { "label": "Licht Privacy", "type": "yellow", "icon": "sun" }
+        ],
+        "description": "Creëer de perfecte sfeer in uw woonkamer met onze raamdecoratie en horren."
+      },
+      {
+        "id": "slaapkamer",
+        "name": "Slaapkamer",
+        "slug": "slaapkamer",
+        "image": "/images/rooms/slaapkamer.jpg",
+        "tags": [
+          { "label": "Verduistering", "type": "blue", "icon": "moon" },
+          { "label": "Insectenwering", "type": "green", "icon": "bug" }
+        ],
+        "description": "Optimale verduistering en insectenwering voor een goede nachtrust."
+      },
+      {
+        "id": "keuken",
+        "name": "Keuken",
+        "slug": "keuken",
+        "image": "/images/rooms/keuken.jpg",
+        "tags": [
+          { "label": "Vochtbestendig", "type": "gray", "icon": "droplet" },
+          { "label": "Privacy", "type": "yellow", "icon": "eye-off" }
+        ],
+        "description": "Vochtbestendige oplossingen voor uw keuken."
+      },
+      {
+        "id": "balkon",
+        "name": "Balkon",
+        "slug": "balkon",
+        "image": "/images/rooms/balkon.jpg",
+        "tags": [
+          { "label": "Hordeuren", "type": "green", "icon": "shield" }
+        ],
+        "description": "Geniet van uw balkon zonder insecten."
+      },
+      {
+        "id": "zolder",
+        "name": "Zolder",
+        "slug": "zolder",
+        "image": "/images/rooms/zolder.jpg",
+        "tags": [
+          { "label": "Warmtewering", "type": "red", "icon": "thermometer" },
+          { "label": "Insectenwering", "type": "green", "icon": "bug" }
+        ],
+        "description": "Houd uw zolder koel en insectenvrij."
+      }
+    ]
+  },
+  "popularCombinations": {
+    "sectionTitle": "Populaire combinaties",
+    "sectionSubtitle": "Veelgekozen oplossingen door onze klanten.",
+    "viewAllDeals": "Bekijk alle deals",
+    "fromPrice": "Vanaf",
+    "items": [
+      {
+        "id": "slaapkamer-comfort-pack",
+        "name": "Slaapkamer Comfort Pack",
+        "slug": "slaapkamer-pack",
+        "description": "Verduisterend rolgordijn + Inzet hor op maat.",
+        "price": 149,
+        "image": "/images/packs/slaapkamer-pack.jpg",
+        "badge": "BESTSELLER",
+        "includes": ["Verduisterend rolgordijn", "Inzet hor op maat"]
+      },
+      {
+        "id": "woonkamer-stijl-pack",
+        "name": "Woonkamer Stijl Pack",
+        "slug": "woonkamer-pack",
+        "description": "Houten jaloezieën (50mm) + Plisséhordeur.",
+        "price": 289,
+        "image": "/images/packs/woonkamer-pack.jpg",
+        "badge": null,
+        "includes": ["Houten jaloezieën 50mm", "Plisséhordeur"]
+      },
+      {
+        "id": "zolder-isolatie-pack",
+        "name": "Zolder Isolatie Pack",
+        "slug": "zolder-pack",
+        "description": "Duette® Shades + Dakraamhor.",
+        "price": 199,
+        "image": "/images/packs/zolder-pack.jpg",
+        "badge": null,
+        "includes": ["Duette® Shades", "Dakraamhor"]
+      }
+    ]
+  },
+  "measurementGuide": {
+    "sectionTitle": "Meten is weten",
+    "sectionSubtitle": "Geen zorgen over de maatvoering. Met onze eenvoudige meetinstructies kan iedereen de juiste maten doorgeven. Wij begeleiden je stap voor stap.",
+    "tip": "Meet altijd in <strong>cm</strong> en op 3 plekken voor de zekerheid.",
+    "features": [
+      {
+        "title": "Duidelijke video instructies",
+        "description": "Voor elk type raam een video."
+      },
+      {
+        "title": "Gratis meetverzekering",
+        "description": "Verkeerd gemeten? Wij vervangen het product gratis."
+      }
+    ],
+    "ctaText": "Bekijk de meetgids",
+    "imageAlt": "Persoon meet raamkozijn"
+  },
+  "testimonials": {
+    "sectionTitle": "Onze klanten vertellen",
+    "trustpilotText": "4.8 uit 5 op Trustpilot",
+    "excellent": "Uitstekend",
+    "items": [
+      {
+        "id": 1,
+        "name": "Jan de Vries",
+        "location": "Amsterdam",
+        "rating": 5,
+        "text": "De configurator werkt super simpel. Precies wat ik nodig had voor mijn nieuwe appartement in Utrecht.",
+        "avatar": "J"
+      },
+      {
+        "id": 2,
+        "name": "Sophie Jansen",
+        "location": "Rotterdam",
+        "rating": 5,
+        "text": "Goede kwaliteit horren. Snelle levering en alles past perfect dankzij de meetinstructies.",
+        "avatar": "S"
+      },
+      {
+        "id": 3,
+        "name": "Mark Bakker",
+        "location": "Eindhoven",
+        "rating": 4.5,
+        "text": "Mooie jaloezieën voor een eerlijke prijs. De klantenservice hielp goed bij een vraag over montage.",
+        "avatar": "M"
+      }
+    ]
+  },
+  "footer": {
+    "description": "De specialist in raamdecoratie en horren op maat. Hoge kwaliteit voor een scherpe prijs.",
+    "kvk": "KVK: 12345678",
+    "btw": "BTW: NL001234567B01",
+    "sections": {
+      "customerService": {
+        "title": "Klantenservice",
+        "links": [
+          { "label": "Contact", "href": "/contact" },
+          { "label": "Veelgestelde vragen", "href": "/faq" },
+          { "label": "Retourneren", "href": "/retourneren" },
+          { "label": "Montage service", "href": "/montage" }
+        ]
+      },
+      "products": {
+        "title": "Producten",
+        "links": [
+          { "label": "Jaloezieën", "href": "/producten/raamdecoratie/jaloezieen" },
+          { "label": "Rolgordijnen", "href": "/producten/raamdecoratie/rolgordijnen" },
+          { "label": "Plisséhordeuren", "href": "/producten/horren/plisse-hordeuren" },
+          { "label": "Inzethorren", "href": "/producten/horren/inzethorren" }
+        ]
+      },
+      "payment": {
+        "title": "Veilig Betalen",
+        "methods": ["iDEAL", "PayPal", "Bancontact", "Kapıda Ödeme"]
+      },
+      "social": {
+        "title": "Volg ons",
+        "links": [
+          { "platform": "facebook", "url": "#" },
+          { "platform": "instagram", "url": "#" },
+          { "platform": "pinterest", "url": "#" }
+        ]
+      }
+    },
+    "legal": {
+      "copyright": "© 2024 Window Specialist. Alle rechten voorbehouden.",
+      "links": [
+        { "label": "Privacybeleid", "href": "/privacy" },
+        { "label": "Algemene voorwaarden", "href": "/voorwaarden" }
+      ]
+    }
+  },
+  "common": {
+    "learnMore": "Meer informatie",
+    "viewAll": "Bekijk alles",
+    "addToCart": "Toevoegen aan winkelwagen",
+    "requestQuote": "Offerte aanvragen",
+    "configure": "Configureren",
+    "from": "Vanaf",
+    "currency": "€",
+    "perPiece": "per stuk",
+    "free": "Gratis",
+    "new": "Nieuw",
+    "sale": "Sale",
+    "bestseller": "Bestseller",
+    "loading": "Laden...",
+    "error": "Er is iets misgegaan",
+    "tryAgain": "Probeer opnieuw",
+    "back": "Terug",
+    "next": "Volgende",
+    "previous": "Vorige",
+    "submit": "Verzenden",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "delete": "Verwijderen",
+    "edit": "Bewerken",
+    "close": "Sluiten",
+    "search": "Zoeken",
+    "filter": "Filteren",
+    "sort": "Sorteren",
+    "yes": "Ja",
+    "no": "Nee"
+  }
+}

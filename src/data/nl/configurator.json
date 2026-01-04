@@ -1,0 +1,260 @@
+{
+  "configurator": {
+    "metaTitle": "Configurator | Stel Uw Product Samen | Window Specialist",
+    "metaDescription": "Configureer uw horren of raamdecoratie op maat. Selecteer uw kamer, kies uw product en voer uw maten in.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Kies uw ruimte",
+        "description": "Selecteer de kamer waarvoor u een product zoekt"
+      },
+      {
+        "id": 2,
+        "title": "Selecteer product",
+        "description": "Kies het type product dat u wilt configureren"
+      },
+      {
+        "id": 3,
+        "title": "Afmetingen",
+        "description": "Voer de exacte afmetingen van uw raam of deur in"
+      },
+      {
+        "id": 4,
+        "title": "Opties kiezen",
+        "description": "Selecteer kleur, materiaal en extra opties"
+      },
+      {
+        "id": 5,
+        "title": "Overzicht",
+        "description": "Controleer uw configuratie en vraag een offerte aan"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "woonkamer",
+        "name": "Woonkamer",
+        "icon": "sofa",
+        "description": "Creëer sfeer met de juiste lichtregulatie",
+        "recommendedProducts": ["jaloezieen", "rolgordijnen", "inzethorren"],
+        "tips": ["Kies voor lichtdoorlatende stoffen voor een warme sfeer", "Houten jaloezieën geven een natuurlijke uitstraling"]
+      },
+      {
+        "id": "slaapkamer",
+        "name": "Slaapkamer",
+        "icon": "bed",
+        "description": "Optimale verduistering voor een goede nachtrust",
+        "recommendedProducts": ["rolgordijnen-verduisterend", "duette-shades", "inzethorren"],
+        "tips": ["Kies voor 100% verduisterend materiaal", "Combineer met een inzethor voor insectenvrij slapen"]
+      },
+      {
+        "id": "keuken",
+        "name": "Keuken",
+        "icon": "utensils",
+        "description": "Vochtbestendige oplossingen voor uw keuken",
+        "recommendedProducts": ["jaloezieen-aluminium", "rolgordijnen-vochtbestendig", "inzethorren"],
+        "tips": ["Kies voor aluminium of vochtbestendige materialen", "Eenvoudig schoon te maken"]
+      },
+      {
+        "id": "balkon",
+        "name": "Balkon / Terras",
+        "icon": "door-open",
+        "description": "Hordeuren voor vrije doorgang",
+        "recommendedProducts": ["plisse-hordeuren", "schuifhorren"],
+        "tips": ["Plissé hordeuren vouwen volledig weg", "Ideaal voor veel gebruikte doorgangen"]
+      },
+      {
+        "id": "zolder",
+        "name": "Zolder",
+        "icon": "home",
+        "description": "Warmtewering en insectenbescherming voor dakramen",
+        "recommendedProducts": ["dakraamhorren", "duette-shades", "rolgordijnen-verduisterend"],
+        "tips": ["Duette® Shades bieden uitstekende isolatie", "Dakraamhorren passen op alle merken"]
+      }
+    ],
+    "productTypes": {
+      "horren": [
+        {
+          "id": "inzethorren",
+          "name": "Inzethorren",
+          "basePrice": 49,
+          "image": "/images/configurator/inzethor.jpg",
+          "description": "Eenvoudig in het raamkozijn te klemmen",
+          "forRooms": ["woonkamer", "slaapkamer", "keuken"],
+          "measurementType": "dagmaat"
+        },
+        {
+          "id": "plisse-hordeuren",
+          "name": "Plissé Hordeuren",
+          "basePrice": 199,
+          "image": "/images/configurator/plisse-hordeur.jpg",
+          "description": "Ruimtebesparend en elegant",
+          "forRooms": ["balkon"],
+          "measurementType": "doorgang"
+        },
+        {
+          "id": "dakraamhorren",
+          "name": "Dakraamhorren",
+          "basePrice": 89,
+          "image": "/images/configurator/dakraamhor.jpg",
+          "description": "Voor VELUX en andere dakramen",
+          "forRooms": ["zolder"],
+          "measurementType": "glasmaat"
+        },
+        {
+          "id": "schuifhorren",
+          "name": "Schuifhorren",
+          "basePrice": 149,
+          "image": "/images/configurator/schuifhor.jpg",
+          "description": "Voor grote ramen en schuifpuien",
+          "forRooms": ["woonkamer", "balkon"],
+          "measurementType": "dagmaat"
+        }
+      ],
+      "raamdecoratie": [
+        {
+          "id": "jaloezieen",
+          "name": "Jaloezieën",
+          "basePrice": 59,
+          "image": "/images/configurator/jaloezie.jpg",
+          "description": "Tijdloze lichtregulatie",
+          "forRooms": ["woonkamer", "slaapkamer", "keuken"],
+          "measurementType": "dagmaat"
+        },
+        {
+          "id": "rolgordijnen",
+          "name": "Rolgordijnen",
+          "basePrice": 49,
+          "image": "/images/configurator/rolgordijn.jpg",
+          "description": "Modern en functioneel",
+          "forRooms": ["woonkamer", "slaapkamer", "keuken", "zolder"],
+          "measurementType": "dagmaat"
+        },
+        {
+          "id": "plisse-gordijnen",
+          "name": "Plissé Gordijnen",
+          "basePrice": 69,
+          "image": "/images/configurator/plisse-gordijn.jpg",
+          "description": "Voor alle raamvormen",
+          "forRooms": ["woonkamer", "slaapkamer"],
+          "measurementType": "glasmaat"
+        },
+        {
+          "id": "duette-shades",
+          "name": "Duette® Shades",
+          "basePrice": 129,
+          "image": "/images/configurator/duette.jpg",
+          "description": "Energiebesparend en isolerend",
+          "forRooms": ["slaapkamer", "zolder"],
+          "measurementType": "glasmaat"
+        }
+      ]
+    },
+    "options": {
+      "frameColors": [
+        { "id": "wit", "name": "Wit", "hex": "#FFFFFF", "priceModifier": 0 },
+        { "id": "antraciet", "name": "Antraciet", "hex": "#383838", "priceModifier": 10 },
+        { "id": "bruin", "name": "Bruin", "hex": "#654321", "priceModifier": 10 },
+        { "id": "creme", "name": "Crème", "hex": "#FFFDD0", "priceModifier": 10 },
+        { "id": "zwart", "name": "Zwart", "hex": "#000000", "priceModifier": 15 }
+      ],
+      "meshTypes": [
+        { "id": "standaard", "name": "Standaard gaas", "description": "Fijnmazig glasvezel gaas", "priceModifier": 0 },
+        { "id": "poll-tex", "name": "Poll-Tex® Pollengaas", "description": "Houdt ook pollen tegen", "priceModifier": 25 },
+        { "id": "pet-screen", "name": "Pet Screen", "description": "Huisdierbestendig extra sterk gaas", "priceModifier": 15 },
+        { "id": "sun-screen", "name": "Sun Screen", "description": "Zonwerende eigenschappen", "priceModifier": 20 }
+      ],
+      "fabricTypes": [
+        { "id": "lichtdoorlatend", "name": "Lichtdoorlatend", "description": "Filtert licht, behoudt zicht", "priceModifier": 0 },
+        { "id": "verduisterend", "name": "Verduisterend", "description": "100% lichtwerend", "priceModifier": 20 },
+        { "id": "dim-out", "name": "Dim-out", "description": "Sterk lichtwerend", "priceModifier": 15 }
+      ],
+      "operationTypes": [
+        { "id": "ketting", "name": "Kettingbediening", "priceModifier": 0 },
+        { "id": "koord", "name": "Koordbediening", "priceModifier": 0 },
+        { "id": "motor", "name": "Elektrische bediening", "priceModifier": 89 },
+        { "id": "smart", "name": "Smart Home (WiFi)", "priceModifier": 149 }
+      ]
+    },
+    "priceCalculation": {
+      "baseFormula": "basePrice + (width * height * pricePerCm2) + optionModifiers",
+      "pricePerCm2": {
+        "inzethorren": 0.003,
+        "plisse-hordeuren": 0.008,
+        "dakraamhorren": 0.005,
+        "schuifhorren": 0.006,
+        "jaloezieen": 0.004,
+        "rolgordijnen": 0.003,
+        "plisse-gordijnen": 0.005,
+        "duette-shades": 0.007
+      },
+      "minimumPrice": 49,
+      "vatRate": 0.21
+    },
+    "measurementInstructions": {
+      "dagmaat": {
+        "title": "Dagmaat meten",
+        "description": "Meet de binnenzijde van het kozijn",
+        "steps": [
+          "Meet de breedte aan de binnenkant van het kozijn",
+          "Meet op 3 hoogtes: boven, midden en onder",
+          "Noteer de kleinste maat",
+          "Meet de hoogte aan de binnenkant van het kozijn",
+          "Meet op 3 breedtes: links, midden en rechts",
+          "Noteer de kleinste maat"
+        ],
+        "image": "/images/measurement/dagmaat.jpg"
+      },
+      "glasmaat": {
+        "title": "Glasmaat meten",
+        "description": "Meet van glaslat tot glaslat",
+        "steps": [
+          "Meet de breedte van het glas inclusief de glaslatten",
+          "Meet de hoogte van het glas inclusief de glaslatten"
+        ],
+        "image": "/images/measurement/glasmaat.jpg"
+      },
+      "doorgang": {
+        "title": "Doorgang meten",
+        "description": "Meet de volledige deuropening",
+        "steps": [
+          "Meet de breedte van de deuropening",
+          "Meet de hoogte van de vloer tot de bovenkant",
+          "Houd rekening met de drempel (indien aanwezig)"
+        ],
+        "image": "/images/measurement/doorgang.jpg"
+      }
+    },
+    "ui": {
+      "buttons": {
+        "next": "Volgende stap",
+        "previous": "Vorige stap",
+        "addToCart": "Toevoegen aan winkelwagen",
+        "requestQuote": "Offerte aanvragen",
+        "startOver": "Opnieuw beginnen"
+      },
+      "labels": {
+        "selectedRoom": "Geselecteerde ruimte",
+        "selectedProduct": "Geselecteerd product",
+        "dimensions": "Afmetingen",
+        "width": "Breedte (cm)",
+        "height": "Hoogte (cm)",
+        "options": "Opties",
+        "totalPrice": "Totaalprijs",
+        "priceExVat": "Prijs excl. BTW",
+        "vat": "BTW 21%",
+        "priceIncVat": "Prijs incl. BTW",
+        "deliveryTime": "Levertijd",
+        "estimatedDelivery": "Geschatte levering"
+      },
+      "messages": {
+        "selectRoom": "Selecteer een ruimte om te beginnen",
+        "selectProduct": "Kies een product",
+        "enterDimensions": "Voer de afmetingen in",
+        "reviewConfig": "Controleer uw configuratie",
+        "configComplete": "Uw configuratie is compleet!",
+        "dimensionError": "Controleer de ingevoerde afmetingen",
+        "maxDimensionExceeded": "De maximale afmetingen zijn overschreden"
+      }
+    }
+  }
+}

@@ -1,0 +1,473 @@
+{
+    "HomePage": {
+        "hero": {
+            "title": "Raamoplossingen per ruimte",
+            "subtitle": "Creëer de perfecte sfeer in elke kamer. Van verduistering voor de slaapkamer tot sfeerlicht in de woonkamer.",
+            "cta_primary": "Kies je kamer",
+            "cta_secondary": "Start configurator",
+            "badge": "Nieuwe Collectie 2024",
+            "cta_room": "Kies je kamer",
+            "cta_config": "Start configurator"
+        },
+        "cta": {
+            "quote": "Offerte aanvragen"
+        },
+        "collections": {
+            "title": "Onze Collecties",
+            "description": "Kies tussen onze plissé horren voor insectenwering of plissé gordijnen voor zonwering en privacy.",
+            "horren": {
+                "title": "Plissé Horren",
+                "description": "Houd insecten buiten met stijl. Onze plissé horren zijn ruimtebesparend, elegant en op maat gemaakt voor deuren, ramen en balkons.",
+                "link": "Bekijk Horren"
+            },
+            "gordijnen": {
+                "title": "Plissé Gordijnen",
+                "description": "Privacy en stijl in elke plooi. Kies uit verduisterend, lichtdoorlatend of isolerend honeycomb. Op maat voor uw exacte afmetingen.",
+                "link": "Bekijk Gordijnen"
+            }
+        },
+        "rooms": {
+            "title": "Ontdek per kamer",
+            "description": "Selecteer een ruimte om de beste combinaties van raamdecoratie en horren te bekijken.",
+            "items": {
+                "woonkamer": "Woonkamer",
+                "slaapkamer": "Slaapkamer",
+                "keuken": "Keuken",
+                "balkon": "Balkon",
+                "zolder": "Zolder"
+            },
+            "tags": {
+                "insect_protection": "Insectenwering",
+                "light_privacy": "Licht & Privacy",
+                "blackout": "Verduistering",
+                "moisture_proof": "Vochtbestendig",
+                "privacy": "Privacy",
+                "door_screens": "Hordeuren",
+                "heat_protection": "Warmtewering"
+            }
+        },
+        "popular": {
+            "title": "Populaire Producten",
+            "subtitle": "Onze meest gekozen oplossingen.",
+            "view_all": "Bekijk alles",
+            "view_btn": "Bekijk product",
+            "from": "Vanaf",
+            "products": {
+                "door_desc": "Ruimtebesparend voor balkons",
+                "honey_desc": "Maximale isolatie",
+                "blackout_desc": "100% lichtblokkering",
+                "window_desc": "Compact en elegant"
+            }
+        },
+        "combinations": {
+            "title": "Populaire combinaties",
+            "subtitle": "Veelgekozen oplossingen door onze klanten.",
+            "view_deals": "Bekijk alle deals",
+            "from": "Vanaf",
+            "packages": {
+                "bedroom": {
+                    "name": "Slaapkamer Comfort Pack",
+                    "desc": "Verduisterend rolgordijn + Inzet hor op maat."
+                },
+                "living": {
+                    "name": "Woonkamer Stijl Pack",
+                    "desc": "Houten jaloezieën (50mm) + Plisséhordeur."
+                },
+                "attic": {
+                    "name": "Zolder Isolatie Pack",
+                    "desc": "Duette® Shades + Dakraamhor."
+                }
+            },
+            "cta": {
+                "view_packages": "Bekijk pakketten"
+            },
+            "view_all_packages": "Bekijk alle pakketten"
+        },
+        "calculator": {
+            "title": "Geen verborgen kosten.",
+            "title_highlight": "Volledige transparantie.",
+            "description": "Voer uw afmetingen in en ontvang direct een eerlijke prijsindicatie. Geen verrassingen, alles inbegrepen inclusief montageservice.",
+            "badge_inclusive": "All-inclusive service",
+            "badges": {
+                "delivery": "Gratis bezorging",
+                "warranty": "5 Jaar Garantie",
+                "install": "Snelle Montage"
+            },
+            "form": {
+                "title": "Direct Prijs Berekenen",
+                "product_label": "Product Selectie",
+                "width": "Breedte (cm)",
+                "height": "Hoogte (cm)",
+                "install_title": "Professionele Montage",
+                "install_desc": "Door vakkundig team",
+                "estimated_price": "Geschatte Prijs",
+                "vat_included": "Incl. BTW",
+                "cta": "Gratis Offerte Aanvragen",
+                "disclaimer": "Vrijblijvend • Binnen 24 uur reactie"
+            },
+            "products": {
+                "plisse_hor_deur": "Plissé Hordeur",
+                "plisse_hor_raam": "Plissé Raamhor",
+                "plisse_hor_balcony": "Glazen Balkon Hor",
+                "plisse_hor_fixed": "Vaste Plissé Hor",
+                "plisse_hor_inside": "Binnenmontage Hor",
+                "plisse_hor_combi": "Hor + Gordijn Combinatie",
+                "plisse_hor_threshold": "Drempelloze Plissé Hor",
+                "plisse_curtain_honeycomb": "Honeycomb / Duette",
+                "plisse_curtain_blackout": "Verduisterend Plissé",
+                "plisse_curtain_light": "Lichtdoorlatend Plissé (70%)",
+                "plisse_curtain_standard": "Standaard Plissé Gordijn"
+            }
+        },
+        "measurement": {
+            "title": "Meten is weten",
+            "description": "Geen zorgen over de maatvoering. Met onze eenvoudige meetinstructies kan iedereen de juiste maten doorgeven. Wij begeleiden je stap voor stap.",
+            "alert": "Meet altijd in <bold>cm</bold> en op 3 plekken voor de zekerheid.",
+            "image_alt": "Persoon meet raamkozijn",
+            "steps": {
+                "video_title": "Duidelijke video instructies",
+                "video_desc": "Voor elk type raam een video.",
+                "insurance_title": "Gratis meetverzekering",
+                "insurance_desc": "Verkeerd gemeten? Wij vervangen het product gratis."
+            },
+            "cta": "Bekijk de meetgids"
+        },
+        "testimonials": {
+            "title": "Onze klanten vertellen",
+            "reviews": {
+                "review1": {
+                    "text": "De configurator werkt super simpel. Precies wat ik nodig had voor mijn nieuwe appartement in Utrecht.",
+                    "location": "Amsterdam",
+                    "name": "Jan de Vries"
+                },
+                "review2": {
+                    "text": "Goede kwaliteit horren. Snelle levering en alles past perfect dankzij de meetinstructies.",
+                    "location": "Rotterdam",
+                    "name": "Sophie Jansen"
+                },
+                "review3": {
+                    "text": "Mooie jaloezieën voor een eerlijke prijs. De klantenservice hielp goed bij een vraag over montage.",
+                    "location": "Eindhoven",
+                    "name": "Mark Bakker"
+                }
+            },
+            "trustpilot": {
+                "excellent": "Uitstekend",
+                "score": "4.8 uit 5 op Trustpilot"
+            }
+        }
+    },
+    "Header": {
+        "nav": {
+            "horren": "Plissé Horren",
+            "gordijnen": "Plissé Gordijnen",
+            "configurator": "Configurator",
+            "meetgids": "Meetgids",
+            "over_ons": "Over Ons",
+            "view_all_horren": "Alle horren bekijken",
+            "view_all_gordijnen": "Alle gordijnen bekijken"
+        },
+        "actions": {},
+        "items": {
+            "horren": {
+                "deur": "Plissé Hordeur",
+                "raam": "Plissé Raamhor",
+                "balkon": "Glazen Balkon Hor",
+                "vaste": "Vaste Plissé Hor",
+                "binnen": "Binnenmontage Hor",
+                "combi": "Hor + Gordijn Combi",
+                "drempel": "Drempelloze Hor"
+            },
+            "gordijnen": {
+                "honeycomb": "Honeycomb / Duette",
+                "verduisterend": "Verduisterend Plissé",
+                "licht": "Lichtdoorlatend (70%)",
+                "kleur": "Kleuropties & Stalen"
+            }
+        },
+        "badges": {
+            "populair": "Populair",
+            "bestseller": "Bestseller"
+        }
+    },
+    "Footer": {
+        "trust": {
+            "risk_free": {
+                "title": "Geen Risico, Wel Zekerheid",
+                "desc": "Al onze producten vallen onder 5 jaar garantie. Zorgeloos gebruik."
+            },
+            "returns": {
+                "title": "Gratis Retourneren",
+                "desc": "Standaardmaten kunnen binnen 30 dagen kosteloos worden geretourneerd."
+            }
+        },
+        "columns": {
+            "company_desc": "Al meer dan 10 jaar de specialist in plissé horren en gordijnen voor Nederlandse woningen. Vakmanschap, kwaliteit en persoonlijke service.",
+            "service": "Service",
+            "specialist": "Dé Plissé Specialist"
+        },
+        "specialist_points": {
+            "price": "Scherpe prijzen, geen verborgen kosten",
+            "delivery": "Gratis bezorging vanaf €50",
+            "advice": "Deskundig advies via chat/telefoon"
+        }
+    },
+    "ProductConfigurator": {
+        "summary_title": "Overzicht samenstelling",
+        "option_header": "Optie",
+        "price_header": "Prijs",
+        "total": "Totaal",
+        "view_ar": "Bekijk in AR",
+        "ar_modal_title": "Bekijk in Augmented Reality",
+        "ar_modal_desc": "Scan de QR-code met uw smartphone om dit product in augmented reality te bekijken in uw eigen ruimte.",
+        "ar_modal_link": "Of open deze link op uw mobiele apparaat",
+        "close": "Sluiten",
+        "standard_included": "Standaard inbegrepen:",
+        "configure_title": "Stel samen:",
+        "choose_option": "Kies een optie...",
+        "add_to_cart": "Toevoegen aan winkelwagen",
+        "request_quote": "Offerte aanvragen",
+        "delivery_time": "Levertijd: binnen {days} werkdagen",
+        "ar_scan_instruction": "Scan de QR-code"
+    },
+    "Products": {
+        "plisse_hordeur": {
+            "name": "Plissé Hordeur - Op Maat",
+            "description": "Ruimtebesparende plissé hordeur voor balkons, terrassen en tuindeuren. Eenvoudig te bedienen met één hand.",
+            "options": {
+                "width": {
+                    "label": "Breedte",
+                    "infoTitle": "Breedtematen plissé hordeur"
+                },
+                "height": {
+                    "label": "Hoogte",
+                    "infoTitle": "Hoogtematen plissé hordeur"
+                },
+                "execution": {
+                    "label": "Uitvoering",
+                    "infoTitle": "Uitvoering opties",
+                    "infoContent": "Kies tussen een enkele of dubbele uitvoering. Een dubbele uitvoering opent naar twee kanten en is ideaal voor bredere openingen.",
+                    "single": "Enkele uitvoering (1-zijdig)",
+                    "double": "Dubbele uitvoering (2-zijdig)"
+                },
+                "profile": {
+                    "label": "Profielbreedte",
+                    "infoTitle": "Profielbreedte informatie",
+                    "infoContent": "Het 3.5cm profiel is geschikt voor de meeste standaard situaties. Kies voor het 4cm profiel bij grotere openingen of wanneer extra stevigheid gewenst is.",
+                    "std": "3.5 cm (standaard)",
+                    "sturdy": "4 cm (extra stevig)"
+                },
+                "mesh": {
+                    "label": "Gaastype",
+                    "infoTitle": "Gaastype opties",
+                    "infoContent": "Standaard polyester gaas is geschikt voor de meeste situaties. Pet-Screen is extra sterk en bestand tegen huisdieren. Poll-Tex filtert tevens pollen voor hooikoortslijders.",
+                    "std": "Standaard polyester",
+                    "pet": "Pet-Screen (huisdiervriendelijk)",
+                    "poll": "Poll-Tex (pollenwerend)",
+                    "rvs": "RVS gaas (extra duurzaam)"
+                },
+                "threshold": {
+                    "label": "Drempeloptie",
+                    "infoTitle": "Drempelopties",
+                    "infoContent": "Kies voor een drempelloos systeem wanneer u geen struikelgevaar wilt of voor toegankelijkheid met rolstoel/rollator. Het magneet systeem houdt de hor op zijn plaats zonder vaste drempel.",
+                    "std": "Standaard drempel",
+                    "low": "Lage drempel (15mm)",
+                    "none": "Drempelloos (magneet)"
+                },
+                "color": {
+                    "label": "Framekleur",
+                    "infoTitle": "Beschikbare framekleuren",
+                    "infoContent": "Kies de kleur van het aluminium frame. Alle kleuren zijn verkrijgbaar in matte afwerking voor een stijlvolle uitstraling.",
+                    "white": "Wit (RAL 9016)",
+                    "cream": "Crème (RAL 9001)",
+                    "anthracite": "Antraciet (RAL 7016)",
+                    "black": "Zwart (RAL 9005)"
+                },
+                "mounting": {
+                    "label": "Montageservice",
+                    "infoTitle": "Montageservice",
+                    "infoContent": "Laat uw plissé hordeur professioneel monteren door onze vakkundige monteurs. Inclusief inmeten, montage en instructie.",
+                    "self": "Zelf monteren",
+                    "pro": "Professionele montage"
+                }
+            },
+            "standard_items": {
+                "rails": "Bovenrail en onderrail",
+                "profile": "Glasprofiel incl. wielen"
+            }
+        },
+        "honeycomb_gordijn": {
+            "name": "Honeycomb / Duette Gordijn - Op Maat",
+            "description": "Het Honeycomb gordijn heeft een unieke honingraatstructuur die lucht opsluit voor optimale isolatie.",
+            "options": {
+                "width": {
+                    "label": "Breedte",
+                    "infoTitle": "Breedtematen Honeycomb gordijn"
+                },
+                "height": {
+                    "label": "Hoogte",
+                    "infoTitle": "Hoogtematen Honeycomb gordijn"
+                },
+                "cell_structure": {
+                    "label": "Celstructuur",
+                    "infoTitle": "Single Cell vs Double Cell",
+                    "infoContent": "Single Cell heeft één laag honingraat en biedt goede isolatie. Double Cell heeft twee lagen en biedt maximale isolatie met tot 25% energiebesparing.",
+                    "single": "Single Cell (standaard isolatie)",
+                    "double": "Double Cell (maximale isolatie)"
+                },
+                "transparency": {
+                    "label": "Lichtdoorlatendheid",
+                    "infoTitle": "Lichtdoorlatendheid opties",
+                    "infoContent": "Kies de gewenste lichtdoorlatendheid. Transparant laat veel licht door, semi-transparant filtert het licht, verduisterend blokkeert al het licht.",
+                    "transparent": "Transparant (70%)",
+                    "semi": "Semi-transparant (40%)",
+                    "blackout": "Verduisterend (0%)"
+                },
+                "operation": {
+                    "label": "Bedieningstype",
+                    "infoTitle": "Bedieningsopties",
+                    "infoContent": "Koordbediening is standaard en betrouwbaar. Smartcord is een koordloze oplossing, veilig voor kinderen. Elektrisch biedt maximaal comfort.",
+                    "cord": "Koordbediening",
+                    "smartcord": "Smartcord (koordloos)",
+                    "electric": "Elektrisch (met afstandsbediening)"
+                },
+                "execution": {
+                    "label": "Uitvoering",
+                    "infoTitle": "Uitvoering opties",
+                    "infoContent": "Standaard: gordijn beweegt van boven naar beneden. Top-down/Bottom-up: gordijn kan zowel van boven als van onder geopend worden voor meer flexibiliteit.",
+                    "standard": "Standaard (top naar bottom)",
+                    "tdbu": "Top-down / Bottom-up",
+                    "day_night": "Dag & Nacht (twee stoffen)"
+                },
+                "color": {
+                    "label": "Kleur",
+                    "infoTitle": "Kleuropties",
+                    "infoContent": "Kies uit meer dan 100 kleuren. Bestel gratis stalen om de kleur thuis te bekijken voordat u beslist.",
+                    "white": "Wit",
+                    "cream": "Crème",
+                    "grey": "Lichtgrijs",
+                    "anthracite": "Antraciet",
+                    "beige": "Beige",
+                    "other": "Andere kleur (zie stalen)"
+                },
+                "mounting": {
+                    "label": "Montageservice",
+                    "infoTitle": "Montageservice",
+                    "infoContent": "Laat uw Honeycomb gordijn professioneel monteren door onze vakkundige monteurs. Inclusief inmeten, montage en instructie.",
+                    "self": "Zelf monteren (incl. instructie)",
+                    "pro": "Professionele montage"
+                }
+            }
+        },
+        "glazen_balkon_hor": {
+            "name": "Glazen Balkon Plissé Hor - Op Maat",
+            "description": "Speciaal ontworpen voor glazen balkonsystemen. Minimaal zichtbare profielen voor maximaal uitzicht.",
+            "options": {
+                "height": {
+                    "label": "Hoogte",
+                    "infoTitle": "Hoogtematen van de plissé hor"
+                },
+                "foundation_beam": {
+                    "label": "Funderingsbalk",
+                    "infoTitle": "Funderingsbalk informatie",
+                    "infoContent": "De funderingsbalk zorgt voor een stabiele ondergrond voor uw plissé hor. Kies voor een funderingsbalk wanneer de ondergrond niet vlak is of extra stabiliteit gewenst is.",
+                    "none": "Geen funderingsbalk",
+                    "aluminum": "Aluminium funderingsbalk",
+                    "rvs": "RVS funderingsbalk"
+                },
+                "glass_catch": {
+                    "label": "Glasopvang (U-profielen tegen de staander)",
+                    "infoTitle": "Glasopvang U-profielen",
+                    "infoContent": "De U-profielen worden tegen de staanders gemonteerd en vangen het glas op. Dit zorgt voor een nette afwerking en beschermt de randen van het glas.",
+                    "none": "Geen glasopvang",
+                    "standard": "Standaard U-profiel",
+                    "wide": "Breed U-profiel"
+                },
+                "steel_look": {
+                    "label": "Steel Look Strips",
+                    "infoTitle": "Steel Look Strips",
+                    "infoContent": "Geef uw plissé hor een industriële uitstraling met onze Steel Look strips. Deze zwarte strips worden op het frame gemonteerd voor een modern strak design.",
+                    "none": "Geen Steel Look",
+                    "horizontal": "Horizontale strips",
+                    "vertical": "Verticale strips",
+                    "both": "Horizontaal + Verticaal"
+                },
+                "draft_strip": {
+                    "label": "Tochtstrip",
+                    "infoTitle": "Tochtstrip informatie",
+                    "infoContent": "Een tochtstrip voorkomt dat koude lucht langs de randen van de hor naar binnen komt. Aanbevolen voor optimale isolatie.",
+                    "none": "Geen tochtstrip",
+                    "standard": "Standaard tochtstrip",
+                    "premium": "Premium tochtstrip (extra isolatie)"
+                },
+                "carrier": {
+                    "label": "Meenemer",
+                    "infoTitle": "Meenemer informatie",
+                    "infoContent": "De meenemer zorgt ervoor dat meerdere panelen tegelijk bewegen wanneer u één paneel verplaatst. Ideaal voor systemen met meerdere schuifpanelen.",
+                    "none": "Geen meenemer",
+                    "single": "Enkele meenemer",
+                    "double": "Dubbele meenemer"
+                },
+                "handle": {
+                    "label": "Deurgreep",
+                    "infoTitle": "Deurgreep opties",
+                    "infoContent": "Kies een deurgreep die past bij uw interieur. Van minimalistisch tot klassiek, wij hebben diverse opties beschikbaar.",
+                    "standard": "Standaard greep (zilver)",
+                    "black": "Moderne greep (zwart)",
+                    "rvs": "RVS greep (geborsteld)",
+                    "premium": "Premium greep (mat zwart)"
+                },
+                "color": {
+                    "label": "Framekleur",
+                    "infoTitle": "Beschikbare framekleuren",
+                    "infoContent": "Kies de kleur van het aluminium frame. Alle kleuren zijn verkrijgbaar in matte afwerking voor een stijlvolle uitstraling.",
+                    "white": "Wit (RAL 9016)",
+                    "cream": "Crème (RAL 9001)",
+                    "anthracite": "Antraciet (RAL 7016)",
+                    "black": "Zwart (RAL 9005)"
+                }
+            }
+        }
+    },
+    "Chatbot": {
+        "buttons": {
+            "phone": "Bel ons",
+            "whatsapp": "WhatsApp",
+            "chat": "Chat"
+        },
+        "chat": {
+            "title": "Window Specialist",
+            "status": "Online - Direct antwoord",
+            "welcome": "Hallo! 👋 Welkom bij Window Specialist. Hoe kan ik u vandaag helpen?\n\nIk kan u informeren over onze producten, prijzen, levertijden en meer.",
+            "placeholder": "Typ uw vraag...",
+            "source": "Bron",
+            "footer": "Antwoorden zijn gebaseerd op onze website informatie"
+        },
+        "quick_actions": {
+            "products": "Producten",
+            "prices": "Prijzen",
+            "delivery": "Levertijd",
+            "contact": "Contact"
+        },
+        "quick_queries": {
+            "products": "Welke producten verkopen jullie?",
+            "prices": "Wat zijn de prijzen?",
+            "delivery": "Wat is de levertijd?",
+            "contact": "Hoe kan ik contact opnemen?"
+        },
+        "responses": {
+            "products_horren": "Hoogwaardige plissé horren voor deuren, ramen en balkons. Ruimtebesparend en elegant.",
+            "products_gordijnen": "Stijlvolle plissé gordijnen met verschillende lichtdoorlatendheid opties.",
+            "available_types": "Beschikbare types",
+            "prices_label": "Prijzen",
+            "features": "Kenmerken",
+            "shipping": "Verzending",
+            "installation": "Montage",
+            "samples": "Stalen",
+            "warranty": "Garantie",
+            "returns": "Retourneren",
+            "contact_reach": "U kunt ons bereiken via",
+            "default_response": "Bedankt voor uw vraag! Ik kan u helpen met informatie over:\n\n• **Producten**: Plissé horren en gordijnen\n• **Prijzen**: Vanaf €69\n• **Services**: Bezorging, montage, stalen\n• **Contact**: Telefoon, email, adres\n\nKunt u uw vraag specifieker stellen? Of neem direct contact met ons op:"
+        }
+    }
+}

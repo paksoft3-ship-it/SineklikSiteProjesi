@@ -1,0 +1,322 @@
+{
+  "categories": {
+    "horren": {
+      "id": "horren",
+      "name": "Horren",
+      "slug": "horren",
+      "description": "Bescherm uw huis tegen insecten met onze hoogwaardige horren op maat.",
+      "image": "/images/categories/horren.jpg",
+      "metaTitle": "Horren op Maat | Insectenhorren | Window Specialist",
+      "metaDescription": "Bestel horren op maat voor elk raam en deur. Inzethorren, plisséhordeuren, dakraamhorren en meer. Gratis meetadvies!",
+      "subcategories": [
+        {
+          "id": "inzethorren",
+          "name": "Inzethorren",
+          "slug": "inzethorren",
+          "description": "Eenvoudig te plaatsen horren die in het raamkozijn worden geklemd.",
+          "image": "/images/products/inzethorren.jpg",
+          "startingPrice": 49,
+          "features": ["Eenvoudige montage", "Geen boren nodig", "Op maat gemaakt"],
+          "metaTitle": "Inzethorren op Maat | Makkelijk Zelf te Plaatsen | Window Specialist",
+          "metaDescription": "Bestel inzethorren op maat. Eenvoudig te plaatsen zonder boren. Perfecte pasvorm gegarandeerd. Gratis meetadvies!"
+        },
+        {
+          "id": "plisse-hordeuren",
+          "name": "Plisséhordeuren",
+          "slug": "plisse-hordeuren",
+          "description": "Elegante en ruimtebesparende hordeuren met plisséeffect.",
+          "image": "/images/products/plisse-hordeuren.jpg",
+          "startingPrice": 199,
+          "features": ["Ruimtebesparend", "Elegant design", "Soepele bediening"],
+          "metaTitle": "Plisséhordeuren op Maat | Elegant & Ruimtebesparend | Window Specialist",
+          "metaDescription": "Plisséhordeuren op maat voor uw deur. Ruimtebesparend ontwerp, soepele bediening. Bestel nu met gratis meetadvies!"
+        },
+        {
+          "id": "dakraamhorren",
+          "name": "Dakraamhorren",
+          "slug": "dakraamhorren",
+          "description": "Speciaal ontworpen horren voor VELUX en andere dakramen.",
+          "image": "/images/products/dakraamhorren.jpg",
+          "startingPrice": 89,
+          "features": ["Voor alle dakraammerken", "UV-bestendig", "Eenvoudige montage"],
+          "metaTitle": "Dakraamhorren | VELUX & Alle Merken | Window Specialist",
+          "metaDescription": "Dakraamhorren op maat voor VELUX en andere merken. UV-bestendig gaas, eenvoudige montage. Bestel nu!"
+        },
+        {
+          "id": "schuifhorren",
+          "name": "Schuifhorren",
+          "slug": "schuifhorren",
+          "description": "Horizontaal schuivende horren voor grote ramen en schuifpuien.",
+          "image": "/images/products/schuifhorren.jpg",
+          "startingPrice": 149,
+          "features": ["Voor grote openingen", "Soepel schuifsysteem", "Aluminium frame"],
+          "metaTitle": "Schuifhorren | Voor Grote Ramen & Schuifpuien | Window Specialist",
+          "metaDescription": "Schuifhorren op maat voor grote ramen en schuifpuien. Aluminium frame, soepel schuifsysteem. Bestel online!"
+        }
+      ]
+    },
+    "raamdecoratie": {
+      "id": "raamdecoratie",
+      "name": "Raamdecoratie",
+      "slug": "raamdecoratie",
+      "description": "Stijlvolle raamdecoratie op maat voor elke ruimte.",
+      "image": "/images/categories/raamdecoratie.jpg",
+      "metaTitle": "Raamdecoratie op Maat | Jaloezieën & Rolgordijnen | Window Specialist",
+      "metaDescription": "Ontdek onze collectie raamdecoratie op maat. Jaloezieën, rolgordijnen, plissé gordijnen en meer. Gratis advies!",
+      "subcategories": [
+        {
+          "id": "jaloezieen",
+          "name": "Jaloezieën",
+          "slug": "jaloezieen",
+          "description": "Tijdloze jaloezieën in aluminium, hout of kunststof.",
+          "image": "/images/products/jaloezieen.jpg",
+          "startingPrice": 59,
+          "features": ["Lichtregulatie", "Privacy", "Diverse materialen"],
+          "metaTitle": "Jaloezieën op Maat | Aluminium, Hout & Kunststof | Window Specialist",
+          "metaDescription": "Jaloezieën op maat in aluminium, hout of kunststof. Perfecte lichtregulatie en privacy. Bestel nu!"
+        },
+        {
+          "id": "rolgordijnen",
+          "name": "Rolgordijnen",
+          "slug": "rolgordijnen",
+          "description": "Moderne rolgordijnen in verduisterend of lichtdoorlatend materiaal.",
+          "image": "/images/products/rolgordijnen.jpg",
+          "startingPrice": 49,
+          "features": ["Verduisterend beschikbaar", "Vele kleuren", "Eenvoudige bediening"],
+          "metaTitle": "Rolgordijnen op Maat | Verduisterend & Lichtdoorlatend | Window Specialist",
+          "metaDescription": "Rolgordijnen op maat bestellen. Kies uit verduisterend of lichtdoorlatend. Grote kleurencollectie. Gratis advies!"
+        },
+        {
+          "id": "plisse-gordijnen",
+          "name": "Plissé Gordijnen",
+          "slug": "plisse-gordijnen",
+          "description": "Veelzijdige plissé gordijnen voor alle raamvormen.",
+          "image": "/images/products/plisse-gordijnen.jpg",
+          "startingPrice": 69,
+          "features": ["Elk raamvorm mogelijk", "Isolerend", "Modern design"],
+          "metaTitle": "Plissé Gordijnen op Maat | Voor Alle Raamvormen | Window Specialist",
+          "metaDescription": "Plissé gordijnen op maat voor elk raamvorm. Isolerende eigenschappen, modern design. Bestel online!"
+        },
+        {
+          "id": "duette-shades",
+          "name": "Duette® Shades",
+          "slug": "duette-shades",
+          "description": "Energiebesparende honingraatgordijnen met isolerende werking.",
+          "image": "/images/products/duette-shades.jpg",
+          "startingPrice": 129,
+          "features": ["Energiebesparend", "Isolerend", "Premium kwaliteit"],
+          "metaTitle": "Duette® Shades | Energiebesparende Gordijnen | Window Specialist",
+          "metaDescription": "Duette® Shades - energiebesparende honingraatgordijnen. Uitstekende isolatie, premium kwaliteit. Bestel nu!"
+        }
+      ]
+    },
+    "pakketten": {
+      "id": "pakketten",
+      "name": "Voordeel Pakketten",
+      "slug": "pakketten",
+      "description": "Combineer en bespaar met onze populaire pakketten.",
+      "image": "/images/categories/pakketten.jpg",
+      "metaTitle": "Voordeel Pakketten | Horren & Raamdecoratie Combinaties | Window Specialist",
+      "metaDescription": "Bespaar met onze voordeel pakketten. Combinaties van horren en raamdecoratie op maat. Ontdek de deals!"
+    }
+  },
+  "products": [
+    {
+      "id": "inzet-hor-standaard",
+      "name": "Inzet Hor Standaard",
+      "slug": "inzet-hor-standaard",
+      "categoryId": "horren",
+      "subcategoryId": "inzethorren",
+      "description": "Onze standaard inzethor is perfect voor elk draairaam. Eenvoudig te plaatsen en te verwijderen zonder gereedschap.",
+      "shortDescription": "Standaard inzethor voor draairamen",
+      "price": 49,
+      "comparePrice": null,
+      "images": [
+        "/images/products/inzet-hor-standaard-1.jpg",
+        "/images/products/inzet-hor-standaard-2.jpg"
+      ],
+      "features": [
+        "Aluminium frame",
+        "Glasvezel gaas",
+        "Zonder boren te monteren",
+        "Klemveren inbegrepen"
+      ],
+      "specifications": {
+        "materiaalFrame": "Aluminium",
+        "materiaalGaas": "Glasvezel",
+        "kleurFrame": "Wit, antraciet, bruin",
+        "maxBreedte": "150 cm",
+        "maxHoogte": "200 cm"
+      },
+      "options": [
+        {
+          "name": "Framekleur",
+          "type": "color",
+          "values": [
+            { "id": "wit", "label": "Wit", "value": "#FFFFFF", "priceModifier": 0 },
+            { "id": "antraciet", "label": "Antraciet", "value": "#383838", "priceModifier": 10 },
+            { "id": "bruin", "label": "Bruin", "value": "#654321", "priceModifier": 10 }
+          ]
+        },
+        {
+          "name": "Gaastype",
+          "type": "select",
+          "values": [
+            { "id": "standaard", "label": "Standaard gaas", "priceModifier": 0 },
+            { "id": "pollengaas", "label": "Poll-Tex® pollengaas", "priceModifier": 25 },
+            { "id": "petscreen", "label": "Pet Screen (huisdierbestendig)", "priceModifier": 15 }
+          ]
+        }
+      ],
+      "inStock": true,
+      "deliveryTime": "5-7 werkdagen",
+      "freeShipping": true,
+      "seo": {
+        "metaTitle": "Inzet Hor Standaard | Eenvoudig Zelf te Plaatsen | Window Specialist",
+        "metaDescription": "Bestel de standaard inzethor op maat. Aluminium frame, glasvezel gaas, zonder boren te monteren. Vanaf €49,-"
+      }
+    },
+    {
+      "id": "plisse-hordeur-enkel",
+      "name": "Plissé Hordeur Enkel",
+      "slug": "plisse-hordeur-enkel",
+      "categoryId": "horren",
+      "subcategoryId": "plisse-hordeuren",
+      "description": "Elegante enkelvoudige plissé hordeur die volledig wegvouwt wanneer niet in gebruik. Perfect voor balkondeur of achterdeur.",
+      "shortDescription": "Enkele plissé hordeur",
+      "price": 199,
+      "comparePrice": 249,
+      "images": [
+        "/images/products/plisse-hordeur-1.jpg",
+        "/images/products/plisse-hordeur-2.jpg"
+      ],
+      "features": [
+        "Vouwt volledig weg",
+        "Ruimtebesparend",
+        "Fluisterstille bediening",
+        "Aluminium frame"
+      ],
+      "specifications": {
+        "materiaalFrame": "Aluminium",
+        "materiaalGaas": "Polyester plissé",
+        "kleurFrame": "Wit, antraciet, bruin, crème",
+        "maxBreedte": "140 cm",
+        "maxHoogte": "260 cm"
+      },
+      "options": [
+        {
+          "name": "Framekleur",
+          "type": "color",
+          "values": [
+            { "id": "wit", "label": "Wit", "value": "#FFFFFF", "priceModifier": 0 },
+            { "id": "antraciet", "label": "Antraciet", "value": "#383838", "priceModifier": 15 },
+            { "id": "bruin", "label": "Bruin", "value": "#654321", "priceModifier": 15 },
+            { "id": "creme", "label": "Crème", "value": "#FFFDD0", "priceModifier": 15 }
+          ]
+        },
+        {
+          "name": "Openingsrichting",
+          "type": "select",
+          "values": [
+            { "id": "links", "label": "Linksdraaiend", "priceModifier": 0 },
+            { "id": "rechts", "label": "Rechtsdraaiend", "priceModifier": 0 }
+          ]
+        }
+      ],
+      "inStock": true,
+      "deliveryTime": "7-10 werkdagen",
+      "freeShipping": true,
+      "badge": "SALE",
+      "seo": {
+        "metaTitle": "Plissé Hordeur Enkel | Ruimtebesparend Design | Window Specialist",
+        "metaDescription": "Enkele plissé hordeur op maat. Vouwt volledig weg, fluisterstille bediening. Nu vanaf €199,- (was €249,-)"
+      }
+    },
+    {
+      "id": "rolgordijn-verduisterend",
+      "name": "Rolgordijn Verduisterend",
+      "slug": "rolgordijn-verduisterend",
+      "categoryId": "raamdecoratie",
+      "subcategoryId": "rolgordijnen",
+      "description": "100% verduisterend rolgordijn voor optimale nachtrust. Ideaal voor slaapkamers en kinderkamers.",
+      "shortDescription": "100% verduisterend rolgordijn",
+      "price": 69,
+      "comparePrice": null,
+      "images": [
+        "/images/products/rolgordijn-verduisterend-1.jpg",
+        "/images/products/rolgordijn-verduisterend-2.jpg"
+      ],
+      "features": [
+        "100% lichtwerend",
+        "Thermisch isolerend",
+        "Grote kleurenkeuze",
+        "Kettingbediening of motor"
+      ],
+      "specifications": {
+        "materiaal": "Polyester met coating",
+        "lichtdoorlatendheid": "0%",
+        "maxBreedte": "300 cm",
+        "maxHoogte": "350 cm",
+        "bediening": "Ketting of motor"
+      },
+      "options": [
+        {
+          "name": "Kleur",
+          "type": "color",
+          "values": [
+            { "id": "wit", "label": "Wit", "value": "#FFFFFF", "priceModifier": 0 },
+            { "id": "antraciet", "label": "Antraciet", "value": "#383838", "priceModifier": 0 },
+            { "id": "zwart", "label": "Zwart", "value": "#000000", "priceModifier": 0 },
+            { "id": "grijs", "label": "Grijs", "value": "#808080", "priceModifier": 0 },
+            { "id": "taupe", "label": "Taupe", "value": "#B38B6D", "priceModifier": 0 }
+          ]
+        },
+        {
+          "name": "Bediening",
+          "type": "select",
+          "values": [
+            { "id": "ketting-rechts", "label": "Kettingbediening rechts", "priceModifier": 0 },
+            { "id": "ketting-links", "label": "Kettingbediening links", "priceModifier": 0 },
+            { "id": "motor", "label": "Elektrische bediening", "priceModifier": 89 }
+          ]
+        }
+      ],
+      "inStock": true,
+      "deliveryTime": "5-7 werkdagen",
+      "freeShipping": true,
+      "seo": {
+        "metaTitle": "Verduisterend Rolgordijn | 100% Lichtwerend | Window Specialist",
+        "metaDescription": "Verduisterend rolgordijn op maat. 100% lichtwerend, thermisch isolerend. Ideaal voor slaapkamers. Vanaf €69,-"
+      }
+    }
+  ],
+  "filters": {
+    "rooms": [
+      { "id": "woonkamer", "label": "Woonkamer" },
+      { "id": "slaapkamer", "label": "Slaapkamer" },
+      { "id": "keuken", "label": "Keuken" },
+      { "id": "balkon", "label": "Balkon" },
+      { "id": "zolder", "label": "Zolder" }
+    ],
+    "features": [
+      { "id": "insectenwering", "label": "Insectenwering" },
+      { "id": "verduistering", "label": "Verduistering" },
+      { "id": "privacy", "label": "Privacy" },
+      { "id": "warmtewering", "label": "Warmtewering" },
+      { "id": "vochtbestendig", "label": "Vochtbestendig" }
+    ],
+    "priceRanges": [
+      { "id": "0-100", "label": "€0 - €100", "min": 0, "max": 100 },
+      { "id": "100-200", "label": "€100 - €200", "min": 100, "max": 200 },
+      { "id": "200-300", "label": "€200 - €300", "min": 200, "max": 300 },
+      { "id": "300+", "label": "€300+", "min": 300, "max": null }
+    ],
+    "colors": [
+      { "id": "wit", "label": "Wit", "value": "#FFFFFF" },
+      { "id": "antraciet", "label": "Antraciet", "value": "#383838" },
+      { "id": "bruin", "label": "Bruin", "value": "#654321" },
+      { "id": "zwart", "label": "Zwart", "value": "#000000" },
+      { "id": "grijs", "label": "Grijs", "value": "#808080" }
+    ]
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "overOns": {
+    "metaTitle": "Over Ons | Window Specialist - Raamdecoratie & Horren op Maat",
+    "metaDescription": "Ontdek Window Specialist - uw specialist in raamdecoratie en horren op maat. Kwaliteit, vakmanschap en persoonlijke service.",
+    "hero": {
+      "title": "Uw specialist in raamdecoratie en horren",
+      "subtitle": "Al meer dan 10 jaar leveren wij kwaliteitsproducten op maat voor tevreden klanten in heel Nederland."
+    },
+    "story": {
+      "title": "Ons verhaal",
+      "content": "Window Specialist is ontstaan vanuit een passie voor kwaliteit en vakmanschap. Wij geloven dat iedereen recht heeft op hoogwaardige raamdecoratie en horren, zonder de hoge prijzen van traditionele aanbieders. Door rechtstreeks te leveren vanuit onze eigen productiefaciliteit, kunnen wij u de beste prijs-kwaliteitverhouding bieden."
+    },
+    "values": [
+      {
+        "icon": "shield-check",
+        "title": "Kwaliteit",
+        "description": "Alleen de beste materialen en vakkundige productie."
+      },
+      {
+        "icon": "users",
+        "title": "Service",
+        "description": "Persoonlijk advies en uitstekende klantenservice."
+      },
+      {
+        "icon": "truck",
+        "title": "Levering",
+        "description": "Snelle levering door heel Nederland en België."
+      },
+      {
+        "icon": "heart",
+        "title": "Garantie",
+        "description": "5 jaar garantie op al onze producten."
+      }
+    ],
+    "stats": [
+      { "value": "15.000+", "label": "Tevreden klanten" },
+      { "value": "50.000+", "label": "Producten geleverd" },
+      { "value": "4.8/5", "label": "Klantwaardering" },
+      { "value": "5 jaar", "label": "Garantie" }
+    ]
+  },
+  "contact": {
+    "metaTitle": "Contact | Window Specialist - Neem Contact Op",
+    "metaDescription": "Neem contact op met Window Specialist voor vragen over raamdecoratie en horren. Bel, mail of chat met onze klantenservice.",
+    "hero": {
+      "title": "Neem contact met ons op",
+      "subtitle": "Heeft u vragen? Wij helpen u graag verder!"
+    },
+    "info": {
+      "address": {
+        "label": "Adres",
+        "value": "Industrieweg 123\n1234 AB Amsterdam\nNederland"
+      },
+      "phone": {
+        "label": "Telefoon",
+        "value": "+31 (0)20 123 4567"
+      },
+      "email": {
+        "label": "E-mail",
+        "value": "info@windowspecialist.nl"
+      },
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+31 6 1234 5678"
+      },
+      "workingHours": {
+        "label": "Openingstijden",
+        "days": [
+          { "day": "Maandag - Vrijdag", "hours": "09:00 - 17:00" },
+          { "day": "Zaterdag", "hours": "10:00 - 14:00" },
+          { "day": "Zondag", "hours": "Gesloten" }
+        ]
+      }
+    },
+    "form": {
+      "title": "Stuur ons een bericht",
+      "fields": {
+        "name": { "label": "Naam", "placeholder": "Uw volledige naam" },
+        "email": { "label": "E-mailadres", "placeholder": "uw@email.nl" },
+        "phone": { "label": "Telefoonnummer", "placeholder": "+31 6 1234 5678" },
+        "subject": { 
+          "label": "Onderwerp", 
+          "options": [
+            "Algemene vraag",
+            "Product informatie",
+            "Offerte aanvraag",
+            "Klacht",
+            "Anders"
+          ]
+        },
+        "message": { "label": "Bericht", "placeholder": "Hoe kunnen wij u helpen?" }
+      },
+      "submit": "Verstuur bericht",
+      "success": "Bedankt voor uw bericht! Wij nemen zo snel mogelijk contact met u op.",
+      "error": "Er is iets misgegaan. Probeer het opnieuw of neem telefonisch contact op."
+    }
+  },
+  "faq": {
+    "metaTitle": "Veelgestelde Vragen | Window Specialist",
+    "metaDescription": "Antwoorden op veelgestelde vragen over horren, raamdecoratie, bestellen, levering en montage bij Window Specialist.",
+    "hero": {
+      "title": "Veelgestelde vragen",
+      "subtitle": "Vind snel antwoord op uw vragen"
+    },
+    "categories": [
+      {
+        "id": "bestellen",
+        "title": "Bestellen",
+        "questions": [
+          {
+            "question": "Hoe bestel ik op maat gemaakte producten?",
+            "answer": "Via onze configurator kunt u eenvoudig uw product samenstellen. Voer de afmetingen in, kies uw opties en voeg het product toe aan uw winkelwagen. Wij produceren vervolgens uw product op maat."
+          },
+          {
+            "question": "Kan ik mijn bestelling wijzigen?",
+            "answer": "Omdat onze producten op maat worden gemaakt, kunt u uw bestelling alleen wijzigen voordat de productie is gestart. Neem zo snel mogelijk contact met ons op als u iets wilt wijzigen."
+          },
+          {
+            "question": "Welke betaalmethoden accepteren jullie?",
+            "answer": "Wij accepteren iDEAL, PayPal, Bancontact en betaling bij aflevering (kapıda ödeme). Bij betaling bij aflevering betaalt u contant of met pin aan de bezorger."
+          }
+        ]
+      },
+      {
+        "id": "meten",
+        "title": "Meten",
+        "questions": [
+          {
+            "question": "Hoe meet ik mijn raam correct?",
+            "answer": "Bekijk onze meetgids voor gedetailleerde instructies per producttype. Meet altijd in centimeters en op minimaal 3 plekken. Gebruik de kleinste maat."
+          },
+          {
+            "question": "Wat als ik verkeerd heb gemeten?",
+            "answer": "Wij bieden gratis meetverzekering! Als u verkeerd heeft gemeten, vervangen wij het product eenmalig gratis. Neem contact op met onze klantenservice."
+          }
+        ]
+      },
+      {
+        "id": "levering",
+        "title": "Levering",
+        "questions": [
+          {
+            "question": "Wat zijn de levertijden?",
+            "answer": "De meeste producten worden binnen 5-10 werkdagen geleverd. In drukke periodes kan dit iets langer duren. U ontvangt een track & trace code zodra uw bestelling is verzonden."
+          },
+          {
+            "question": "Wat zijn de verzendkosten?",
+            "answer": "Verzending binnen Nederland is gratis bij bestellingen vanaf €50,-. Voor bestellingen onder €50,- rekenen wij €6,95 verzendkosten."
+          },
+          {
+            "question": "Leveren jullie ook in België?",
+            "answer": "Ja, wij leveren ook in België. De verzendkosten voor België zijn €9,95. Levertijd is 7-12 werkdagen."
+          }
+        ]
+      },
+      {
+        "id": "montage",
+        "title": "Montage",
+        "questions": [
+          {
+            "question": "Kan ik de producten zelf monteren?",
+            "answer": "Ja, al onze producten zijn ontworpen voor eenvoudige zelfmontage. Bij elk product wordt een duidelijke montage-instructie meegeleverd en zijn er video's beschikbaar."
+          },
+          {
+            "question": "Bieden jullie montageservice aan?",
+            "answer": "Ja, in de Randstad bieden wij professionele montageservice aan. De kosten hiervoor zijn afhankelijk van het product en de locatie. Vraag een offerte aan voor de exacte prijs."
+          }
+        ]
+      },
+      {
+        "id": "garantie",
+        "title": "Garantie & Retourneren",
+        "questions": [
+          {
+            "question": "Wat is de garantie op jullie producten?",
+            "answer": "Wij bieden 5 jaar garantie op al onze producten. Dit dekt fabricagefouten en materiaalgebreken bij normaal gebruik."
+          },
+          {
+            "question": "Kan ik mijn bestelling retourneren?",
+            "answer": "Omdat onze producten op maat worden gemaakt, kunnen deze niet worden geretourneerd tenzij er sprake is van een fabricagefout. Neem bij problemen altijd contact met ons op."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Staat uw vraag er niet bij?",
+      "description": "Neem gerust contact met ons op. Wij helpen u graag verder!",
+      "button": "Contact opnemen"
+    }
+  },
+  "meetgids": {
+    "metaTitle": "Meetgids | Hoe Meet U Uw Raam? | Window Specialist",
+    "metaDescription": "Leer hoe u correct uw raam opmeet voor horren en raamdecoratie. Stap-voor-stap instructies en video tutorials.",
+    "hero": {
+      "title": "Meetgids",
+      "subtitle": "Meten is weten. Met onze eenvoudige instructies kunt u zelf perfect opmeten."
+    },
+    "intro": {
+      "title": "Waarom correct meten belangrijk is",
+      "content": "Een goede pasvorm is essentieel voor de werking en het uiterlijk van uw product. Door nauwkeurig te meten, garanderen wij dat uw product perfect past."
+    },
+    "tips": [
+      "Meet altijd in centimeters (cm)",
+      "Meet op minimaal 3 punten (boven, midden, onder)",
+      "Gebruik bij afwijkende maten altijd de kleinste waarde",
+      "Meet breedte van links naar rechts",
+      "Meet hoogte van boven naar beneden"
+    ],
+    "products": [
+      {
+        "id": "inzethorren",
+        "title": "Inzethorren meten",
+        "description": "Zo meet u correct voor inzethorren",
+        "videoUrl": "/videos/meten-inzethorren.mp4",
+        "steps": [
+          "Meet de binnenzijde van het kozijn (dagmaat)",
+          "Meet de breedte op 3 hoogtes",
+          "Meet de hoogte op 3 breedtes",
+          "Noteer de kleinste maat"
+        ]
+      },
+      {
+        "id": "plisse-hordeuren",
+        "title": "Plissé hordeuren meten",
+        "description": "Zo meet u correct voor plissé hordeuren",
+        "videoUrl": "/videos/meten-plisse.mp4",
+        "steps": [
+          "Meet de volledige doorgang",
+          "Houd rekening met de drempel",
+          "Meet de hoogte inclusief bovendorpel",
+          "Controleer of er voldoende montageruimte is"
+        ]
+      }
+    ],
+    "guarantee": {
+      "title": "Gratis meetverzekering",
+      "description": "Verkeerd gemeten? Geen probleem! Wij bieden gratis meetverzekering. Als het product niet past door een meetfout, vervangen wij het eenmalig kosteloos."
+    }
+  },
+  "privacy": {
+    "metaTitle": "Privacybeleid | Window Specialist",
+    "metaDescription": "Lees ons privacybeleid. Hoe Window Specialist omgaat met uw persoonlijke gegevens.",
+    "title": "Privacybeleid",
+    "lastUpdated": "Laatst bijgewerkt: januari 2024",
+    "sections": [
+      {
+        "title": "1. Inleiding",
+        "content": "Window Specialist respecteert uw privacy en zet zich in om uw persoonlijke gegevens te beschermen. Dit privacybeleid legt uit welke gegevens wij verzamelen, hoe wij deze gebruiken en welke rechten u heeft."
+      },
+      {
+        "title": "2. Welke gegevens verzamelen wij?",
+        "content": "Wij verzamelen gegevens die u aan ons verstrekt bij het plaatsen van een bestelling, aanvragen van een offerte, of contact opnemen: naam, adres, e-mail, telefoonnummer en betalingsgegevens."
+      },
+      {
+        "title": "3. Waarvoor gebruiken wij uw gegevens?",
+        "content": "Uw gegevens gebruiken wij voor: het verwerken van bestellingen, communicatie over uw bestelling, klantenservice, en (met uw toestemming) marketingdoeleinden."
+      },
+      {
+        "title": "4. Bewaartermijn",
+        "content": "Wij bewaren uw gegevens niet langer dan noodzakelijk. Bestelgegevens bewaren wij 7 jaar conform de wettelijke bewaarplicht."
+      },
+      {
+        "title": "5. Uw rechten",
+        "content": "U heeft recht op inzage, correctie en verwijdering van uw gegevens. Ook kunt u bezwaar maken tegen het gebruik van uw gegevens. Neem hiervoor contact met ons op."
+      },
+      {
+        "title": "6. Contact",
+        "content": "Voor vragen over ons privacybeleid kunt u contact opnemen via privacy@windowspecialist.nl."
+      }
+    ]
+  },
+  "voorwaarden": {
+    "metaTitle": "Algemene Voorwaarden | Window Specialist",
+    "metaDescription": "Lees onze algemene voorwaarden voor bestellingen bij Window Specialist.",
+    "title": "Algemene Voorwaarden",
+    "lastUpdated": "Laatst bijgewerkt: januari 2024",
+    "sections": [
+      {
+        "title": "1. Algemeen",
+        "content": "Deze voorwaarden zijn van toepassing op alle bestellingen bij Window Specialist. Door een bestelling te plaatsen, gaat u akkoord met deze voorwaarden."
+      },
+      {
+        "title": "2. Prijzen",
+        "content": "Alle prijzen zijn in euro's en inclusief BTW. Prijzen kunnen zonder voorafgaande kennisgeving worden gewijzigd. De prijs op het moment van bestellen is bindend."
+      },
+      {
+        "title": "3. Levering",
+        "content": "Wij streven ernaar binnen de aangegeven levertijd te leveren. Bij vertraging wordt u hiervan op de hoogte gesteld. Levertijden zijn indicatief en geen fatale termijnen."
+      },
+      {
+        "title": "4. Maatwerk",
+        "content": "Op maat gemaakte producten kunnen niet worden geretourneerd, tenzij er sprake is van een fabricagefout of het product niet voldoet aan de bestelling."
+      },
+      {
+        "title": "5. Garantie",
+        "content": "Op al onze producten geldt 5 jaar garantie op fabricagefouten. De garantie vervalt bij onjuist gebruik, onjuiste montage of wijzigingen aan het product."
+      },
+      {
+        "title": "6. Betaling",
+        "content": "Betaling geschiedt via iDEAL, PayPal, Bancontact of bij aflevering. Bij betaling bij aflevering dient het volledige bedrag contant of met pin te worden voldaan."
+      }
+    ]
+  },
+  "offerte": {
+    "metaTitle": "Offerte Aanvragen | Window Specialist",
+    "metaDescription": "Vraag vrijblijvend een offerte aan voor horren of raamdecoratie op maat. Snel antwoord gegarandeerd!",
+    "hero": {
+      "title": "Offerte aanvragen",
+      "subtitle": "Vul het formulier in en ontvang binnen 24 uur een vrijblijvende offerte."
+    },
+    "form": {
+      "sections": {
+        "personal": {
+          "title": "Uw gegevens",
+          "fields": {
+            "firstName": { "label": "Voornaam", "placeholder": "Uw voornaam" },
+            "lastName": { "label": "Achternaam", "placeholder": "Uw achternaam" },
+            "email": { "label": "E-mailadres", "placeholder": "uw@email.nl" },
+            "phone": { "label": "Telefoonnummer", "placeholder": "+31 6 1234 5678" }
+          }
+        },
+        "address": {
+          "title": "Adresgegevens",
+          "fields": {
+            "street": { "label": "Straat en huisnummer", "placeholder": "Straatnaam 123" },
+            "postalCode": { "label": "Postcode", "placeholder": "1234 AB" },
+            "city": { "label": "Plaats", "placeholder": "Amsterdam" }
+          }
+        },
+        "products": {
+          "title": "Product informatie",
+          "fields": {
+            "productType": {
+              "label": "Type product",
+              "options": [
+                "Inzethorren",
+                "Plissé hordeuren",
+                "Dakraamhorren",
+                "Schuifhorren",
+                "Jaloezieën",
+                "Rolgordijnen",
+                "Plissé gordijnen",
+                "Anders"
+              ]
+            },
+            "quantity": { "label": "Aantal", "placeholder": "1" },
+            "width": { "label": "Breedte (cm)", "placeholder": "100" },
+            "height": { "label": "Hoogte (cm)", "placeholder": "150" }
+          }
+        },
+        "additional": {
+          "title": "Aanvullende informatie",
+          "fields": {
+            "message": { "label": "Opmerkingen", "placeholder": "Eventuele opmerkingen of vragen..." },
+            "preferredContact": {
+              "label": "Voorkeur contact",
+              "options": ["E-mail", "Telefoon", "WhatsApp"]
+            }
+          }
+        }
+      },
+      "submit": "Offerte aanvragen",
+      "privacy": "Door dit formulier in te vullen gaat u akkoord met ons privacybeleid."
+    },
+    "success": {
+      "title": "Bedankt voor uw aanvraag!",
+      "message": "Wij hebben uw offerte aanvraag ontvangen en nemen binnen 24 uur contact met u op."
+    }
+  },
+  "bedankt": {
+    "metaTitle": "Bedankt voor uw bestelling | Window Specialist",
+    "metaDescription": "Uw bestelling is succesvol geplaatst bij Window Specialist.",
+    "title": "Bedankt voor uw bestelling!",
+    "subtitle": "Uw bestelling is succesvol geplaatst",
+    "orderInfo": "U ontvangt binnen enkele minuten een bevestiging per e-mail met uw ordernummer en de details van uw bestelling.",
+    "nextSteps": {
+      "title": "Wat gebeurt er nu?",
+      "steps": [
+        "U ontvangt een orderbevestiging per e-mail",
+        "Wij starten met de productie van uw op maat gemaakte product",
+        "U ontvangt een track & trace code zodra uw bestelling wordt verzonden",
+        "Uw bestelling wordt bezorgd op het door u opgegeven adres"
+      ]
+    },
+    "cta": {
+      "continue": "Verder winkelen",
+      "contact": "Contact opnemen"
+    }
+  }
+}
