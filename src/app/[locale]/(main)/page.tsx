@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
 import RoomsSection from '@/components/sections/RoomsSection';
-import PopularCombinationsSection from '@/components/sections/PopularCombinationsSection';
-import MeasurementGuideSection from '@/components/sections/MeasurementGuideSection';
 import { TestimonialsSlider } from '@/components/testimonials';
 
 import CollectionsSection from '@/components/sections/CollectionsSection';
@@ -78,23 +76,15 @@ export default function HomePage() {
       </ScrollAnimation>
 
       <ScrollAnimation>
+        <PriceCalculatorSection />
+      </ScrollAnimation>
+
+      <ScrollAnimation>
         <RoomsSection />
       </ScrollAnimation>
 
       <ScrollAnimation>
         <PopularProductsSection />
-      </ScrollAnimation>
-
-      <ScrollAnimation>
-        <PopularCombinationsSection />
-      </ScrollAnimation>
-
-      <ScrollAnimation>
-        <PriceCalculatorSection />
-      </ScrollAnimation>
-
-      <ScrollAnimation>
-        <MeasurementGuideSection />
       </ScrollAnimation>
 
       <ScrollAnimation>
