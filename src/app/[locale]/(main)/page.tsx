@@ -8,7 +8,7 @@ import { TestimonialsSlider } from '@/components/testimonials';
 import CollectionsSection from '@/components/sections/CollectionsSection';
 import PriceCalculatorSection from '@/components/sections/PriceCalculatorSection';
 import PopularProductsSection from '@/components/sections/PopularProductsSection';
-import { ScrollAnimation as ScrollAnimationWrapper } from '@/components/animations/ScrollAnimation';
+import { ScrollAnimation } from '@/components/animations/ScrollAnimation';
 
 export const metadata: Metadata = {
   title: 'Window Specialist - Raamdecoratie & Horren op Maat',
@@ -73,33 +73,33 @@ export default function HomePage() {
       {/* Page Sections */}
       <HeroSection />
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <CollectionsSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <RoomsSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <PopularProductsSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <PopularCombinationsSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <PriceCalculatorSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <MeasurementGuideSection />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
-      <ScrollAnimationWrapper>
+      <ScrollAnimation>
         <TestimonialsSlider />
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
     </>
   );
 }

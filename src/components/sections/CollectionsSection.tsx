@@ -84,7 +84,7 @@ const CollectionsSection = () => {
           {collections.map((collection) => (
             <div key={collection.id} className="group">
               {/* Main Image */}
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 shadow-lg">
+              <Link href={collection.link as any} className="block relative aspect-[4/3] rounded-2xl overflow-hidden mb-4 shadow-lg cursor-pointer">
                 <img
                   src={collection.images[activeImages[collection.id]]}
                   alt={collection.title}
@@ -100,7 +100,7 @@ const CollectionsSection = () => {
                     </span>
                   ))}
                 </div>
-              </div>
+              </Link>
 
               {/* Thumbnails or Color Dots */}
               <div className="flex items-center gap-2 mb-4">

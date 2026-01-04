@@ -131,6 +131,14 @@ export const pathnames = {
     '/account': {
         en: '/account',
         nl: '/mijn-account'
+    },
+    '/success': {
+        en: '/success',
+        nl: '/bedankt'
+    },
+    '/cart': {
+        en: '/cart',
+        nl: '/winkelwagen'
     }
 } satisfies Pathnames<typeof locales>;
 

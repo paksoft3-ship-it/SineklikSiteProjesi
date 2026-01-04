@@ -18,6 +18,8 @@ import {
   ShoppingCart,
   FileText,
 } from 'lucide-react';
+import { triggerAddToCartCelebration } from '@/lib/celebration';
+import { useRouter } from '@/navigation';
 
 // Import data
 import configuratorData from '@/data/nl/configurator.json';
@@ -52,6 +54,7 @@ interface ConfigState {
 }
 
 const ProductConfigurator = () => {
+  const router = useRouter();
   const [config, setConfig] = useState<ConfigState>({
     step: 1,
     selectedRoom: null,
@@ -574,7 +577,20 @@ const ProductConfigurator = () => {
         </div>
 
         <div className="space-y-3">
-          <Button className="w-full" size="lg" leftIcon={<ShoppingCart className="w-5 h-5" />}>
+          <Button
+            className="w-full transition-transform active:scale-95"
+            size="lg"
+            leftIcon={<ShoppingCart className="w-5 h-5" />}
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = (rect.left + rect.width / 2) / window.innerWidth;
+              const y = (rect.top + rect.height / 2) / window.innerHeight;
+              triggerAddToCartCelebration(x, y);
+              setTimeout(() => {
+                router.push('/cart');
+              }, 1000);
+            }}
+          >
             Toevoegen aan winkelwagen
           </Button>
           <Button

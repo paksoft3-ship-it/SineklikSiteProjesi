@@ -2,7 +2,7 @@
 
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
-import { ScrollAnimation as ScrollAnimationWrapper, StaggerContainer } from '@/components/animations/ScrollAnimation';
+import { ScrollAnimation, StaggerContainer } from '@/components/animations/ScrollAnimation';
 
 const Footer = () => {
   // We use root translations where possible or namespaces
@@ -30,7 +30,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary dark:bg-bg-dark-1">
       {/* Trust Badges Section */}
-      <ScrollAnimationWrapper variant="fadeUp">
+      <ScrollAnimation variant="fadeUp">
         <div className="border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -52,10 +52,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
       {/* Main Footer Content */}
-      <ScrollAnimationWrapper variant="fadeUp" delay={0.2}>
+      <ScrollAnimation variant="fadeUp" delay={0.2}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Company Info */}
@@ -172,7 +172,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </ScrollAnimationWrapper>
+      </ScrollAnimation>
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700">

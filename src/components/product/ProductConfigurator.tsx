@@ -5,6 +5,8 @@ import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { PlisseAnimation } from '@/components/animations';
+import { useRouter } from '@/navigation';
+import { triggerAddToCartCelebration } from '@/lib/celebration';
 
 interface ConfigOption {
   id: string;
@@ -29,6 +31,7 @@ interface ProductConfiguratorProps {
 }
 
 const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
+  const router = useRouter();
   const t = useTranslations('ProductConfigurator');
   const [selectedOptions, setSelectedOptions] = useState<Record<string, string>>({});
   const [activeInfoPopup, setActiveInfoPopup] = useState<string | null>(null);
@@ -367,7 +370,18 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
 
             {/* Add to Cart */}
             <div className="mt-8 space-y-3">
-              <button className="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
+              <button
+                className="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-xl transition shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = (rect.left + rect.width / 2) / window.innerWidth;
+                  const y = (rect.top + rect.height / 2) / window.innerHeight;
+                  triggerAddToCartCelebration(x, y);
+                  setTimeout(() => {
+                    router.push('/cart');
+                  }, 1000);
+                }}
+              >
                 <i className="fas fa-shopping-cart"></i>
                 {t('add_to_cart')}
               </button>

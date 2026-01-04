@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { ScrollAnimation as ScrollAnimationWrapper, StaggerContainer } from '@/components/animations/ScrollAnimation';
+import { ScrollAnimation, StaggerContainer } from '@/components/animations/ScrollAnimation';
 
 const TestimonialsSection = () => {
   const t = useTranslations('HomePage.testimonials');
@@ -51,18 +51,18 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <ScrollAnimationWrapper>
+        <ScrollAnimation>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-secondary dark:text-white mb-12">
             {t('title')}
           </h2>
-        </ScrollAnimationWrapper>
+        </ScrollAnimation>
 
         <StaggerContainer
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           staggerDelay={0.2}
         >
           {testimonials.map((testimonial) => (
-            <ScrollAnimationWrapper
+            <ScrollAnimation
               key={testimonial.id}
               variant="scaleUp"
               className="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl text-left"
@@ -84,11 +84,11 @@ const TestimonialsSection = () => {
                   <span className="text-xs text-gray-500">{testimonial.location}</span>
                 </div>
               </div>
-            </ScrollAnimationWrapper>
+            </ScrollAnimation>
           ))}
         </StaggerContainer>
 
-        <ScrollAnimationWrapper delay={0.4}>
+        <ScrollAnimation delay={0.4}>
           <div className="mt-12 flex justify-center items-center gap-2 text-gray-500 dark:text-gray-400 font-medium">
             <span>{t('trustpilot.excellent')}</span>
             <div className="flex text-green-500">
@@ -100,7 +100,7 @@ const TestimonialsSection = () => {
             </div>
             <span>{t('trustpilot.score')}</span>
           </div>
-        </ScrollAnimationWrapper>
+        </ScrollAnimation>
       </div>
     </section>
   );
