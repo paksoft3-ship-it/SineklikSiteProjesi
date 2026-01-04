@@ -16,8 +16,14 @@ const AuthModal = ({ isOpen, onClose, initialMode = 'login' }: AuthModalProps) =
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const { login, signup } = useAuth();
+
+  // Reset mode when initialMode changes or modal opens
+  // (Optional: depending on desired behavior, but good for consistency)
+  if (!isOpen && mode !== initialMode) {
+    setMode(initialMode);
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +32,7 @@ const AuthModal = ({ isOpen, onClose, initialMode = 'login' }: AuthModalProps) =
 
     try {
       let success = false;
-      
+
       if (mode === 'login') {
         success = await login(email, password);
         if (!success) {
@@ -62,160 +68,174 @@ const AuthModal = ({ isOpen, onClose, initialMode = 'login' }: AuthModalProps) =
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      <div
+        className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
-      
+
       {/* Modal */}
-      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md p-6 animate-fadeIn">
+      <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-fadeIn">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+          className="absolute top-4 right-4 z-10 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
         >
           <i className="fas fa-times text-xl"></i>
         </button>
 
-        {/* Header */}
-        <div className="text-center mb-6">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className={`fas ${mode === 'login' ? 'fa-sign-in-alt' : 'fa-user-plus'} text-2xl text-primary`}></i>
-          </div>
-          <h2 className="font-display text-2xl font-bold text-secondary dark:text-white">
-            {mode === 'login' ? 'Welkom terug' : 'Account aanmaken'}
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-1">
-            {mode === 'login' 
-              ? 'Log in om uw bestellingen te bekijken' 
-              : 'Registreer voor een persoonlijk account'}
-          </p>
+        {/* Tabs */}
+        <div className="flex border-b border-gray-100 dark:border-gray-700">
+          <button
+            onClick={() => setMode('login')}
+            className={`flex-1 py-4 text-center font-semibold text-sm transition-colors relative ${mode === 'login'
+                ? 'text-primary'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+              }`}
+          >
+            Inloggen
+            {mode === 'login' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </button>
+          <button
+            onClick={() => setMode('signup')}
+            className={`flex-1 py-4 text-center font-semibold text-sm transition-colors relative ${mode === 'signup'
+                ? 'text-primary'
+                : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'
+              }`}
+          >
+            Registreren
+            {mode === 'signup' && (
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary" />
+            )}
+          </button>
         </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {mode === 'signup' && (
+        <div className="p-6">
+
+          {/* Header Text */}
+          <div className="text-center mb-6">
+            <h2 className="font-display text-2xl font-bold text-secondary dark:text-white mb-2">
+              {mode === 'login' ? 'Welkom terug' : 'Maak een account'}
+            </h2>
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {mode === 'login'
+                ? 'Log in om toegang te krijgen tot uw bestellingen'
+                : 'Registreer om uw bestellingen te beheren'}
+            </p>
+          </div>
+
+          {/* Social Login (Prominent) */}
+          <div className="mb-6">
+            <button className="w-full py-3 border border-gray-200 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-3 group">
+              <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5 opacity-80 group-hover:opacity-100 transition-opacity" />
+              <span className="text-gray-700 dark:text-gray-300 font-medium">
+                {mode === 'login' ? 'Inloggen met Google' : 'Aanmelden met Google'}
+              </span>
+            </button>
+          </div>
+
+          {/* Divider */}
+          <div className="relative mb-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-4 bg-white dark:bg-gray-800 text-gray-500">of met e-mail</span>
+            </div>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {mode === 'signup' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Naam
+                </label>
+                <div className="relative">
+                  <i className="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow"
+                    placeholder="Uw naam"
+                    required
+                  />
+                </div>
+              </div>
+            )}
+
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                Naam
+                E-mailadres
               </label>
               <div className="relative">
-                <i className="fas fa-user absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <i className="fas fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
                 <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Uw naam"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow"
+                  placeholder="uw@email.nl"
                   required
                 />
               </div>
             </div>
-          )}
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              E-mailadres
-            </label>
-            <div className="relative">
-              <i className="fas fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="uw@email.nl"
-                required
-              />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                Wachtwoord
+              </label>
+              <div className="relative">
+                <i className="fas fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-shadow"
+                  placeholder="••••••••"
+                  required
+                  minLength={6}
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Wachtwoord
-            </label>
-            <div className="relative">
-              <i className="fas fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent"
-                placeholder="••••••••"
-                required
-                minLength={6}
-              />
-            </div>
-          </div>
-
-          {error && (
-            <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm">
-              <i className="fas fa-exclamation-circle mr-2"></i>
-              {error}
-            </div>
-          )}
-
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full py-3 bg-primary hover:bg-blue-600 disabled:bg-blue-400 text-white font-bold rounded-xl transition flex items-center justify-center gap-2"
-          >
-            {isSubmitting ? (
-              <>
-                <i className="fas fa-spinner fa-spin"></i>
-                Even geduld...
-              </>
-            ) : (
-              <>
-                <i className={`fas ${mode === 'login' ? 'fa-sign-in-alt' : 'fa-user-plus'}`}></i>
-                {mode === 'login' ? 'Inloggen' : 'Registreren'}
-              </>
+            {error && (
+              <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-600 dark:text-red-400 text-sm flex items-center gap-2">
+                <i className="fas fa-exclamation-circle flex-shrink-0"></i>
+                {error}
+              </div>
             )}
-          </button>
-        </form>
 
-        {/* Divider */}
-        <div className="relative my-6">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">of</span>
-          </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full py-3 bg-primary hover:bg-blue-600 disabled:bg-blue-400 text-white font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+            >
+              {isSubmitting ? (
+                <>
+                  <i className="fas fa-spinner fa-spin"></i>
+                  Even geduld...
+                </>
+              ) : (
+                <>
+                  {mode === 'login' ? 'Inloggen' : 'Account aanmaken'}
+                  <i className="fas fa-arrow-right text-sm"></i>
+                </>
+              )}
+            </button>
+          </form>
+
+          {/* Footer Info */}
+          <p className="text-center text-xs text-gray-400 mt-6">
+            Door door te gaan gaat u akkoord met onze{' '}
+            <a href="#" className="underline hover:text-gray-600 dark:hover:text-gray-300">voorwaarden</a>
+            {' '}en{' '}
+            <a href="#" className="underline hover:text-gray-600 dark:hover:text-gray-300">privacybeleid</a>.
+          </p>
+
         </div>
-
-        {/* Social Login */}
-        <div className="space-y-3">
-          <button className="w-full py-3 border border-gray-200 dark:border-gray-600 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center gap-3">
-            <img src="https://www.google.com/favicon.ico" alt="Google" className="w-5 h-5" />
-            <span className="text-gray-700 dark:text-gray-300">Doorgaan met Google</span>
-          </button>
-        </div>
-
-        {/* Switch mode */}
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-          {mode === 'login' ? (
-            <>
-              Nog geen account?{' '}
-              <button
-                onClick={() => setMode('signup')}
-                className="text-primary hover:underline font-medium"
-              >
-                Registreer nu
-              </button>
-            </>
-          ) : (
-            <>
-              Heeft u al een account?{' '}
-              <button
-                onClick={() => setMode('login')}
-                className="text-primary hover:underline font-medium"
-              >
-                Log in
-              </button>
-            </>
-          )}
-        </p>
       </div>
     </div>
   );

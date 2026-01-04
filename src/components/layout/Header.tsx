@@ -9,7 +9,6 @@ import { useAuth } from '@/context/AuthContext';
 import { AuthModal, UserDropdown } from '@/components/auth';
 
 const Header = () => {
-  const [isDark, setIsDark] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -17,17 +16,7 @@ const Header = () => {
   const t = useTranslations('Header');
   const { isAuthenticated, isLoading } = useAuth();
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const isDarkMode = document.documentElement.classList.contains('dark');
-      setIsDark(isDarkMode);
-    }
-  }, []);
 
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle('dark');
-    setIsDark(!isDark);
-  };
 
   type NavItem = {
     name: string;
@@ -85,28 +74,23 @@ const Header = () => {
                   ) : isAuthenticated ? (
                     <UserDropdown />
                   ) : (
-                    <div className="flex items-center gap-3">
-                      <button
-                        onClick={() => {
-                          setAuthMode('login');
-                          setIsAuthModalOpen(true);
-                        }}
-                        className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-primary transition font-medium border border-gray-200 dark:border-gray-600 rounded-lg hover:border-primary"
-                      >
-                        <i className="fas fa-sign-in-alt mr-2"></i>
-                        {t('nav.auth.login')}
-                      </button>
-                      <button
-                        onClick={() => {
-                          setAuthMode('signup');
-                          setIsAuthModalOpen(true);
-                        }}
-                        className="flex items-center px-4 py-2 bg-primary hover:bg-blue-600 text-white font-medium rounded-lg shadow-sm hover:shadow-md transition"
-                      >
-                        <i className="fas fa-user-plus mr-2"></i>
-                        {t('nav.auth.register')}
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => {
+                        setAuthMode('login');
+                        setIsAuthModalOpen(true);
+                      }}
+                      className="group flex items-center gap-3 px-4 py-2.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-full hover:shadow-md transition-all duration-300 hover:border-primary/50"
+                    >
+                      <div className="flex items-center gap-2 pr-3 border-r border-gray-200 dark:border-gray-600">
+                        <img src="https://www.google.com/favicon.ico" alt="Google" className="w-4 h-4" />
+                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
+                          Sign up with Google
+                        </span>
+                      </div>
+                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors">
+                        Login / Sign up
+                      </span>
+                    </button>
                   )}
 
                   <LanguageSwitcher />
@@ -120,12 +104,7 @@ const Header = () => {
                       0
                     </span>
                   </button>
-                  <button
-                    onClick={toggleDarkMode}
-                    className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-yellow-300 transition"
-                  >
-                    {isDark ? <i className="fas fa-sun"></i> : <i className="fas fa-moon"></i>}
-                  </button>
+
                 </div>
 
                 {/* Mobile Menu Button */}

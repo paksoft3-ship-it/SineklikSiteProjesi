@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import ProductConfigurator from '@/components/product/ProductConfigurator';
 import { getTranslations } from 'next-intl/server';
+import { ScrollAnimation as ScrollAnimationWrapper } from '@/components/animations/ScrollAnimation';
 
 
 export const metadata: Metadata = {
@@ -155,7 +156,9 @@ export default async function PlisseHordeurConfiguratorPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <ProductConfigurator product={productData} />
+      <ScrollAnimationWrapper variant="fadeUp">
+        <ProductConfigurator product={productData} />
+      </ScrollAnimationWrapper>
     </div>
   );
 }

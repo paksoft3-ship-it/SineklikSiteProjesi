@@ -38,17 +38,18 @@
 
 /* Component styles */
 @layer components {
+
   /* Button styles */
   .btn-primary {
-    @apply inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-blue-600 transition shadow-lg shadow-blue-500/30;
+    @apply inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-blue-600 transition-all duration-200 shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] hover:shadow-blue-500/40;
   }
 
   .btn-secondary {
-    @apply inline-flex justify-center items-center px-8 py-4 border-2 border-primary text-base font-bold rounded-lg text-primary bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 transition;
+    @apply inline-flex justify-center items-center px-8 py-4 border-2 border-primary text-base font-bold rounded-lg text-primary bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
   }
 
   .btn-outline {
-    @apply inline-flex justify-center items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 hover:border-primary hover:text-primary transition;
+    @apply inline-flex justify-center items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 hover:border-primary hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
   }
 
   /* Card styles */
@@ -130,6 +131,7 @@
 
 /* Utility styles */
 @layer utilities {
+
   /* Text gradient */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400;
@@ -184,6 +186,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -194,6 +197,7 @@
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
