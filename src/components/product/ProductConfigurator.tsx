@@ -8,6 +8,8 @@ import Image from 'next/image';
 import { PlisseAnimation } from '@/components/animations';
 import { useRouter } from '@/navigation';
 import { triggerAddToCartCelebration } from '@/lib/celebration';
+import { PaymentIcons } from '@/components/ui/PaymentIcons';
+import { Plus, Minus } from 'lucide-react';
 
 interface ConfigOption {
   id: string;
@@ -89,7 +91,9 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
     return breakdown;
   };
 
+
   const [buttonState, setButtonState] = useState<'idle' | 'celebrating' | 'done'>('idle');
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <div className="bg-bg-light-1 dark:bg-bg-dark-1">
@@ -371,42 +375,77 @@ const ProductConfigurator = ({ product }: ProductConfiguratorProps) => {
               </button>
             </div>
 
-            {/* Add to Cart */}
-            <div className="mt-8 space-y-3">
-              <button
-                className={cn(
-                  "w-full py-4 font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2",
-                  buttonState === 'idle' && "bg-primary hover:bg-blue-600 text-white shadow-blue-500/30",
-                  buttonState === 'celebrating' && "bg-[#FF1493] text-white scale-105 shadow-pink-500/50", // Deep Pink
-                  buttonState === 'done' && "bg-gray-500 text-white scale-95"
-                )}
-                onClick={(e) => {
-                  if (buttonState !== 'idle') return;
+            {/* Design 5: Connected Split - Add to Cart */}
+            <div className="space-y-4 mt-8">
+              {/* Add to Cart Row */}
+              <div className="flex items-stretch rounded-2xl overflow-hidden shadow-lg">
+                <button
+                  onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                  className="w-14 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition flex items-center justify-center text-gray-700 dark:text-gray-200 border-r border-gray-200 dark:border-gray-600"
+                >
+                  <i className="fas fa-minus"></i>
+                </button>
+                <div className="w-16 bg-gray-100 dark:bg-gray-700 flex items-center justify-center border-r border-gray-200 dark:border-gray-600">
+                  <span className="font-bold text-xl text-gray-900 dark:text-white">{quantity}</span>
+                </div>
+                <button
+                  onClick={() => setQuantity(prev => prev + 1)}
+                  className="w-14 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition flex items-center justify-center text-gray-700 dark:text-gray-200 border-r border-gray-200 dark:border-gray-600"
+                >
+                  <i className="fas fa-plus"></i>
+                </button>
+                <button
+                  className={cn(
+                    "flex-1 h-14 font-bold transition flex items-center justify-center gap-3 px-6",
+                    buttonState === 'idle' && "bg-blue-500 hover:bg-blue-600 text-white",
+                    buttonState === 'celebrating' && "bg-[#FF1493] text-white",
+                    buttonState === 'done' && "bg-gray-500 text-white"
+                  )}
+                  onClick={(e) => {
+                    if (buttonState !== 'idle') return;
 
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = (rect.left + rect.width / 2) / window.innerWidth;
-                  const y = (rect.top + rect.height / 2) / window.innerHeight;
-                  const w = rect.width / window.innerWidth;
-                  const h = rect.height / window.innerHeight;
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = (rect.left + rect.width / 2) / window.innerWidth;
+                    const y = (rect.top + rect.height / 2) / window.innerHeight;
+                    const w = rect.width / window.innerWidth;
+                    const h = rect.height / window.innerHeight;
 
-                  setButtonState('celebrating');
-                  triggerAddToCartCelebration(x, y, w, h);
+                    setButtonState('celebrating');
+                    triggerAddToCartCelebration(x, y, w, h);
 
-                  setTimeout(() => {
-                    setButtonState('done');
                     setTimeout(() => {
                       router.push('/cart');
-                    }, 500);
-                  }, 1500); // 1.5s celebrating
-                }}
-              >
-                <i className={cn("fas", buttonState === 'celebrating' ? "fa-heart" : "fa-shopping-cart")}></i>
-                {buttonState === 'celebrating' ? 'Toegevoegd!' : t('add_to_cart')}
-              </button>
-              <button className="w-full py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition flex items-center justify-center gap-2">
-                <i className="fas fa-file-alt"></i>
-                {t('request_quote')}
-              </button>
+                    }, 100);
+                  }}
+                >
+                  <i className={cn("fas text-lg", buttonState === 'celebrating' ? "fa-heart" : "fa-shopping-cart")}></i>
+                  <span>
+                    {buttonState === 'celebrating' ? 'Toegevoegd!' : 'Toevoegen'}
+                  </span>
+                </button>
+              </div>
+
+              {/* Payment Icons */}
+              <div className="flex items-center justify-center gap-1 flex-wrap">
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-paypal text-xl text-blue-700"></i>
+                </div>
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-cc-visa text-xl text-blue-800"></i>
+                </div>
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-cc-mastercard text-xl text-orange-500"></i>
+                </div>
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-cc-amex text-xl text-blue-400"></i>
+                </div>
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-apple-pay text-2xl text-black"></i>
+                </div>
+                <div className="h-8 px-4 bg-white rounded-lg shadow-sm flex items-center justify-center border border-gray-100">
+                  <i className="fab fa-stripe text-xl text-purple-600"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -17,9 +17,12 @@ import {
   Info,
   ShoppingCart,
   FileText,
+  Plus,
+  Minus,
 } from 'lucide-react';
 import { triggerAddToCartCelebration } from '@/lib/celebration';
 import { useRouter } from '@/navigation';
+import { PaymentIcons } from '@/components/ui/PaymentIcons';
 
 // Import data
 import configuratorData from '@/data/nl/configurator.json';
@@ -72,6 +75,7 @@ const ProductConfigurator = () => {
     },
     quantity: 1,
   });
+
   const [buttonState, setButtonState] = useState<'idle' | 'celebrating' | 'done'>('idle');
 
   // Get selected room data
@@ -166,7 +170,7 @@ const ProductConfigurator = () => {
               nextStep();
             }}
             className={cn(
-              'p-6 rounded-2xl border-2 transition-all text-center hover:border-primary hover:shadow-lg',
+              'p-3 sm:p-6 rounded-2xl border-2 transition-all text-center hover:border-primary hover:shadow-lg',
               config.selectedRoom === room.id
                 ? 'border-primary bg-primary/5'
                 : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
@@ -208,7 +212,7 @@ const ProductConfigurator = () => {
             nextStep();
           }}
           className={cn(
-            'p-8 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
+            'p-4 sm:p-8 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
             config.selectedProductType === 'horren'
               ? 'border-primary bg-primary/5'
               : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
@@ -241,7 +245,7 @@ const ProductConfigurator = () => {
             nextStep();
           }}
           className={cn(
-            'p-8 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
+            'p-4 sm:p-8 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
             config.selectedProductType === 'raamdecoratie'
               ? 'border-primary bg-primary/5'
               : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
@@ -286,7 +290,7 @@ const ProductConfigurator = () => {
               nextStep();
             }}
             className={cn(
-              'p-6 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
+              'p-3 sm:p-6 rounded-2xl border-2 transition-all text-left hover:border-primary hover:shadow-lg',
               config.selectedProduct === product.id
                 ? 'border-primary bg-primary/5'
                 : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800'
@@ -318,7 +322,7 @@ const ProductConfigurator = () => {
     return (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Dimensions */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Ruler className="w-5 h-5 text-primary" />
             Afmetingen
@@ -400,7 +404,7 @@ const ProductConfigurator = () => {
         </div>
 
         {/* Options */}
-        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-6">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
             Opties
           </h2>
@@ -517,7 +521,7 @@ const ProductConfigurator = () => {
   const renderSummary = () => (
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {/* Configuration Summary */}
-      <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl p-6">
+      <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-6">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
           Uw configuratie
         </h2>
@@ -557,7 +561,7 @@ const ProductConfigurator = () => {
       </div>
 
       {/* Price Summary */}
-      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl p-3 sm:p-6">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">
           Prijsoverzicht
         </h2>
@@ -578,44 +582,98 @@ const ProductConfigurator = () => {
         </div>
 
         <div className="space-y-3">
-          <Button
-            className={cn(
-              "w-full transition-all duration-300 active:scale-95",
-              buttonState === 'idle' && "", // Default style from Button component
-              buttonState === 'celebrating' && "!bg-[#FF1493] !text-white scale-105 !border-[#FF1493]",
-              buttonState === 'done' && "!bg-gray-500 !text-white scale-95 !border-gray-500"
-            )}
-            size="lg"
-            leftIcon={buttonState === 'celebrating' ? <Check className="w-5 h-5" /> : <ShoppingCart className="w-5 h-5" />}
-            onClick={(e) => {
-              if (buttonState !== 'idle') return;
-              const rect = e.currentTarget.getBoundingClientRect();
-              const x = (rect.left + rect.width / 2) / window.innerWidth;
-              const y = (rect.top + rect.height / 2) / window.innerHeight;
-              const w = rect.width / window.innerWidth;
-              const h = rect.height / window.innerHeight;
+          <div className="flex flex-nowrap items-stretch gap-2 sm:gap-4 w-full min-w-0">
+            {/* Quantity Selector */}
+            <div
+              className={cn(
+                "flex items-center bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl",
+                "px-[clamp(0.25rem,1.2vw,1rem)]",
+                "gap-[clamp(0.25rem,1vw,0.75rem)]",
+                "flex-none shrink min-w-[88px]"
+              )}
+            >
+              <button
+                onClick={() =>
+                  setConfig((prev) => ({ ...prev, quantity: Math.max(1, prev.quantity - 1) }))
+                }
+                className={cn(
+                  "flex items-center justify-center rounded-lg transition text-primary",
+                  // responsive square button size
+                  "w-[clamp(1.5rem,5vw,2rem)] h-[clamp(2.5rem,6vw,3rem)]",
+                  "hover:bg-gray-200 dark:hover:bg-gray-700",
+                  "disabled:opacity-50 disabled:cursor-not-allowed"
+                )}
+                disabled={config.quantity <= 1}
+                aria-label="Decrease quantity"
+              >
+                <Minus className="w-[clamp(0.75rem,2.2vw,1rem)] h-[clamp(0.75rem,2.2vw,1rem)]" />
+              </button>
 
-              setButtonState('celebrating');
-              triggerAddToCartCelebration(x, y, w, h);
+              <span
+                className={cn(
+                  "text-center font-bold tabular-nums",
+                  "w-[clamp(1.25rem,3vw,1.75rem)]",
+                  "text-[clamp(0.75rem,2.2vw,1.125rem)]"
+                )}
+              >
+                {config.quantity}
+              </span>
 
-              setTimeout(() => {
-                setButtonState('done');
+              <button
+                onClick={() => setConfig((prev) => ({ ...prev, quantity: prev.quantity + 1 }))}
+                className={cn(
+                  "flex items-center justify-center rounded-lg transition text-primary",
+                  "w-[clamp(1.5rem,5vw,2rem)] h-[clamp(2.5rem,6vw,3rem)]",
+                  "hover:bg-gray-200 dark:hover:bg-gray-700"
+                )}
+                aria-label="Increase quantity"
+              >
+                <Plus className="w-[clamp(0.75rem,2.2vw,1rem)] h-[clamp(0.75rem,2.2vw,1rem)]" />
+              </button>
+            </div>
+
+            {/* Add to cart */}
+            <Button
+              className={cn(
+                "flex-1 px-4 lg:px-2 xl:px-4 transition-all duration-300 active:scale-95 h-12",
+                buttonState === "celebrating" && "!bg-[#FF1493] !text-white scale-105 !border-[#FF1493]",
+                buttonState === "done" && "!bg-gray-500 !text-white scale-95 !border-gray-500"
+              )}
+              size="lg"
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
+                if (buttonState !== 'idle') return;
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = (rect.left + rect.width / 2) / window.innerWidth;
+                const y = (rect.top + rect.height / 2) / window.innerHeight;
+                const w = rect.width / window.innerWidth;
+                const h = rect.height / window.innerHeight;
+
+                setButtonState('celebrating');
+                triggerAddToCartCelebration(x, y, w, h);
+
                 setTimeout(() => {
                   router.push('/cart');
-                }, 500);
-              }, 1500);
-            }}
-          >
-            {buttonState === 'celebrating' ? 'Toegevoegd!' : 'Toevoegen aan winkelwagen'}
-          </Button>
-          <Button
-            variant="secondary"
-            className="w-full"
-            size="lg"
-            leftIcon={<FileText className="w-5 h-5" />}
-          >
-            Offerte aanvragen
-          </Button>
+                }, 100);
+              }}
+            >
+              <div className="flex items-center justify-center gap-2 w-full text-nowrap">
+                {buttonState === "celebrating" ? (
+                  <Check className="shrink-0 w-5 h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
+                ) : (
+                  <ShoppingCart className="shrink-0 w-5 h-5 lg:w-4 lg:h-4 xl:w-5 xl:h-5" />
+                )}
+
+                <span className="font-bold whitespace-nowrap !text-sm lg:!text-xs xl:!text-sm">
+                  {buttonState === "celebrating" ? "Toegevoegd!" : "Toevoegen aan winkelwagen"}
+                </span>
+              </div>
+            </Button>
+          </div>
+
+          {/* Payment Icons */}
+          <div className="px-1">
+            <PaymentIcons />
+          </div>
         </div>
 
         <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
@@ -633,7 +691,7 @@ const ProductConfigurator = () => {
           </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 
   // Render current step
