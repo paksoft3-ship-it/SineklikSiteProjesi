@@ -20,25 +20,26 @@ const Header = () => {
 
   type NavItem = {
     name: string;
-    href: any; // We use 'any' here to avoid complex circular type inference with Pathnames, as proper typing would require importing Pathnames from config which might loop
+    href: any;
     badge?: string;
+    image: string;
   };
 
   const plisseHorrenItems: NavItem[] = [
-    { name: t('items.horren.deur'), href: '/products/plisse-screens/door', badge: t('badges.populair') },
-    { name: t('items.horren.raam'), href: '/products/plisse-screens/window' },
-    { name: t('items.horren.balkon'), href: '/products/plisse-screens/glass-balcony' },
-    { name: t('items.horren.vaste'), href: '/products/plisse-screens/fixed' },
-    { name: t('items.horren.binnen'), href: '/products/plisse-screens/insight' },
-    { name: t('items.horren.combi'), href: '/products/plisse-screens/screen-curtain', badge: t('badges.bestseller') },
-    { name: t('items.horren.drempel'), href: '/products/plisse-screens/barrier-free' },
+    { name: t('items.horren.deur'), href: '/products/plisse-screens/door', badge: t('badges.populair'), image: '/images/nav/nav-hor-deur.jpg' },
+    { name: t('items.horren.raam'), href: '/products/plisse-screens/window', image: '/images/nav/nav-hor-raam.jpg' },
+    { name: t('items.horren.balkon'), href: '/products/plisse-screens/glass-balcony', image: '/images/nav/nav-hor-balkon.jpg' },
+    { name: t('items.horren.vaste'), href: '/products/plisse-screens/fixed', image: '/images/nav/nav-hor-vaste.jpg' },
+    { name: t('items.horren.binnen'), href: '/products/plisse-screens/insight', image: '/images/nav/nav-hor-binnen.jpg' },
+    { name: t('items.horren.combi'), href: '/products/plisse-screens/screen-curtain', badge: t('badges.bestseller'), image: '/images/nav/nav-hor-combi.jpg' },
+    { name: t('items.horren.drempel'), href: '/products/plisse-screens/barrier-free', image: '/images/nav/nav-hor-drempel.jpg' },
   ];
 
   const plisseGordijnenItems: NavItem[] = [
-    { name: t('items.gordijnen.honeycomb'), href: '/products/plisse-curtains/honeycomb', badge: t('badges.bestseller') },
-    { name: t('items.gordijnen.verduisterend'), href: '/products/plisse-curtains/blackout', badge: t('badges.populair') },
-    { name: t('items.gordijnen.licht'), href: '/products/plisse-curtains/light-filtering' },
-    { name: t('items.gordijnen.kleur'), href: '/products/plisse-curtains/colors' },
+    { name: t('items.gordijnen.honeycomb'), href: '/products/plisse-curtains/honeycomb', badge: t('badges.bestseller'), image: '/images/nav/nav-gordijn-honeycomb.jpg' },
+    { name: t('items.gordijnen.verduisterend'), href: '/products/plisse-curtains/blackout', badge: t('badges.populair'), image: '/images/nav/nav-gordijn-verduisterend.jpg' },
+    { name: t('items.gordijnen.licht'), href: '/products/plisse-curtains/light-filtering', image: '/images/nav/nav-gordijn-licht.jpg' },
+    { name: t('items.gordijnen.kleur'), href: '/products/plisse-curtains/colors', image: '/images/nav/nav-gordijn-kleur.jpg' },
   ];
 
   return (
@@ -134,101 +135,168 @@ const Header = () => {
         </div>
 
         {/* Row 3: Navigation (Desktop Only) */}
-        <div className="hidden lg:block border-b border-gray-200 dark:border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="hidden lg:block border-b border-gray-200 dark:border-gray-700 relative z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="flex items-center h-14">
               <nav className="flex space-x-1 items-center w-full justify-center">
-                {/* Plissé Horren Dropdown */}
+
+                {/* Mega Menu Item: Plissé Horren */}
                 <div
-                  className="relative"
+                  className="group"
                   onMouseEnter={() => setActiveDropdown('horren')}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <Link
-                    href="/products/plisse-screens"
-                    className="flex items-center gap-1 px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href={'/products/plisse-screens' as any}
+                    className={`flex items-center gap-1 px-5 py-2 text-sm font-semibold tracking-wide transition rounded-full ${activeDropdown === 'horren'
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
                   >
                     {t('nav.horren')}
-                    <i className="fas fa-chevron-down text-xs ml-1"></i>
+                    <i className={`fas fa-chevron-down text-[10px] ml-1 transition-transform duration-300 ${activeDropdown === 'horren' ? 'rotate-180' : ''}`}></i>
                   </Link>
-                  {activeDropdown === 'horren' && (
-                    <div className="absolute top-full left-0 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 mt-1 z-50">
-                      {plisseHorrenItems.map((item, index) => (
-                        <Link
-                          key={index}
-                          href={item.href}
-                          className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary transition"
-                        >
-                          {item.name}
-                          {item.badge && (
-                            <span className={`text-xs px-2 py-0.5 rounded ${item.badge === t('badges.bestseller') ? 'bg-yellow-100 text-yellow-700' : 'bg-primary/10 text-primary'
-                              }`}>
-                              {item.badge}
-                            </span>
-                          )}
-                        </Link>
-                      ))}
-                      <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
-                        <Link
-                          href="/products/plisse-screens"
-                          className="flex items-center px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                        >
-                          {t('nav.view_all_horren')} <i className="fas fa-arrow-right ml-2"></i>
-                        </Link>
+
+                  {/* Mega Menu Dropdown */}
+                  <div
+                    className={`absolute top-full left-0 pt-4 w-full transition-all duration-300 origin-top ${activeDropdown === 'horren' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                      }`}
+                  >
+                    <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden max-h-[70vh] overflow-y-auto">
+                      <div className="p-8">
+                        <div className="flex justify-between items-center mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">
+                          <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white">
+                            {t('nav.horren')}
+                          </h3>
+                          <Link href={'/products/plisse-screens' as any} className="text-primary hover:text-primary-dark text-sm font-semibold flex items-center gap-2">
+                            {t('nav.view_all_horren')} <i className="fas fa-arrow-right"></i>
+                          </Link>
+                        </div>
+
+                        <div className="grid grid-cols-5 gap-6">
+                          {plisseHorrenItems.map((item, index) => (
+                            <Link
+                              key={index}
+                              href={item.href}
+                              className="group/item block relative"
+                            >
+                              <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100 dark:bg-gray-800 relative">
+                                <img
+                                  src={item.image}
+                                  alt={item.name}
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
+                                />
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/10 transition-colors duration-300" />
+
+                                {/* Badge */}
+                                {item.badge && (
+                                  <span className={`absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm ${item.badge === t('badges.bestseller')
+                                    ? 'bg-yellow-400 text-yellow-900'
+                                    : 'bg-primary text-white'
+                                    }`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="font-semibold text-gray-900 dark:text-white group-hover/item:text-primary transition-colors text-center text-sm">
+                                {item.name}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Footer / CTA area inside dropdown (Optional) */}
+                      <div className="bg-gray-50 dark:bg-gray-800/50 p-4 text-center">
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          {t('nav.custom_sizes_available')}
+                        </p>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
 
-                {/* Plissé Gordijnen Dropdown */}
+                {/* Mega Menu Item: Plissé Gordijnen */}
                 <div
-                  className="relative"
+                  className="group"
                   onMouseEnter={() => setActiveDropdown('gordijnen')}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <Link
-                    href="/products/plisse-curtains"
-                    className="flex items-center gap-1 px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+                    href={'/products/plisse-curtains' as any}
+                    className={`flex items-center gap-1 px-5 py-2 text-sm font-semibold tracking-wide transition rounded-full ${activeDropdown === 'gordijnen'
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-gray-700 dark:text-gray-200 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
                   >
                     {t('nav.gordijnen')}
-                    <i className="fas fa-chevron-down text-xs ml-1"></i>
+                    <i className={`fas fa-chevron-down text-[10px] ml-1 transition-transform duration-300 ${activeDropdown === 'gordijnen' ? 'rotate-180' : ''}`}></i>
                   </Link>
-                  {activeDropdown === 'gordijnen' && (
-                    <div className="absolute top-full left-0 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 py-2 mt-1 z-50">
-                      {plisseGordijnenItems.map((item, index) => (
-                        <Link
-                          key={index}
-                          href={item.href}
-                          className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary transition"
-                        >
-                          {item.name}
-                          {item.badge && (
-                            <span className={`text-xs px-2 py-0.5 rounded ${item.badge === t('badges.bestseller') ? 'bg-yellow-100 text-yellow-700' : 'bg-primary/10 text-primary'
-                              }`}>
-                              {item.badge}
-                            </span>
-                          )}
-                        </Link>
-                      ))}
-                      <div className="border-t border-gray-200 dark:border-gray-700 mt-2 pt-2">
-                        <Link
-                          href="/products/plisse-curtains"
-                          className="flex items-center px-4 py-2 text-sm text-primary font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-                        >
-                          {t('nav.view_all_gordijnen')} <i className="fas fa-arrow-right ml-2"></i>
-                        </Link>
+
+                  {/* Mega Menu Dropdown */}
+                  <div
+                    className={`absolute top-full left-0 pt-4 w-full transition-all duration-300 origin-top ${activeDropdown === 'gordijnen' ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                      }`}
+                  >
+                    <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl ring-1 ring-black/5 overflow-hidden max-h-[70vh] overflow-y-auto">
+                      <div className="p-8">
+                        <div className="flex justify-between items-center mb-6 border-b border-gray-100 dark:border-gray-800 pb-4">
+                          <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white">
+                            {t('nav.gordijnen')}
+                          </h3>
+                          <Link href={'/products/plisse-curtains' as any} className="text-primary hover:text-primary-dark text-sm font-semibold flex items-center gap-2">
+                            {t('nav.view_all_gordijnen')} <i className="fas fa-arrow-right"></i>
+                          </Link>
+                        </div>
+
+                        <div className="grid grid-cols-5 gap-6">
+                          {plisseGordijnenItems.map((item, index) => (
+                            <Link
+                              key={index}
+                              href={item.href}
+                              className="group/item block relative"
+                            >
+                              <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-gray-100 dark:bg-gray-800 relative">
+                                <img
+                                  src={item.image}
+                                  alt={item.name}
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/10 transition-colors duration-300" />
+
+                                {item.badge && (
+                                  <span className={`absolute top-2 right-2 text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm ${item.badge === t('badges.bestseller')
+                                    ? 'bg-yellow-400 text-yellow-900'
+                                    : 'bg-primary text-white'
+                                    }`}>
+                                    {item.badge}
+                                  </span>
+                                )}
+                              </div>
+                              <p className="font-semibold text-gray-900 dark:text-white group-hover/item:text-primary transition-colors text-center text-sm">
+                                {item.name}
+                              </p>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="bg-gray-50 dark:bg-gray-800/50 p-4 text-center">
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          {t('nav.premium_fabrics')}
+                        </p>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
 
-                <Link href="/configurator" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <Link href={'/configurator' as any} className="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-primary transition rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
                   {t('nav.configurator')}
                 </Link>
-                <Link href="/measurement-guide" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <Link href={'/measurement-guide' as any} className="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-primary transition rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
                   {t('nav.meetgids')}
                 </Link>
-                <Link href="/about" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <Link href={'/about' as any} className="px-5 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-primary transition rounded-full hover:bg-gray-50 dark:hover:bg-gray-800">
                   {t('nav.over_ons')}
                 </Link>
               </nav>
