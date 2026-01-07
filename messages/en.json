@@ -1,13 +1,26 @@
 {
     "HomePage": {
         "hero": {
-            "title": "Window Solutions per Room",
-            "subtitle": "Create the perfect atmosphere in every room. From blackout for the bedroom to ambient light in the living room.",
-            "cta_primary": "Choose Your Room",
-            "cta_secondary": "Start Configurator",
-            "badge": "New Collection 2024",
-            "cta_room": "Choose your room",
-            "cta_config": "Start configurator"
+            "horren": {
+                "title": "Keep Insects Out",
+                "description": "Stylish protection for doors, windows & balconies",
+                "button": "View Screens",
+                "tags": {
+                    "door": "Door Screen",
+                    "window": "Window Screen",
+                    "balcony": "Balcony Screen"
+                }
+            },
+            "gordijnen": {
+                "title": "Control Light & Privacy",
+                "description": "Blackout, honeycomb & light filtering options",
+                "button": "View Curtains",
+                "tags": {
+                    "blackout": "Blackout",
+                    "honeycomb": "Honeycomb",
+                    "lightFiltering": "Light Filtering"
+                }
+            }
         },
         "collections": {
             "title": "Our Collections",

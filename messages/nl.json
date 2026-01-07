@@ -1,13 +1,26 @@
 {
     "HomePage": {
         "hero": {
-            "title": "Raamoplossingen per ruimte",
-            "subtitle": "Creëer de perfecte sfeer in elke kamer. Van verduistering voor de slaapkamer tot sfeerlicht in de woonkamer.",
-            "cta_primary": "Kies je kamer",
-            "cta_secondary": "Start configurator",
-            "badge": "Nieuwe Collectie 2024",
-            "cta_room": "Kies je kamer",
-            "cta_config": "Start configurator"
+            "horren": {
+                "title": "Houd Insecten Buiten",
+                "description": "Stijlvolle bescherming voor deuren, ramen & balkons",
+                "button": "Bekijk Horren",
+                "tags": {
+                    "door": "Deur Hor",
+                    "window": "Raam Hor",
+                    "balcony": "Balkon Hor"
+                }
+            },
+            "gordijnen": {
+                "title": "Regel Licht & Privacy",
+                "description": "Verduisterend, honeycomb & lichtdoorlatende opties",
+                "button": "Bekijk Gordijnen",
+                "tags": {
+                    "blackout": "Verduisterend",
+                    "honeycomb": "Honeycomb",
+                    "lightFiltering": "Lichtdoorlatend"
+                }
+            }
         },
         "cta": {
             "quote": "Offerte aanvragen"

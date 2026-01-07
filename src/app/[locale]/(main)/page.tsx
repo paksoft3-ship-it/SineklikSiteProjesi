@@ -3,7 +3,6 @@ import HeroSection from '@/components/sections/HeroSection';
 import RoomsSection from '@/components/sections/RoomsSection';
 import { TestimonialsSlider } from '@/components/testimonials';
 
-import CollectionsSection from '@/components/sections/CollectionsSection';
 import PriceCalculatorSection from '@/components/sections/PriceCalculatorSection';
 import PopularProductsSection from '@/components/sections/PopularProductsSection';
 import { ScrollAnimation } from '@/components/animations/ScrollAnimation';
@@ -71,9 +70,6 @@ export default function HomePage() {
       {/* Page Sections */}
       <HeroSection />
 
-      <ScrollAnimation>
-        <CollectionsSection />
-      </ScrollAnimation>
 
       <ScrollAnimation>
         <PriceCalculatorSection />
