@@ -22,6 +22,20 @@
                 }
             }
         },
+        "categoryGrid": {
+            "title": "Explore our wide range.",
+            "description": "Discover our extensive collection of window coverings and insect screens tailored to your needs.",
+            "categories": {
+                "jalozieen": "Venetian Blinds",
+                "plisseGordijnen": "Pleated Blinds",
+                "duette": "DUETTE®",
+                "rolgordijnen": "Roller Blinds",
+                "horren": "Insect Screens",
+                "vouwgordijnen": "Roman Blinds",
+                "gordijnen": "Curtains",
+                "lamellen": "Vertical Blinds"
+            }
+        },
         "collections": {
             "title": "Our Collections",
             "description": "Choose between our pleated screens for insect protection or pleated curtains for sun protection and privacy.",

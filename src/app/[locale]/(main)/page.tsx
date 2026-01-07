@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/sections/HeroSection';
 import RoomsSection from '@/components/sections/RoomsSection';
+import ProductCategoryGrid from '@/components/sections/ProductCategoryGrid';
 import { TestimonialsSlider } from '@/components/testimonials';
 
 import PriceCalculatorSection from '@/components/sections/PriceCalculatorSection';
@@ -70,6 +71,9 @@ export default function HomePage() {
       {/* Page Sections */}
       <HeroSection />
 
+      <ScrollAnimation>
+        <ProductCategoryGrid />
+      </ScrollAnimation>
 
       <ScrollAnimation>
         <PriceCalculatorSection />

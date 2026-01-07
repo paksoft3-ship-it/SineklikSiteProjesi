@@ -25,6 +25,20 @@
         "cta": {
             "quote": "Offerte aanvragen"
         },
+        "categoryGrid": {
+            "title": "Bekijk ons ruime aanbod.",
+            "description": "Ontdek onze uitgebreide collectie raamdecoratie en horren, perfect op maat gemaakt voor uw woning.",
+            "categories": {
+                "jalozieen": "Jaloezieën",
+                "plisseGordijnen": "Plisségordijnen",
+                "duette": "DUETTE®",
+                "rolgordijnen": "Rolgordijnen",
+                "horren": "Horren",
+                "vouwgordijnen": "Vouwgordijnen",
+                "gordijnen": "Gordijnen",
+                "lamellen": "Lamellen"
+            }
+        },
         "collections": {
             "title": "Onze Collecties",
             "description": "Kies tussen onze plissé horren voor insectenwering of plissé gordijnen voor zonwering en privacy.",
