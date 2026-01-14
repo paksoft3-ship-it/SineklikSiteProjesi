@@ -13,7 +13,7 @@ const RoomsSection = () => {
     {
       id: 'woonkamer',
       name: t('items.woonkamer'),
-      image: '/images/hero/slide-1.png',
+      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800',
       tags: [
         { label: t('tags.insect_protection'), icon: 'fa-bug', color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' },
         { label: t('tags.light_privacy'), icon: 'fa-sun', color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300' },
@@ -22,7 +22,7 @@ const RoomsSection = () => {
     {
       id: 'slaapkamer',
       name: t('items.slaapkamer'),
-      image: '/images/hero/slide-2.png',
+      image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800',
       tags: [
         { label: t('tags.blackout'), icon: 'fa-moon', color: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300' },
         { label: t('tags.insect_protection'), icon: 'fa-bug', color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' },
@@ -31,7 +31,7 @@ const RoomsSection = () => {
     {
       id: 'keuken',
       name: t('items.keuken'),
-      image: '/images/hero/slide-3.png',
+      image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800',
       tags: [
         { label: t('tags.moisture_proof'), icon: 'fa-tint', color: 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300' },
         { label: t('tags.privacy'), icon: 'fa-eye-slash', color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300' },
@@ -40,7 +40,7 @@ const RoomsSection = () => {
     {
       id: 'balkon',
       name: t('items.balkon'),
-      image: '/images/products/plisse-hordeur.png',
+      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800',
       tags: [
         { label: t('tags.door_screens'), icon: 'fa-shield-alt', color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' },
       ],
@@ -48,7 +48,7 @@ const RoomsSection = () => {
     {
       id: 'zolder',
       name: t('items.zolder'),
-      image: '/images/products/room-zolder.png',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
       tags: [
         { label: t('tags.heat_protection'), icon: 'fa-temperature-low', color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300' },
         { label: t('tags.insect_protection'), icon: 'fa-bug', color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' },

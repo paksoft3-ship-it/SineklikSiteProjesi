@@ -77,7 +77,7 @@
           "id": "inzethorren",
           "name": "Inzethorren",
           "basePrice": 49,
-          "image": "/images/configurator/inzethor.jpg",
+          "image": "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600",
           "description": "Eenvoudig in het raamkozijn te klemmen",
           "forRooms": ["woonkamer", "slaapkamer", "keuken"],
           "measurementType": "dagmaat"
@@ -86,7 +86,7 @@
           "id": "plisse-hordeuren",
           "name": "Plissé Hordeuren",
           "basePrice": 199,
-          "image": "/images/configurator/plisse-hordeur.jpg",
+          "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600",
           "description": "Ruimtebesparend en elegant",
           "forRooms": ["balkon"],
           "measurementType": "doorgang"
@@ -95,7 +95,7 @@
           "id": "dakraamhorren",
           "name": "Dakraamhorren",
           "basePrice": 89,
-          "image": "/images/configurator/dakraamhor.jpg",
+          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",
           "description": "Voor VELUX en andere dakramen",
           "forRooms": ["zolder"],
           "measurementType": "glasmaat"
@@ -104,7 +104,7 @@
           "id": "schuifhorren",
           "name": "Schuifhorren",
           "basePrice": 149,
-          "image": "/images/configurator/schuifhor.jpg",
+          "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600",
           "description": "Voor grote ramen en schuifpuien",
           "forRooms": ["woonkamer", "balkon"],
           "measurementType": "dagmaat"
@@ -115,7 +115,7 @@
           "id": "jaloezieen",
           "name": "Jaloezieën",
           "basePrice": 59,
-          "image": "/images/configurator/jaloezie.jpg",
+          "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600",
           "description": "Tijdloze lichtregulatie",
           "forRooms": ["woonkamer", "slaapkamer", "keuken"],
           "measurementType": "dagmaat"
@@ -124,7 +124,7 @@
           "id": "rolgordijnen",
           "name": "Rolgordijnen",
           "basePrice": 49,
-          "image": "/images/configurator/rolgordijn.jpg",
+          "image": "https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600",
           "description": "Modern en functioneel",
           "forRooms": ["woonkamer", "slaapkamer", "keuken", "zolder"],
           "measurementType": "dagmaat"
@@ -133,7 +133,7 @@
           "id": "plisse-gordijnen",
           "name": "Plissé Gordijnen",
           "basePrice": 69,
-          "image": "/images/configurator/plisse-gordijn.jpg",
+          "image": "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600",
           "description": "Voor alle raamvormen",
           "forRooms": ["woonkamer", "slaapkamer"],
           "measurementType": "glasmaat"
@@ -142,7 +142,7 @@
           "id": "duette-shades",
           "name": "Duette® Shades",
           "basePrice": 129,
-          "image": "/images/configurator/duette.jpg",
+          "image": "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600",
           "description": "Energiebesparend en isolerend",
           "forRooms": ["slaapkamer", "zolder"],
           "measurementType": "glasmaat"
@@ -202,7 +202,7 @@
           "Meet op 3 breedtes: links, midden en rechts",
           "Noteer de kleinste maat"
         ],
-        "image": "/images/measurement/dagmaat.jpg"
+        "image": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600"
       },
       "glasmaat": {
         "title": "Glasmaat meten",
@@ -211,7 +211,7 @@
           "Meet de breedte van het glas inclusief de glaslatten",
           "Meet de hoogte van het glas inclusief de glaslatten"
         ],
-        "image": "/images/measurement/glasmaat.jpg"
+        "image": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600"
       },
       "doorgang": {
         "title": "Doorgang meten",
@@ -221,7 +221,7 @@
           "Meet de hoogte van de vloer tot de bovenkant",
           "Houd rekening met de drempel (indien aanwezig)"
         ],
-        "image": "/images/measurement/doorgang.jpg"
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600"
       }
     },
     "ui": {

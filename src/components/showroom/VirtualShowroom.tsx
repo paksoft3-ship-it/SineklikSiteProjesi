@@ -27,7 +27,7 @@ const showroomScenes: ShowroomScene[] = [
   {
     id: 'living-room',
     name: 'Woonkamer',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCY4KO7R8cYzhiiDQF3lEU0O2aFS-YeBKBIa4iRXIWR38-_lzxIZTo1MdWYAUUS3Aeoa8wKNTTdptuMJymhiKUwV5ZmeTfx9mGQi2Lfd6-ZU2Hba11PxRuypd3boEmLw6Op6Mzwc125LS4htWFvhwKQjYTzcPnGtoY-F2e53uXtFp6WzFeBEcRIR2CcuHYh_tFXOBW6ppeu3W_Fa8eEr6xDB0oxZFLAIg7HSWTW78WnzlxUE03IvGb0ZmuqdMOArvYOkmkFWuqqkX',
+    image: '/images/showroom/living-room.png',
     hotspots: [
       {
         id: '1',
@@ -37,7 +37,7 @@ const showroomScenes: ShowroomScene[] = [
           name: 'Honeycomb Gordijn',
           description: 'Isolerend duette gordijn in wit',
           price: 129,
-          image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDawAgImZOKKD70Z5MscFOK3OWOurJi410Z5zReowrEWrvPBl9--pzNmYRlNOW7ndUFh770zGia-bpcjnq_c9W8TTXR3dRaGBAim0_FI8gYZ7PJDLH2mxiRJNAfoIBJBUll0soKq0RtLX4k8OauZznDAvsYl5BjX4yMnFOO_Ff8GKsQqHt3Rcy54yzRDybO4A8wv1q954GyjwrNhwDrOzNFu0poB3hIkgw8NU8QaZ_MoiFIFCNUXIJlglJjoELf3w4Y702i7jmzp34Q',
+          image: '/images/showroom/living-after.png',
           link: '/products/plisse-curtains/honeycomb',
         },
       },
@@ -49,7 +49,7 @@ const showroomScenes: ShowroomScene[] = [
           name: 'Plissé Gordijn',
           description: 'Lichtdoorlatend plissé in crème',
           price: 79,
-          image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCY4KO7R8cYzhiiDQF3lEU0O2aFS-YeBKBIa4iRXIWR38-_lzxIZTo1MdWYAUUS3Aeoa8wKNTTdptuMJymhiKUwV5ZmeTfx9mGQi2Lfd6-ZU2Hba11PxRuypd3boEmLw6Op6Mzwc125LS4htWFvhwKQjYTzcPnGtoY-F2e53uXtFp6WzFeBEcRIR2CcuHYh_tFXOBW6ppeu3W_Fa8eEr6xDB0oxZFLAIg7HSWTW78WnzlxUE03IvGb0ZmuqdMOArvYOkmkFWuqqkX',
+          image: '/images/showroom/living-after.png',
           link: '/products/plisse-curtains/light-filtering',
         },
       },
@@ -131,11 +131,10 @@ export default function VirtualShowroom() {
               setActiveScene(scene);
               setActiveHotspot(null);
             }}
-            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition ${
-              activeScene.id === scene.id
+            className={`px-4 py-2 rounded-lg font-medium text-sm whitespace-nowrap transition ${activeScene.id === scene.id
                 ? 'bg-primary text-white'
                 : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
-            }`}
+              }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -164,11 +163,10 @@ export default function VirtualShowroom() {
             {activeScene.hotspots.map((hotspot) => (
               <motion.button
                 key={hotspot.id}
-                className={`absolute w-10 h-10 -ml-5 -mt-5 rounded-full flex items-center justify-center transition-all ${
-                  activeHotspot?.id === hotspot.id
+                className={`absolute w-10 h-10 -ml-5 -mt-5 rounded-full flex items-center justify-center transition-all ${activeHotspot?.id === hotspot.id
                     ? 'bg-primary scale-125'
                     : 'bg-white/90 hover:bg-primary hover:scale-110'
-                }`}
+                  }`}
                 style={{ left: `${hotspot.x}%`, top: `${hotspot.y}%` }}
                 onClick={() => setActiveHotspot(hotspot)}
                 initial={{ scale: 0 }}
@@ -176,9 +174,8 @@ export default function VirtualShowroom() {
                 whileHover={{ scale: 1.2 }}
               >
                 <i
-                  className={`fas fa-plus text-sm ${
-                    activeHotspot?.id === hotspot.id ? 'text-white' : 'text-gray-700'
-                  }`}
+                  className={`fas fa-plus text-sm ${activeHotspot?.id === hotspot.id ? 'text-white' : 'text-gray-700'
+                    }`}
                 ></i>
 
                 {/* Pulse Effect */}

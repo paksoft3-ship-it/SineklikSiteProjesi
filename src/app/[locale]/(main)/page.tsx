@@ -3,9 +3,11 @@ import HeroSection from '@/components/sections/HeroSection';
 import RoomsSection from '@/components/sections/RoomsSection';
 import ProductCategoryGrid from '@/components/sections/ProductCategoryGrid';
 import { TestimonialsSlider } from '@/components/testimonials';
-
 import PriceCalculatorSection from '@/components/sections/PriceCalculatorSection';
 import PopularProductsSection from '@/components/sections/PopularProductsSection';
+import VirtualShowroomSection from '@/components/sections/VirtualShowroomSection';
+import BeforeAfterSection from '@/components/sections/BeforeAfterSection';
+import QuizCTASection from '@/components/sections/QuizCTASection';
 import { ScrollAnimation } from '@/components/animations/ScrollAnimation';
 
 export const metadata: Metadata = {
@@ -86,6 +88,15 @@ export default function HomePage() {
       <ScrollAnimation>
         <PopularProductsSection />
       </ScrollAnimation>
+
+      {/* Before/After Transformations */}
+      <BeforeAfterSection />
+
+      {/* Virtual Showroom Preview */}
+      <VirtualShowroomSection />
+
+      {/* Interactive Tools CTA */}
+      <QuizCTASection />
 
       <ScrollAnimation>
         <TestimonialsSlider />

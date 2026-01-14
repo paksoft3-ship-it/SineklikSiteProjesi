@@ -1,10 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
 import { easings, durations } from '@/lib/animation-config';
 
 const TopBar = () => {
+  const t = useTranslations('TopBar');
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -78,7 +81,7 @@ const TopBar = () => {
               className="fas fa-check text-primary -ml-2"
               variants={checkIconVariants}
             />
-            <span>Gratis levering*</span>
+            <span>{t('free_delivery')}</span>
           </motion.div>
 
           <motion.span
@@ -102,7 +105,7 @@ const TopBar = () => {
               className="fas fa-check text-primary -ml-2"
               variants={checkIconVariants}
             />
-            <span>15.000+ tevreden klanten</span>
+            <span>{t('satisfied_customers')}</span>
           </motion.div>
 
           <motion.span
@@ -127,7 +130,7 @@ const TopBar = () => {
             />
             <motion.div whileHover={{ scale: 1.05 }}>
               <Link href="/about" className="hover:text-primary transition underline">
-                Klantbeoordeling 4.8
+                {t('customer_rating')}
               </Link>
             </motion.div>
             <div className="flex text-yellow-400 text-xs">

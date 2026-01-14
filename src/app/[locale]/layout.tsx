@@ -55,7 +55,7 @@ export const metadata: Metadata = {
       'De specialist in raamdecoratie en horren op maat. Gratis meetadvies en snelle levering door heel Nederland.',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&h=630&fit=crop',
         width: 1200,
         height: 630,
         alt: 'Window Specialist - Raamdecoratie & Horren op Maat',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: 'Window Specialist - Raamdecoratie & Horren op Maat',
     description:
       'De specialist in raamdecoratie en horren op maat. Gratis meetadvies en snelle levering.',
-    images: ['/images/og-image.jpg'],
+    images: ['https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200&h=630&fit=crop'],
   },
   robots: {
     index: true,

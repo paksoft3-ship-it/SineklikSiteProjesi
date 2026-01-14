@@ -156,6 +156,70 @@
             },
             "cta": "View measurement guide"
         },
+        "virtualShowroom": {
+            "badge": "Virtual Showroom",
+            "title": "View Products in Your Own Space",
+            "description": "Discover how our products look in different rooms. Click on hotspots to view product details.",
+            "features": {
+                "visualization": {
+                    "title": "Realistic Visualization",
+                    "desc": "See how products look in real room settings"
+                },
+                "hotspots": {
+                    "title": "Interactive Hotspots",
+                    "desc": "Click on products for details and prices"
+                },
+                "colorMatcher": {
+                    "title": "Color Matcher",
+                    "desc": "Upload a photo and we'll match the perfect colors"
+                },
+                "ar": {
+                    "title": "AR View",
+                    "desc": "View products in augmented reality on your phone"
+                }
+            },
+            "cta": "Open Full Showroom"
+        },
+        "beforeAfter": {
+            "badge": "Transformations",
+            "title": "See the Difference",
+            "description": "Drag the slider to see how our products transform your space.",
+            "before": "Before",
+            "after": "After",
+            "items": {
+                "living": {
+                    "title": "Living Room Transformation",
+                    "desc": "From bare windows to stylish honeycomb curtains"
+                },
+                "bedroom": {
+                    "title": "Bedroom Blackout",
+                    "desc": "Perfect blackout for a good night's sleep"
+                }
+            }
+        },
+        "quizCTA": {
+            "badge": "Helpful Tools",
+            "title": "Need Help Choosing?",
+            "description": "Use our interactive tools to find the perfect product for your situation.",
+            "start": "Start now",
+            "tools": {
+                "quiz": {
+                    "title": "Product Quiz",
+                    "desc": "Answer 5 questions for personalized advice",
+                    "badge": "Popular"
+                },
+                "colorMatcher": {
+                    "title": "Color Matcher",
+                    "desc": "Upload a photo and find the perfect color",
+                    "badge": "New"
+                },
+                "scheduler": {
+                    "title": "Appointment Planner",
+                    "desc": "Schedule a free measurement appointment",
+                    "badge": "Free"
+                }
+            }
+        },
         "testimonials": {
             "title": "What our customers say",
             "reviews": {
@@ -181,12 +245,31 @@
             }
         }
     },
+    "TopBar": {
+        "free_delivery": "Free delivery*",
+        "satisfied_customers": "15,000+ satisfied customers",
+        "customer_rating": "Customer rating 4.8"
+    },
     "Header": {
+        "logo": {
+            "window": "Window",
+            "specialist": "Specialist"
+        },
+        "search": {
+            "open": "Open search",
+            "placeholder": "Search..."
+        },
+        "auth": {
+            "sign_up_google": "Sign up with Google",
+            "login_signup": "Login / Sign up"
+        },
         "nav": {
             "horren": "Pleated Screens",
             "gordijnen": "Pleated Curtains",
             "configurator": "Configurator",
             "meetgids": "Measurement Guide",
+            "tools": "Tools",
+            "showcase": "Components",
             "over_ons": "About Us",
             "view_all_horren": "View all screens",
             "view_all_gordijnen": "View all curtains",
@@ -530,6 +613,148 @@
             "placeholder": "Your email address",
             "button": "Subscribe"
         }
+    },
+    "ToolsPage": {
+        "badge": "Interactive Tools",
+        "title": "Helpful Tools for the Perfect Choice",
+        "description": "Use our free online tools to find the perfect product, match colors, schedule appointments and more.",
+        "start_tool": "Start tool",
+        "tools": {
+            "quiz": {
+                "title": "Product Quiz",
+                "description": "Answer 5 questions and receive personalized product advice based on your preferences and situation.",
+                "badge": "Popular",
+                "duration": "2 min"
+            },
+            "colorMatcher": {
+                "title": "Color Matcher",
+                "description": "Upload a photo of your room and we'll analyze the colors to find the perfect match.",
+                "badge": "New",
+                "duration": "1 min"
+            },
+            "scheduler": {
+                "title": "Appointment Planner",
+                "description": "Schedule a free measurement appointment at your home with one of our experts.",
+                "badge": "Free",
+                "duration": "3 min"
+            },
+            "sustainability": {
+                "title": "Energy Calculator",
+                "description": "Calculate how much energy, CO2 and money you can save with insulating window coverings.",
+                "duration": "1 min"
+            },
+            "showroom": {
+                "title": "Virtual Showroom",
+                "description": "View our products in realistic room settings with interactive hotspots.",
+                "badge": "Interactive",
+                "duration": "5 min"
+            }
+        },
+        "help": {
+            "title": "Need Help?",
+            "description": "Our experts are ready to help you make the right choice.",
+            "contact": "Contact Us",
+            "configurator": "Go to Configurator"
+        }
+    },
+    "ShowcasePage": {
+        "title": "Component Showcase",
+        "description": "View all available components and their functionalities.",
+        "categories": {
+            "all": "All Components",
+            "ui": "UI Components",
+            "social": "Social Proof",
+            "trust": "Trust Badges",
+            "animations": "Animations",
+            "tools": "Tools"
+        },
+        "tools_links": {
+            "title": "Interactive Tools (Links)",
+            "click_to_open": "Click to open"
+        }
+    },
+    "SustainabilityPage": {
+        "badge": "Sustainability Calculator",
+        "title": "Calculate Your Energy Savings",
+        "description": "Discover how much energy, CO2 and money you can save with our insulating window coverings.",
+        "why": {
+            "title": "Why Insulating Window Coverings?",
+            "insulation": {
+                "title": "Better Insulation",
+                "desc": "Up to 25% less heat loss through your windows"
+            },
+            "costs": {
+                "title": "Lower Energy Costs",
+                "desc": "Save up to €200 per year on your energy bill"
+            },
+            "co2": {
+                "title": "Less CO2",
+                "desc": "Reduce your ecological footprint"
+            }
+        }
+    },
+    "ShowroomPage": {
+        "badge": "Virtual Showroom",
+        "title": "Discover Our Products in Context",
+        "description": "Click on hotspots to view product details in realistic room settings."
+    },
+    "WhatsApp": {
+        "default_message": "Hello, I have a question about your products.",
+        "help_needed": "Need help? Chat with us!",
+        "chat_label": "Chat on WhatsApp"
+    },
+    "TrustBadges": {
+        "badges": {
+            "guarantee": {
+                "title": "5 Year Warranty",
+                "desc": "On all products"
+            },
+            "shipping": {
+                "title": "Free Shipping",
+                "desc": "From €50"
+            },
+            "returns": {
+                "title": "30 Day Returns",
+                "desc": "Not satisfied? Money back"
+            },
+            "support": {
+                "title": "Customer Service",
+                "desc": "Mon-Fri 9:00-17:00"
+            },
+            "secure": {
+                "title": "Secure Payment",
+                "desc": "SSL secured"
+            },
+            "rating": {
+                "title": "4.8/5 Stars",
+                "desc": "2,500+ reviews"
+            }
+        },
+        "pay_with": "Pay securely with:",
+        "ssl_secured": "256-bit SSL Secured",
+        "certifications": {
+            "iso": "ISO 9001",
+            "ce": "CE Certified",
+            "tuv": "TÜV Approved"
+        }
+    },
+    "CollectionsSection": {
+        "satisfied_customers": "+15,000 satisfied customers",
+        "horren_types": {
+            "door": "Door",
+            "window": "Window",
+            "balcony": "Glass Balcony",
+            "thresholdless": "Thresholdless"
+        },
+        "gordijnen_types": {
+            "honeycomb": "Honeycomb",
+            "blackout": "Blackout",
+            "lightFiltering": "Light Filtering",
+            "colors": "Color Options"
+        }
+    },
+    "ProductCategoryGrid": {
+        "view_collection": "View Collection"
     },
     "Chatbot": {
         "buttons": {

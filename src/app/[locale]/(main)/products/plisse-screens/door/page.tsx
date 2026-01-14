@@ -20,10 +20,10 @@ export default async function PlisseHordeurConfiguratorPage() {
     oldPrice: 249,
     deliveryDays: 10,
     images: [
-      '/images/products/plisse-hordeur.png',
-      '/images/products/raam-hor.png',
-      '/images/collections/horren.png',
-      '/images/products/window-detail-ref.png',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
+      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600',
+      'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600',
     ],
     configOptions: [
       {

@@ -18,7 +18,7 @@ const CollectionsSection = () => {
       link: '/producten/plisse-horren',
       linkText: t('horren.link'),
       images: [
-        '/images/collections/horren.png',
+        'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800',
       ],
       subProducts: ['Deur', 'Raam', 'Glazen Balkon', 'Drempelloos'],
     },
@@ -29,7 +29,7 @@ const CollectionsSection = () => {
       link: '/producten/plisse-gordijnen',
       linkText: t('gordijnen.link'),
       images: [
-        '/images/collections/gordijnen.png',
+        'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800',
       ],
       colors: ['#E8E4E0', '#8B7355', '#4A4A4A', '#2C2C2C', '#F5F5DC'],
       subProducts: ['Honeycomb', 'Verduisterend', 'Lichtdoorlatend', 'Kleuropties'],

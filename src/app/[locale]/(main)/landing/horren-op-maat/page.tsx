@@ -60,21 +60,21 @@ const products = [
     name: 'Inzethorren',
     description: 'Eenvoudig te plaatsen zonder boren',
     price: 49,
-    image: '/images/products/inzethorren.jpg',
+    image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600',
     features: ['Aluminium frame', 'Glasvezel gaas', 'Zelf te monteren'],
   },
   {
     name: 'Plissé Hordeuren',
     description: 'Ruimtebesparend en elegant',
     price: 199,
-    image: '/images/products/plisse-hordeuren.jpg',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
     features: ['Vouwt volledig weg', 'Fluisterstil', 'Premium kwaliteit'],
   },
   {
     name: 'Dakraamhorren',
     description: 'Voor VELUX en alle merken',
     price: 89,
-    image: '/images/products/dakraamhorren.jpg',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
     features: ['UV-bestendig', 'Eenvoudige montage', 'Perfecte pasvorm'],
   },
 ];
@@ -93,7 +93,7 @@ export default function HorrenOpMaatPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary via-secondary to-blue-900 dark:from-bg-dark-2 dark:to-bg-dark-1 py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] bg-repeat" />
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '20px 20px'}} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

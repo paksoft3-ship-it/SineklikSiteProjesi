@@ -16,7 +16,7 @@ const PopularCombinationsSection = () => {
       description: t('packages.bedroom.desc'),
       price: 149,
       badge: tHeader('badges.bestseller'), // Reusing bestseller from header
-      image: '/images/packages/bedroom.png',
+      image: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600',
       link: '/products/packages/bedroom',
     },
     {
@@ -25,7 +25,7 @@ const PopularCombinationsSection = () => {
       description: t('packages.living.desc'),
       price: 289,
       badge: null,
-      image: '/images/packages/living.png',
+      image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600',
       link: '/products/packages/living',
     },
     {
@@ -34,7 +34,7 @@ const PopularCombinationsSection = () => {
       description: t('packages.attic.desc'),
       price: 199,
       badge: null,
-      image: '/images/packages/attic.png',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
       link: '/products/packages/attic',
     },
   ];

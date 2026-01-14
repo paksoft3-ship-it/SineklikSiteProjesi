@@ -41,20 +41,20 @@ const Header = () => {
   };
 
   const plisseHorrenItems: NavItem[] = [
-    { name: t('items.horren.deur'), href: '/products/plisse-screens/door', badge: t('badges.populair'), image: '/images/nav/nav-hor-deur.jpg' },
-    { name: t('items.horren.raam'), href: '/products/plisse-screens/window', image: '/images/nav/nav-hor-raam.jpg' },
-    { name: t('items.horren.balkon'), href: '/products/plisse-screens/glass-balcony', image: '/images/nav/nav-hor-balkon.jpg' },
-    { name: t('items.horren.vaste'), href: '/products/plisse-screens/fixed', image: '/images/nav/nav-hor-vaste.jpg' },
-    { name: t('items.horren.binnen'), href: '/products/plisse-screens/insight', image: '/images/nav/nav-hor-binnen.jpg' },
-    { name: t('items.horren.combi'), href: '/products/plisse-screens/screen-curtain', badge: t('badges.bestseller'), image: '/images/nav/nav-hor-combi.jpg' },
-    { name: t('items.horren.drempel'), href: '/products/plisse-screens/barrier-free', image: '/images/nav/nav-hor-drempel.jpg' },
+    { name: t('items.horren.deur'), href: '/products/plisse-screens/door', badge: t('badges.populair'), image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400' },
+    { name: t('items.horren.raam'), href: '/products/plisse-screens/window', image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=400' },
+    { name: t('items.horren.balkon'), href: '/products/plisse-screens/glass-balcony', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400' },
+    { name: t('items.horren.vaste'), href: '/products/plisse-screens/fixed', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400' },
+    { name: t('items.horren.binnen'), href: '/products/plisse-screens/insight', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400' },
+    { name: t('items.horren.combi'), href: '/products/plisse-screens/screen-curtain', badge: t('badges.bestseller'), image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400' },
+    { name: t('items.horren.drempel'), href: '/products/plisse-screens/barrier-free', image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=400' },
   ];
 
   const plisseGordijnenItems: NavItem[] = [
-    { name: t('items.gordijnen.honeycomb'), href: '/products/plisse-curtains/honeycomb', badge: t('badges.bestseller'), image: '/images/nav/nav-gordijn-honeycomb.jpg' },
-    { name: t('items.gordijnen.verduisterend'), href: '/products/plisse-curtains/blackout', badge: t('badges.populair'), image: '/images/nav/nav-gordijn-verduisterend.jpg' },
-    { name: t('items.gordijnen.licht'), href: '/products/plisse-curtains/light-filtering', image: '/images/nav/nav-gordijn-licht.jpg' },
-    { name: t('items.gordijnen.kleur'), href: '/products/plisse-curtains/colors', image: '/images/nav/nav-gordijn-kleur.jpg' },
+    { name: t('items.gordijnen.honeycomb'), href: '/products/plisse-curtains/honeycomb', badge: t('badges.bestseller'), image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400' },
+    { name: t('items.gordijnen.verduisterend'), href: '/products/plisse-curtains/blackout', badge: t('badges.populair'), image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=400' },
+    { name: t('items.gordijnen.licht'), href: '/products/plisse-curtains/light-filtering', image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=400' },
+    { name: t('items.gordijnen.kleur'), href: '/products/plisse-curtains/colors', image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400' },
   ];
 
   // Animation variants for dropdown items
@@ -135,7 +135,7 @@ const Header = () => {
                           transition={{ duration: 0.5 }}
                         />
                         <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
-                          Sign up with Google
+                          {t('auth.sign_up_google')}
                         </span>
                       </button>
 
@@ -149,7 +149,7 @@ const Header = () => {
                         className="group pl-3 pr-4 py-2.5 rounded-r-full"
                       >
                         <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">
-                          Login / Sign up
+                          {t('auth.login_signup')}
                         </span>
                       </button>
                     </motion.div>
@@ -162,10 +162,10 @@ const Header = () => {
                     className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    aria-label="Open zoeken"
+                    aria-label={t('search.open')}
                   >
                     <i className="fas fa-search text-sm"></i>
-                    <span className="text-sm hidden xl:inline">Zoeken...</span>
+                    <span className="text-sm hidden xl:inline">{t('search.placeholder')}</span>
                     <kbd className="hidden xl:inline-block px-1.5 py-0.5 bg-white dark:bg-gray-700 rounded text-xs text-gray-400">
                       ⌘K
                     </kbd>
@@ -463,6 +463,8 @@ const Header = () => {
                 {[
                   { href: '/configurator', label: t('nav.configurator') },
                   { href: '/measurement-guide', label: t('nav.meetgids') },
+                  { href: '/tools', label: t('nav.tools') },
+                  { href: '/showcase', label: t('nav.showcase') },
                   { href: '/about', label: t('nav.over_ons') },
                 ].map((link) => (
                   <motion.div
@@ -549,6 +551,8 @@ const Header = () => {
                   {[
                     { href: '/configurator', label: t('nav.configurator') },
                     { href: '/measurement-guide', label: t('nav.meetgids') },
+                    { href: '/tools', label: t('nav.tools') },
+                    { href: '/showcase', label: t('nav.showcase') },
                     { href: '/about', label: t('nav.over_ons') },
                   ].map((link, index) => (
                     <motion.div

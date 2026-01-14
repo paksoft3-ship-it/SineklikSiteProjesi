@@ -38,7 +38,7 @@
         "id": "woonkamer",
         "name": "Woonkamer",
         "slug": "woonkamer",
-        "image": "/images/rooms/woonkamer.jpg",
+        "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800",
         "tags": [
           { "label": "Insectenwering", "type": "green", "icon": "bug" },
           { "label": "Licht Privacy", "type": "yellow", "icon": "sun" }
@@ -49,7 +49,7 @@
         "id": "slaapkamer",
         "name": "Slaapkamer",
         "slug": "slaapkamer",
-        "image": "/images/rooms/slaapkamer.jpg",
+        "image": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800",
         "tags": [
           { "label": "Verduistering", "type": "blue", "icon": "moon" },
           { "label": "Insectenwering", "type": "green", "icon": "bug" }
@@ -60,7 +60,7 @@
         "id": "keuken",
         "name": "Keuken",
         "slug": "keuken",
-        "image": "/images/rooms/keuken.jpg",
+        "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800",
         "tags": [
           { "label": "Vochtbestendig", "type": "gray", "icon": "droplet" },
           { "label": "Privacy", "type": "yellow", "icon": "eye-off" }
@@ -71,7 +71,7 @@
         "id": "balkon",
         "name": "Balkon",
         "slug": "balkon",
-        "image": "/images/rooms/balkon.jpg",
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800",
         "tags": [
           { "label": "Hordeuren", "type": "green", "icon": "shield" }
         ],
@@ -81,7 +81,7 @@
         "id": "zolder",
         "name": "Zolder",
         "slug": "zolder",
-        "image": "/images/rooms/zolder.jpg",
+        "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800",
         "tags": [
           { "label": "Warmtewering", "type": "red", "icon": "thermometer" },
           { "label": "Insectenwering", "type": "green", "icon": "bug" }
@@ -102,7 +102,7 @@
         "slug": "slaapkamer-pack",
         "description": "Verduisterend rolgordijn + Inzet hor op maat.",
         "price": 149,
-        "image": "/images/packs/slaapkamer-pack.jpg",
+        "image": "https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600",
         "badge": "BESTSELLER",
         "includes": ["Verduisterend rolgordijn", "Inzet hor op maat"]
       },
@@ -112,7 +112,7 @@
         "slug": "woonkamer-pack",
         "description": "Houten jaloezieën (50mm) + Plisséhordeur.",
         "price": 289,
-        "image": "/images/packs/woonkamer-pack.jpg",
+        "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600",
         "badge": null,
         "includes": ["Houten jaloezieën 50mm", "Plisséhordeur"]
       },
@@ -122,7 +122,7 @@
         "slug": "zolder-pack",
         "description": "Duette® Shades + Dakraamhor.",
         "price": 199,
-        "image": "/images/packs/zolder-pack.jpg",
+        "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600",
         "badge": null,
         "includes": ["Duette® Shades", "Dakraamhor"]
       }

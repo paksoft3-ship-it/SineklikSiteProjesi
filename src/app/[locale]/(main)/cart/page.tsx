@@ -14,7 +14,7 @@ export default function CartPage() {
             title: 'Plissé Hordeur - Premium',
             subtitle: 'Op maat gemaakt',
             price: 249.00,
-            image: '/images/products/plisse/door-1.jpg',
+            image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400',
             specs: ['Breedte: 90cm', 'Hoogte: 210cm', 'Kleur: Antraciet (RAL 7016)']
         }
     ];

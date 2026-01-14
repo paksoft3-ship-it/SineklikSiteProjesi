@@ -1,51 +1,21 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 interface Badge {
   icon: string;
-  title: string;
-  description: string;
+  titleKey: string;
   color: string;
 }
 
-const defaultBadges: Badge[] = [
-  {
-    icon: 'fa-shield-alt',
-    title: '5 Jaar Garantie',
-    description: 'Op alle producten',
-    color: 'text-green-600',
-  },
-  {
-    icon: 'fa-truck',
-    title: 'Gratis Verzending',
-    description: 'Vanaf €50',
-    color: 'text-blue-600',
-  },
-  {
-    icon: 'fa-undo',
-    title: '30 Dagen Retour',
-    description: 'Niet tevreden? Geld terug',
-    color: 'text-purple-600',
-  },
-  {
-    icon: 'fa-headset',
-    title: 'Klantenservice',
-    description: 'Ma-Vr 9:00-17:00',
-    color: 'text-orange-600',
-  },
-  {
-    icon: 'fa-lock',
-    title: 'Veilig Betalen',
-    description: 'SSL beveiligd',
-    color: 'text-teal-600',
-  },
-  {
-    icon: 'fa-star',
-    title: '4.8/5 Sterren',
-    description: '2.500+ reviews',
-    color: 'text-yellow-600',
-  },
+const badgeConfig: Badge[] = [
+  { icon: 'fa-shield-alt', titleKey: 'guarantee', color: 'text-green-600' },
+  { icon: 'fa-truck', titleKey: 'shipping', color: 'text-blue-600' },
+  { icon: 'fa-undo', titleKey: 'returns', color: 'text-purple-600' },
+  { icon: 'fa-headset', titleKey: 'support', color: 'text-orange-600' },
+  { icon: 'fa-lock', titleKey: 'secure', color: 'text-teal-600' },
+  { icon: 'fa-star', titleKey: 'rating', color: 'text-yellow-600' },
 ];
 
 const paymentLogos = [
@@ -76,12 +46,18 @@ const itemVariants = {
 };
 
 export function TrustBadgesBar({
-  badges = defaultBadges,
   variant = 'horizontal',
 }: {
-  badges?: Badge[];
   variant?: 'horizontal' | 'grid';
 }) {
+  const t = useTranslations('TrustBadges');
+
+  const badges = badgeConfig.map(badge => ({
+    ...badge,
+    title: t(`badges.${badge.titleKey}.title`),
+    description: t(`badges.${badge.titleKey}.desc`),
+  }));
+
   if (variant === 'grid') {
     return (
       <motion.div
@@ -141,6 +117,8 @@ export function TrustBadgesBar({
 }
 
 export function PaymentBadges() {
+  const t = useTranslations('TrustBadges');
+
   return (
     <motion.div
       className="flex flex-wrap items-center justify-center gap-4"
@@ -149,7 +127,7 @@ export function PaymentBadges() {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <span className="text-sm text-gray-500 dark:text-gray-400 mr-2">Veilig betalen met:</span>
+      <span className="text-sm text-gray-500 dark:text-gray-400 mr-2">{t('pay_with')}</span>
       {paymentLogos.map((payment, index) => (
         <motion.div
           key={index}
@@ -165,6 +143,8 @@ export function PaymentBadges() {
 }
 
 export function SecurityBadge() {
+  const t = useTranslations('TrustBadges');
+
   return (
     <motion.div
       className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-900/20 rounded-full"
@@ -178,7 +158,7 @@ export function SecurityBadge() {
         transition={{ duration: 2, repeat: Infinity }}
       />
       <span className="text-sm font-medium text-green-700 dark:text-green-300">
-        256-bit SSL Beveiligd
+        {t('ssl_secured')}
       </span>
     </motion.div>
   );
@@ -191,6 +171,7 @@ export function ReviewSummary({
   rating?: number;
   totalReviews?: number;
 }) {
+  const t = useTranslations('Common');
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
 
@@ -219,13 +200,15 @@ export function ReviewSummary({
       </div>
       <span className="font-bold text-gray-900 dark:text-white">{rating}</span>
       <span className="text-sm text-gray-500 dark:text-gray-400">
-        ({totalReviews.toLocaleString()} reviews)
+        ({totalReviews.toLocaleString()} {t('trust_badges.reviews')})
       </span>
     </motion.div>
   );
 }
 
 export function GuaranteeBadge() {
+  const t = useTranslations('Common');
+
   return (
     <motion.div
       className="relative bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full w-24 h-24 flex items-center justify-center shadow-lg"
@@ -240,18 +223,19 @@ export function GuaranteeBadge() {
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
-        <span className="text-xs font-bold text-gray-900 dark:text-white">5 JAAR</span>
-        <span className="text-[10px] text-gray-600 dark:text-gray-400">GARANTIE</span>
+        <span className="text-xs font-bold text-gray-900 dark:text-white">5 {t('trust_badges.guarantee').toUpperCase()}</span>
       </div>
     </motion.div>
   );
 }
 
 export function CertificationBadges() {
+  const t = useTranslations('TrustBadges');
+
   const certifications = [
-    { name: 'ISO 9001', icon: 'fa-certificate' },
-    { name: 'CE Certified', icon: 'fa-check-circle' },
-    { name: 'TÜV Approved', icon: 'fa-shield-alt' },
+    { key: 'iso', icon: 'fa-certificate' },
+    { key: 'ce', icon: 'fa-check-circle' },
+    { key: 'tuv', icon: 'fa-shield-alt' },
   ];
 
   return (
@@ -270,7 +254,9 @@ export function CertificationBadges() {
           whileHover={{ scale: 1.05 }}
         >
           <i className={`fas ${cert.icon} text-gray-600 dark:text-gray-400`}></i>
-          <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{cert.name}</span>
+          <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
+            {t(`certifications.${cert.key}`)}
+          </span>
         </motion.div>
       ))}
     </motion.div>

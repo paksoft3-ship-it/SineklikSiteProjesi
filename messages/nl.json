@@ -159,6 +159,70 @@
             },
             "cta": "Bekijk de meetgids"
         },
+        "virtualShowroom": {
+            "badge": "Virtuele Showroom",
+            "title": "Bekijk Producten in Uw Eigen Ruimte",
+            "description": "Ontdek hoe onze producten eruit zien in verschillende kamers. Klik op de hotspots om productdetails te bekijken.",
+            "features": {
+                "visualization": {
+                    "title": "Realistische Visualisatie",
+                    "desc": "Zie hoe producten eruitzien in echte kamersettings"
+                },
+                "hotspots": {
+                    "title": "Interactieve Hotspots",
+                    "desc": "Klik op producten voor details en prijzen"
+                },
+                "colorMatcher": {
+                    "title": "Kleurmatcher",
+                    "desc": "Upload een foto en wij matchen de perfecte kleuren"
+                },
+                "ar": {
+                    "title": "AR Weergave",
+                    "desc": "Bekijk producten in augmented reality op uw telefoon"
+                }
+            },
+            "cta": "Open Volledige Showroom"
+        },
+        "beforeAfter": {
+            "badge": "Transformaties",
+            "title": "Bekijk het Verschil",
+            "description": "Sleep de slider om te zien hoe onze producten uw ruimte transformeren.",
+            "before": "Voor",
+            "after": "Na",
+            "items": {
+                "living": {
+                    "title": "Woonkamer Transformatie",
+                    "desc": "Van kale ramen naar stijlvolle honeycomb gordijnen"
+                },
+                "bedroom": {
+                    "title": "Slaapkamer Verduistering",
+                    "desc": "Perfecte verduistering voor een goede nachtrust"
+                }
+            }
+        },
+        "quizCTA": {
+            "badge": "Handige Tools",
+            "title": "Hulp Nodig bij het Kiezen?",
+            "description": "Gebruik onze interactieve tools om het perfecte product te vinden voor uw situatie.",
+            "start": "Start nu",
+            "tools": {
+                "quiz": {
+                    "title": "Product Quiz",
+                    "desc": "Beantwoord 5 vragen voor persoonlijk advies",
+                    "badge": "Populair"
+                },
+                "colorMatcher": {
+                    "title": "Kleur Matcher",
+                    "desc": "Upload een foto en vind de perfecte kleur",
+                    "badge": "Nieuw"
+                },
+                "scheduler": {
+                    "title": "Afspraak Planner",
+                    "desc": "Plan een gratis inmeetafspraak",
+                    "badge": "Gratis"
+                }
+            }
+        },
         "testimonials": {
             "title": "Onze klanten vertellen",
             "reviews": {
@@ -184,12 +248,31 @@
             }
         }
     },
+    "TopBar": {
+        "free_delivery": "Gratis levering*",
+        "satisfied_customers": "15.000+ tevreden klanten",
+        "customer_rating": "Klantbeoordeling 4.8"
+    },
     "Header": {
+        "logo": {
+            "window": "Window",
+            "specialist": "Specialist"
+        },
+        "search": {
+            "open": "Open zoeken",
+            "placeholder": "Zoeken..."
+        },
+        "auth": {
+            "sign_up_google": "Aanmelden met Google",
+            "login_signup": "Inloggen / Registreren"
+        },
         "nav": {
             "horren": "Plissé Horren",
             "gordijnen": "Plissé Gordijnen",
             "configurator": "Configurator",
             "meetgids": "Meetgids",
+            "tools": "Tools",
+            "showcase": "Componenten",
             "over_ons": "Over Ons",
             "view_all_horren": "Alle horren bekijken",
             "view_all_gordijnen": "Alle gordijnen bekijken",
@@ -533,6 +616,148 @@
             "placeholder": "Uw e-mailadres",
             "button": "Aanmelden"
         }
+    },
+    "ToolsPage": {
+        "badge": "Interactieve Tools",
+        "title": "Handige Tools voor de Perfecte Keuze",
+        "description": "Gebruik onze gratis online tools om het perfecte product te vinden, kleuren te matchen, afspraken te plannen en meer.",
+        "start_tool": "Start tool",
+        "tools": {
+            "quiz": {
+                "title": "Product Quiz",
+                "description": "Beantwoord 5 vragen en ontvang persoonlijk productadvies gebaseerd op uw wensen en situatie.",
+                "badge": "Populair",
+                "duration": "2 min"
+            },
+            "colorMatcher": {
+                "title": "Kleur Matcher",
+                "description": "Upload een foto van uw kamer en wij analyseren de kleuren om de perfecte match te vinden.",
+                "badge": "Nieuw",
+                "duration": "1 min"
+            },
+            "scheduler": {
+                "title": "Afspraak Planner",
+                "description": "Plan een gratis inmeetafspraak bij u thuis met een van onze experts.",
+                "badge": "Gratis",
+                "duration": "3 min"
+            },
+            "sustainability": {
+                "title": "Energie Calculator",
+                "description": "Bereken hoeveel energie, CO2 en geld u kunt besparen met isolerende raamdecoratie.",
+                "duration": "1 min"
+            },
+            "showroom": {
+                "title": "Virtuele Showroom",
+                "description": "Bekijk onze producten in realistische kamersettings met interactieve hotspots.",
+                "badge": "Interactief",
+                "duration": "5 min"
+            }
+        },
+        "help": {
+            "title": "Hulp Nodig?",
+            "description": "Onze experts staan klaar om u te helpen bij het maken van de juiste keuze.",
+            "contact": "Neem Contact Op",
+            "configurator": "Naar Configurator"
+        }
+    },
+    "ShowcasePage": {
+        "title": "Component Showcase",
+        "description": "Bekijk alle beschikbare componenten en hun functionaliteiten.",
+        "categories": {
+            "all": "Alle Componenten",
+            "ui": "UI Components",
+            "social": "Social Proof",
+            "trust": "Trust Badges",
+            "animations": "Animaties",
+            "tools": "Tools"
+        },
+        "tools_links": {
+            "title": "Interactive Tools (Links)",
+            "click_to_open": "Klik om te openen"
+        }
+    },
+    "SustainabilityPage": {
+        "badge": "Duurzaamheid Calculator",
+        "title": "Bereken Uw Energiebesparing",
+        "description": "Ontdek hoeveel energie, CO2 en geld u kunt besparen met onze isolerende raamdecoratie.",
+        "why": {
+            "title": "Waarom Isolerende Raamdecoratie?",
+            "insulation": {
+                "title": "Betere Isolatie",
+                "desc": "Tot 25% minder warmteverlies via uw ramen"
+            },
+            "costs": {
+                "title": "Lagere Energiekosten",
+                "desc": "Bespaar tot €200 per jaar op uw energierekening"
+            },
+            "co2": {
+                "title": "Minder CO2",
+                "desc": "Verlaag uw ecologische voetafdruk"
+            }
+        }
+    },
+    "ShowroomPage": {
+        "badge": "Virtuele Showroom",
+        "title": "Ontdek Onze Producten in Context",
+        "description": "Klik op de hotspots om productdetails te bekijken in realistische kamersettings."
+    },
+    "WhatsApp": {
+        "default_message": "Hallo, ik heb een vraag over uw producten.",
+        "help_needed": "Hulp nodig? Chat met ons!",
+        "chat_label": "Chat op WhatsApp"
+    },
+    "TrustBadges": {
+        "badges": {
+            "guarantee": {
+                "title": "5 Jaar Garantie",
+                "desc": "Op alle producten"
+            },
+            "shipping": {
+                "title": "Gratis Verzending",
+                "desc": "Vanaf €50"
+            },
+            "returns": {
+                "title": "30 Dagen Retour",
+                "desc": "Niet tevreden? Geld terug"
+            },
+            "support": {
+                "title": "Klantenservice",
+                "desc": "Ma-Vr 9:00-17:00"
+            },
+            "secure": {
+                "title": "Veilig Betalen",
+                "desc": "SSL beveiligd"
+            },
+            "rating": {
+                "title": "4.8/5 Sterren",
+                "desc": "2.500+ reviews"
+            }
+        },
+        "pay_with": "Veilig betalen met:",
+        "ssl_secured": "256-bit SSL Beveiligd",
+        "certifications": {
+            "iso": "ISO 9001",
+            "ce": "CE Certified",
+            "tuv": "TÜV Approved"
+        }
+    },
+    "CollectionsSection": {
+        "satisfied_customers": "+15.000 tevreden klanten",
+        "horren_types": {
+            "door": "Deur",
+            "window": "Raam",
+            "balcony": "Glazen Balkon",
+            "thresholdless": "Drempelloos"
+        },
+        "gordijnen_types": {
+            "honeycomb": "Honeycomb",
+            "blackout": "Verduisterend",
+            "lightFiltering": "Lichtdoorlatend",
+            "colors": "Kleuropties"
+        }
+    },
+    "ProductCategoryGrid": {
+        "view_collection": "Bekijk Collectie"
     },
     "Chatbot": {
         "buttons": {

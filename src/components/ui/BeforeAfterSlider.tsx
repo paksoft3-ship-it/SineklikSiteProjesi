@@ -20,6 +20,7 @@ export default function BeforeAfterSlider({
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleMove = useCallback(
@@ -59,7 +60,11 @@ export default function BeforeAfterSlider({
       className={`relative w-full aspect-[4/3] overflow-hidden rounded-2xl cursor-ew-resize select-none ${className}`}
       onMouseMove={handleMouseMove}
       onMouseUp={handleEnd}
-      onMouseLeave={handleEnd}
+      onMouseLeave={() => {
+        handleEnd();
+        setIsHovered(false);
+      }}
+      onMouseEnter={() => setIsHovered(true)}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleEnd}
     >
@@ -72,7 +77,7 @@ export default function BeforeAfterSlider({
           draggable={false}
         />
         <motion.span
-          className="absolute top-4 right-4 px-3 py-1 bg-green-500 text-white text-sm font-bold rounded-full"
+          className="absolute top-4 right-4 px-3 py-1 bg-green-500 text-white text-sm font-bold rounded-full shadow-lg"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
@@ -93,7 +98,7 @@ export default function BeforeAfterSlider({
           draggable={false}
         />
         <motion.span
-          className="absolute top-4 left-4 px-3 py-1 bg-gray-700 text-white text-sm font-bold rounded-full"
+          className="absolute top-4 left-4 px-3 py-1 bg-gray-700 text-white text-sm font-bold rounded-full shadow-lg"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.3 }}
@@ -102,44 +107,71 @@ export default function BeforeAfterSlider({
         </motion.span>
       </div>
 
-      {/* Slider Handle */}
+      {/* Slider Handle - Fixed position, no scale on hover */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize z-10"
-        style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+        className="absolute top-0 bottom-0 z-10"
+        style={{
+          left: `${sliderPosition}%`,
+          transform: 'translateX(-50%)',
+          width: '4px'
+        }}
         onMouseDown={handleStart}
         onTouchStart={handleStart}
       >
-        {/* Handle Circle */}
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          animate={{
-            boxShadow: isDragging
-              ? '0 0 20px rgba(0, 123, 255, 0.5)'
-              : '0 4px 20px rgba(0, 0, 0, 0.2)'
-          }}
-        >
-          <div className="flex items-center gap-1">
-            <i className="fas fa-chevron-left text-primary text-xs"></i>
-            <i className="fas fa-chevron-right text-primary text-xs"></i>
-          </div>
-        </motion.div>
-
-        {/* Vertical Line Glow */}
+        {/* Vertical Line */}
         <div
           className="absolute inset-0 w-1 transition-all duration-300"
           style={{
             background: isDragging
-              ? 'linear-gradient(to bottom, transparent, rgba(0, 123, 255, 0.8), transparent)'
-              : 'white'
+              ? 'linear-gradient(to bottom, transparent, rgba(0, 123, 255, 0.9), transparent)'
+              : 'linear-gradient(to bottom, transparent 5%, white 20%, white 80%, transparent 95%)',
+            boxShadow: isDragging ? '0 0 15px rgba(0, 123, 255, 0.5)' : '0 0 10px rgba(0, 0, 0, 0.3)'
           }}
         />
+
+        {/* Handle Circle - Centered, no position change on hover */}
+        <div
+          className="absolute left-1/2 top-1/2 w-14 h-14 bg-white rounded-full shadow-xl flex items-center justify-center cursor-ew-resize"
+          style={{
+            transform: 'translate(-50%, -50%)',
+            boxShadow: isDragging
+              ? '0 0 25px rgba(0, 123, 255, 0.6), 0 4px 20px rgba(0, 0, 0, 0.3)'
+              : isHovered
+              ? '0 6px 25px rgba(0, 0, 0, 0.25)'
+              : '0 4px 20px rgba(0, 0, 0, 0.2)'
+          }}
+        >
+          <div className="flex items-center gap-1.5">
+            <motion.i
+              className="fas fa-chevron-left text-primary text-xs"
+              animate={{ x: isDragging ? -2 : 0 }}
+              transition={{ duration: 0.2 }}
+            />
+            <div className="w-px h-4 bg-gray-300" />
+            <motion.i
+              className="fas fa-chevron-right text-primary text-xs"
+              animate={{ x: isDragging ? 2 : 0 }}
+              transition={{ duration: 0.2 }}
+            />
+          </div>
+        </div>
+
+        {/* Pulse ring effect when dragging */}
+        {isDragging && (
+          <motion.div
+            className="absolute left-1/2 top-1/2 w-14 h-14 rounded-full border-2 border-primary/50"
+            style={{ transform: 'translate(-50%, -50%)' }}
+            initial={{ scale: 1, opacity: 0.8 }}
+            animate={{ scale: 1.4, opacity: 0 }}
+            transition={{ duration: 0.6, repeat: Infinity }}
+          />
+        )}
       </div>
 
       {/* Instructions Overlay */}
       <motion.div
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 backdrop-blur-sm text-white text-sm rounded-full"
+        className="absolute bottom-4 left-1/2 px-4 py-2 bg-black/60 backdrop-blur-sm text-white text-sm rounded-full pointer-events-none"
+        style={{ transform: 'translateX(-50%)' }}
         initial={{ opacity: 1, y: 0 }}
         animate={{ opacity: isDragging ? 0 : 1 }}
         transition={{ duration: 0.3 }}
