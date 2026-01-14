@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/animations/ScrollAnimation';
-import { easings, durations, delays } from '@/lib/animation-config';
+import { easings, durations } from '@/lib/animation-config';
 
 const Footer = () => {
   const tFooter = useTranslations('Footer');
   const tHeader = useTranslations('Header');
+  const tCommon = useTranslations('Common');
+  const [email, setEmail] = useState('');
 
   const trustBadges = [
     {
@@ -22,13 +25,12 @@ const Footer = () => {
       description: tFooter('trust.returns.desc'),
     },
     {
-      icon: 'fa-undo-alt',
-      title: tFooter('trust.returns.title'),
-      description: tFooter('trust.returns.desc'),
+      icon: 'fa-award',
+      title: tFooter('trust.quality.title'),
+      description: tFooter('trust.quality.desc'),
     },
   ];
 
-  // Animation for footer links
   const linkVariants = {
     rest: { x: 0 },
     hover: {
@@ -38,17 +40,6 @@ const Footer = () => {
     },
   };
 
-  // Animation for icons
-  const iconVariants = {
-    rest: { scale: 1, rotate: 0 },
-    hover: {
-      scale: 1.2,
-      rotate: 5,
-      transition: { duration: durations.fast, ease: easings.snappy }
-    },
-  };
-
-  // Star animation variants
   const starVariants = {
     hidden: { opacity: 0, scale: 0 },
     visible: (i: number) => ({
@@ -63,8 +54,56 @@ const Footer = () => {
     }),
   };
 
+  const socialLinks = [
+    { icon: 'fa-facebook-f', href: '#', label: 'Facebook' },
+    { icon: 'fa-instagram', href: '#', label: 'Instagram' },
+    { icon: 'fa-pinterest-p', href: '#', label: 'Pinterest' },
+    { icon: 'fa-linkedin-in', href: '#', label: 'LinkedIn' },
+  ];
+
+  const paymentMethods = [
+    { icon: 'fa-building-columns', name: 'iDEAL' },
+    { icon: 'fa-cc-visa', name: 'Visa' },
+    { icon: 'fa-cc-mastercard', name: 'Mastercard' },
+    { icon: 'fa-cc-paypal', name: 'PayPal' },
+    { icon: 'fa-credit-card', name: 'Klarna' },
+  ];
+
+  const certifications = [
+    { icon: 'fa-certificate', name: 'ISO 9001' },
+    { icon: 'fa-check-circle', name: 'CE' },
+    { icon: 'fa-shield-alt', name: 'TÜV' },
+  ];
+
   return (
     <footer className="bg-secondary dark:bg-bg-dark-1">
+      {/* Scrolling Trust Badges Marquee */}
+      <div className="overflow-hidden bg-gray-800 dark:bg-gray-900 py-3 border-b border-gray-700">
+        <motion.div
+          className="flex items-center gap-12"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+        >
+          {[...Array(2)].map((_, setIdx) => (
+            <div key={setIdx} className="flex items-center gap-12 whitespace-nowrap">
+              {[
+                { icon: 'fa-shield-alt', text: `5 ${tCommon('trust_badges.guarantee')}`, color: 'text-green-400' },
+                { icon: 'fa-truck', text: tCommon('trust_badges.free_shipping'), color: 'text-blue-400' },
+                { icon: 'fa-undo', text: `30 ${tCommon('trust_badges.returns')}`, color: 'text-purple-400' },
+                { icon: 'fa-headset', text: tCommon('trust_badges.support'), color: 'text-orange-400' },
+                { icon: 'fa-lock', text: tCommon('trust_badges.secure'), color: 'text-teal-400' },
+                { icon: 'fa-star', text: '4.8/5 ' + tCommon('trust_badges.rating'), color: 'text-yellow-400' },
+              ].map((badge, idx) => (
+                <div key={idx} className="flex items-center gap-2 px-4">
+                  <i className={`fas ${badge.icon} ${badge.color}`}></i>
+                  <span className="text-gray-300 text-sm font-medium">{badge.text}</span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
       {/* Trust Badges Section */}
       <ScrollAnimation variant="fadeUp">
         <div className="border-b border-gray-700">
@@ -107,10 +146,10 @@ const Footer = () => {
       {/* Main Footer Content */}
       <ScrollAnimation variant="fadeUp" delay={0.2}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Company Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+            {/* Company Info - 2 columns */}
             <motion.div
-              className="lg:col-span-1"
+              className="lg:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -123,12 +162,33 @@ const Footer = () => {
                 <span className="text-white">Window</span>
                 <span className="text-primary">Specialist</span>
               </motion.h5>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 {tFooter('columns.company_desc')}
               </p>
-              <p className="text-gray-500 text-sm">
-                <strong className="text-gray-400">KVK:</strong> 12345678
-              </p>
+
+              {/* Social Links */}
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-white mb-3">{tFooter('bottom.social_follow')}</p>
+                <div className="flex gap-3">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      className="w-10 h-10 bg-gray-700 hover:bg-primary rounded-lg flex items-center justify-center text-gray-300 hover:text-white transition-all"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label={social.label}
+                    >
+                      <i className={`fab ${social.icon}`}></i>
+                    </motion.a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-gray-500 text-sm space-y-1">
+                <p><strong className="text-gray-400">KVK:</strong> 12345678</p>
+                <p><strong className="text-gray-400">BTW:</strong> NL123456789B01</p>
+              </div>
             </motion.div>
 
             {/* Plissé Horren Links */}
@@ -156,12 +216,9 @@ const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.2 + index * 0.05 }}
                   >
-                    <motion.div
-                      variants={linkVariants}
-                      initial="rest"
-                      whileHover="hover"
-                    >
-                      <Link href={link.href as any} className="text-gray-400 hover:text-primary transition inline-block">
+                    <motion.div variants={linkVariants} initial="rest" whileHover="hover">
+                      <Link href={link.href as any} className="text-gray-400 hover:text-primary transition inline-flex items-center gap-2">
+                        <i className="fas fa-chevron-right text-[8px] text-primary opacity-0 group-hover:opacity-100"></i>
                         {link.label}
                       </Link>
                     </motion.div>
@@ -194,11 +251,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + index * 0.05 }}
                   >
-                    <motion.div
-                      variants={linkVariants}
-                      initial="rest"
-                      whileHover="hover"
-                    >
+                    <motion.div variants={linkVariants} initial="rest" whileHover="hover">
                       <Link href={link.href as any} className="text-gray-400 hover:text-primary transition inline-block">
                         {link.label}
                       </Link>
@@ -223,7 +276,8 @@ const Footer = () => {
                   { href: '/contact', label: 'Contact' },
                   { href: '/faq', label: 'FAQ' },
                   { href: '/measurement-guide', label: tHeader('nav.meetgids') },
-                  { href: '/warranty', label: 'Garantie' },
+                  { href: '/configurator', label: tHeader('nav.configurator') },
+                  { href: '/about', label: tHeader('nav.over_ons') },
                 ].map((link, index) => (
                   <motion.li
                     key={link.href}
@@ -232,11 +286,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 + index * 0.05 }}
                   >
-                    <motion.div
-                      variants={linkVariants}
-                      initial="rest"
-                      whileHover="hover"
-                    >
+                    <motion.div variants={linkVariants} initial="rest" whileHover="hover">
                       <Link href={link.href as any} className="text-gray-400 hover:text-primary transition inline-block">
                         {link.label}
                       </Link>
@@ -246,105 +296,62 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Specialist Badge / Review Widget */}
+            {/* Newsletter & Reviews */}
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: durations.normal, delay: 0.5 }}
             >
-              <motion.div
-                className="bg-white dark:bg-gray-800 rounded-2xl p-5 shadow-lg"
-                whileHover={{ y: -4, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
-                transition={{ duration: durations.normal }}
-              >
-                <h6 className="font-display font-bold text-primary text-sm mb-4">
-                  {tFooter('columns.specialist')}
-                </h6>
-                <ul className="space-y-2 text-sm mb-4">
-                  {[
-                    tFooter('specialist_points.price'),
-                    tFooter('specialist_points.delivery'),
-                    tFooter('specialist_points.advice'),
-                  ].map((point, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center gap-2 text-gray-700 dark:text-gray-300"
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                    >
-                      <motion.i
-                        className="fas fa-check text-primary text-xs"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.6 + index * 0.1, type: 'spring', stiffness: 500 }}
-                      />
-                      {point}
-                    </motion.li>
-                  ))}
-                </ul>
-
-                {/* Review */}
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <motion.div
-                      className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: durations.fast }}
-                    >
-                      J
-                    </motion.div>
-                    <div>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">Jan de Vries</p>
-                      <div className="flex text-yellow-400 text-xs">
-                        {[0, 1, 2, 3, 4].map((i) => (
-                          <motion.i
-                            key={i}
-                            className="fas fa-star"
-                            custom={i}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={starVariants}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 italic">
-                    "Mooi product voor de prijs!"
-                  </p>
+              {/* Newsletter */}
+              <div className="bg-gray-800 dark:bg-gray-900 rounded-xl p-4 mb-4">
+                <h6 className="font-bold text-white text-sm mb-2">{tFooter('newsletter.title')}</h6>
+                <p className="text-gray-400 text-xs mb-3">{tFooter('newsletter.desc')}</p>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={tFooter('newsletter.placeholder')}
+                    className="flex-1 px-3 py-2 bg-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                  <motion.button
+                    className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <i className="fas fa-paper-plane"></i>
+                  </motion.button>
                 </div>
+              </div>
 
-                {/* Trustpilot Style Rating */}
-                <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center justify-between">
-                    <div className="flex text-green-500 text-sm">
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <motion.i
-                          key={i}
-                          className="fas fa-star"
-                          custom={i}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          variants={starVariants}
-                        />
-                      ))}
-                    </div>
-                    <motion.span
-                      className="text-xs text-gray-500"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.8 }}
-                    >
-                      4.721 reviews
-                    </motion.span>
+              {/* Trustpilot Style Rating */}
+              <motion.div
+                className="bg-white dark:bg-gray-800 rounded-xl p-4"
+                whileHover={{ y: -2 }}
+                transition={{ duration: durations.fast }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="flex text-green-500 text-lg">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <motion.i
+                        key={i}
+                        className="fas fa-star"
+                        custom={i}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={starVariants}
+                      />
+                    ))}
                   </div>
+                  <span className="font-bold text-gray-900 dark:text-white">4.8</span>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  2.500+ {tCommon('trust_badges.reviews')}
+                </p>
+                <div className="flex items-center gap-2 mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                  <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" alt="Trustpilot" className="h-4 dark:invert" />
                 </div>
               </motion.div>
             </motion.div>
@@ -352,53 +359,115 @@ const Footer = () => {
         </div>
       </ScrollAnimation>
 
-      {/* Bottom Bar */}
-      <motion.div
-        className="border-t border-gray-700"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: durations.normal }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 gap-4">
-            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-              <p>© 2024 Window Specialist. Alle rechten voorbehouden.</p>
-              <div className="flex space-x-6">
+      {/* Bottom Bar - Redesigned */}
+      <div className="border-t border-gray-700 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Payment Methods & Certifications Row */}
+          <motion.div
+            className="py-6 border-b border-gray-800"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+              {/* Payment Methods */}
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <span className="text-sm text-gray-400 font-medium">{tCommon('trust_badges.pay_with')}</span>
+                <div className="flex items-center gap-3">
+                  {paymentMethods.map((method, index) => (
+                    <motion.div
+                      key={index}
+                      className="w-14 h-9 bg-white dark:bg-gray-800 rounded-md flex items-center justify-center shadow-sm"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                    >
+                      <i className={`fab ${method.icon} text-xl text-gray-700 dark:text-gray-300`}></i>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Security Badge */}
+              <motion.div
+                className="flex items-center gap-2 px-4 py-2 bg-green-900/30 rounded-full"
+                whileHover={{ scale: 1.05 }}
+              >
+                <motion.i
+                  className="fas fa-lock text-green-400"
+                  animate={{ rotate: [0, -5, 5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                />
+                <span className="text-sm text-green-300 font-medium">
+                  {tCommon('trust_badges.ssl_secured')}
+                </span>
+              </motion.div>
+
+              {/* Certifications */}
+              <div className="flex items-center gap-3">
+                {certifications.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-gray-800 rounded-lg"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <i className={`fas ${cert.icon} text-gray-400`}></i>
+                    <span className="text-xs font-medium text-gray-300">{cert.name}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Copyright & Legal Links Row */}
+          <motion.div
+            className="py-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              {/* Copyright & Made In */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-gray-500">
+                <p>{tFooter('bottom.copyright', { year: new Date().getFullYear() })}</p>
+                <div className="hidden sm:block h-4 w-px bg-gray-700"></div>
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🇳🇱</span>
+                  <span>{tFooter('bottom.made_in')}</span>
+                </div>
+              </div>
+
+              {/* Legal Links */}
+              <div className="flex items-center gap-6 text-sm">
                 {[
-                  { href: '/privacy', label: 'Privacy' },
-                  { href: '/terms', label: 'Voorwaarden' },
-                ].map((link) => (
+                  { href: '/privacy', label: tFooter('bottom.privacy') },
+                  { href: '/voorwaarden', label: tFooter('bottom.terms') },
+                  { href: '/cookies', label: tFooter('bottom.cookies') },
+                ].map((link, index) => (
                   <motion.div
                     key={link.href}
                     whileHover={{ y: -2 }}
                     transition={{ duration: durations.fast }}
                   >
-                    <Link href={link.href as any} className="hover:text-gray-300 transition">
+                    <Link
+                      href={link.href as any}
+                      className="text-gray-500 hover:text-gray-300 transition"
+                    >
                       {link.label}
                     </Link>
                   </motion.div>
                 ))}
               </div>
             </div>
-
-            {/* Payment Icons */}
-            <div className="flex items-center gap-3">
-              {['fa-cc-visa', 'fa-cc-mastercard', 'fa-cc-paypal', 'fa-credit-card'].map((icon, index) => (
-                <motion.i
-                  key={icon}
-                  className={`fab ${icon.startsWith('fa-cc') ? 'fab' : 'fas'} ${icon} text-2xl text-gray-500`}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.2, color: '#fff' }}
-                />
-              ))}
-            </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </footer>
   );
 };

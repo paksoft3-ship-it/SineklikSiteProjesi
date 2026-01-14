@@ -220,28 +220,6 @@
             "bestseller": "Bestseller"
         }
     },
-    "Footer": {
-        "trust": {
-            "risk_free": {
-                "title": "No Risk, Certainty",
-                "desc": "All our products come with a 5-year warranty. Carefree use."
-            },
-            "returns": {
-                "title": "Free Returns",
-                "desc": "Standard sizes can be returned free of charge within 30 days."
-            }
-        },
-        "columns": {
-            "company_desc": "For over 10 years the specialist in pleated screens and curtains for Dutch homes. Craftsmanship, quality and personal service.",
-            "service": "Service",
-            "specialist": "The Pleated Specialist"
-        },
-        "specialist_points": {
-            "price": "Competitive prices, no hidden costs",
-            "delivery": "Free delivery from €50",
-            "advice": "Expert advice via chat/phone"
-        }
-    },
     "ProductConfigurator": {
         "summary_title": "Configuration Summary",
         "option_header": "Option",
@@ -457,6 +435,100 @@
                     "black": "Black (RAL 9005)"
                 }
             }
+        }
+    },
+    "Common": {
+        "search": {
+            "placeholder": "Search products, categories...",
+            "no_results": "No results found for",
+            "try_other": "Try other keywords or browse our categories",
+            "recent": "Recent searches",
+            "popular": "Popular searches",
+            "quick_links": "Quick links",
+            "clear": "Clear",
+            "navigate": "navigate",
+            "select": "select",
+            "close": "close",
+            "powered_by": "Powered by AI"
+        },
+        "accessibility": {
+            "skip_to_main": "Skip to main content",
+            "toolbar_title": "Accessibility",
+            "font_size": "Font size",
+            "high_contrast": "High contrast",
+            "high_contrast_desc": "Enhanced color contrast",
+            "reduced_motion": "Reduce motion",
+            "reduced_motion_desc": "Fewer animations",
+            "dyslexic_font": "Dyslexic font",
+            "dyslexic_font_desc": "Easier to read",
+            "focus_indicators": "Focus indicators",
+            "focus_indicators_desc": "Clearer focus",
+            "reset": "Reset settings",
+            "close": "Close"
+        },
+        "social_proof": {
+            "viewers": "people viewing this now",
+            "just_purchased": "just purchased",
+            "minutes_ago": "minutes ago",
+            "stock_warning": "Only {count} left in stock!",
+            "hurry": "Order quickly",
+            "trending": "Trending #{rank}",
+            "ends_in": "Offer ends in"
+        },
+        "trust_badges": {
+            "guarantee": "Year Warranty",
+            "free_shipping": "Free Shipping",
+            "free_shipping_desc": "From €50",
+            "returns": "Day Returns",
+            "returns_desc": "Not satisfied? Money back",
+            "support": "Customer Service",
+            "support_desc": "Mon-Fri 9:00-17:00",
+            "secure": "Secure Payment",
+            "secure_desc": "SSL secured",
+            "rating": "Stars",
+            "reviews": "reviews",
+            "pay_with": "Pay securely with:",
+            "ssl_secured": "256-bit SSL Secured"
+        }
+    },
+    "Footer": {
+        "trust": {
+            "risk_free": {
+                "title": "No Risk, Certainty",
+                "desc": "All our products come with a 5-year warranty. Carefree use."
+            },
+            "returns": {
+                "title": "Free Returns",
+                "desc": "Standard sizes can be returned free of charge within 30 days."
+            },
+            "quality": {
+                "title": "Premium Quality",
+                "desc": "Durable materials with Dutch craftsmanship for years of enjoyment."
+            }
+        },
+        "columns": {
+            "company_desc": "For over 10 years the specialist in pleated screens and curtains for Dutch homes. Craftsmanship, quality and personal service.",
+            "service": "Service",
+            "specialist": "The Pleated Specialist"
+        },
+        "specialist_points": {
+            "price": "Competitive prices, no hidden costs",
+            "delivery": "Free delivery from €50",
+            "advice": "Expert advice via chat/phone"
+        },
+        "bottom": {
+            "copyright": "© {year} Window Specialist. All rights reserved.",
+            "privacy": "Privacy Policy",
+            "terms": "Terms & Conditions",
+            "cookies": "Cookie Policy",
+            "made_in": "Made in the Netherlands",
+            "social_follow": "Follow us"
+        },
+        "newsletter": {
+            "title": "Stay updated",
+            "desc": "Receive exclusive offers and tips",
+            "placeholder": "Your email address",
+            "button": "Subscribe"
         }
     },
     "Chatbot": {

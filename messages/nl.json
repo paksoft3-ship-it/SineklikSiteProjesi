@@ -223,28 +223,6 @@
             "bestseller": "Bestseller"
         }
     },
-    "Footer": {
-        "trust": {
-            "risk_free": {
-                "title": "Geen Risico, Wel Zekerheid",
-                "desc": "Al onze producten vallen onder 5 jaar garantie. Zorgeloos gebruik."
-            },
-            "returns": {
-                "title": "Gratis Retourneren",
-                "desc": "Standaardmaten kunnen binnen 30 dagen kosteloos worden geretourneerd."
-            }
-        },
-        "columns": {
-            "company_desc": "Al meer dan 10 jaar de specialist in plissé horren en gordijnen voor Nederlandse woningen. Vakmanschap, kwaliteit en persoonlijke service.",
-            "service": "Service",
-            "specialist": "Dé Plissé Specialist"
-        },
-        "specialist_points": {
-            "price": "Scherpe prijzen, geen verborgen kosten",
-            "delivery": "Gratis bezorging vanaf €50",
-            "advice": "Deskundig advies via chat/telefoon"
-        }
-    },
     "ProductConfigurator": {
         "summary_title": "Overzicht samenstelling",
         "option_header": "Optie",
@@ -460,6 +438,100 @@
                     "black": "Zwart (RAL 9005)"
                 }
             }
+        }
+    },
+    "Common": {
+        "search": {
+            "placeholder": "Zoek producten, categorieën...",
+            "no_results": "Geen resultaten gevonden voor",
+            "try_other": "Probeer andere zoekwoorden of bekijk onze categorieën",
+            "recent": "Recente zoekopdrachten",
+            "popular": "Populaire zoekopdrachten",
+            "quick_links": "Snelle links",
+            "clear": "Wissen",
+            "navigate": "navigeren",
+            "select": "selecteren",
+            "close": "sluiten",
+            "powered_by": "Aangedreven door AI"
+        },
+        "accessibility": {
+            "skip_to_main": "Ga naar hoofdinhoud",
+            "toolbar_title": "Toegankelijkheid",
+            "font_size": "Tekstgrootte",
+            "high_contrast": "Hoog contrast",
+            "high_contrast_desc": "Verhoogd kleurcontrast",
+            "reduced_motion": "Verminder beweging",
+            "reduced_motion_desc": "Minder animaties",
+            "dyslexic_font": "Dyslexie-lettertype",
+            "dyslexic_font_desc": "Makkelijker te lezen",
+            "focus_indicators": "Focus indicatoren",
+            "focus_indicators_desc": "Duidelijkere focus",
+            "reset": "Reset instellingen",
+            "close": "Sluiten"
+        },
+        "social_proof": {
+            "viewers": "mensen bekijken dit nu",
+            "just_purchased": "heeft zojuist gekocht",
+            "minutes_ago": "minuten geleden",
+            "stock_warning": "Nog maar {count} op voorraad!",
+            "hurry": "Bestel snel",
+            "trending": "Trending #{rank}",
+            "ends_in": "Actie eindigt in"
+        },
+        "trust_badges": {
+            "guarantee": "Jaar Garantie",
+            "free_shipping": "Gratis Verzending",
+            "free_shipping_desc": "Vanaf €50",
+            "returns": "Dagen Retour",
+            "returns_desc": "Niet tevreden? Geld terug",
+            "support": "Klantenservice",
+            "support_desc": "Ma-Vr 9:00-17:00",
+            "secure": "Veilig Betalen",
+            "secure_desc": "SSL beveiligd",
+            "rating": "Sterren",
+            "reviews": "reviews",
+            "pay_with": "Veilig betalen met:",
+            "ssl_secured": "256-bit SSL Beveiligd"
+        }
+    },
+    "Footer": {
+        "trust": {
+            "risk_free": {
+                "title": "Geen Risico, Wel Zekerheid",
+                "desc": "Al onze producten vallen onder 5 jaar garantie. Zorgeloos gebruik."
+            },
+            "returns": {
+                "title": "Gratis Retourneren",
+                "desc": "Standaardmaten kunnen binnen 30 dagen kosteloos worden geretourneerd."
+            },
+            "quality": {
+                "title": "Premium Kwaliteit",
+                "desc": "Duurzame materialen met Nederlandse vakmanschap voor jarenlang plezier."
+            }
+        },
+        "columns": {
+            "company_desc": "Al meer dan 10 jaar de specialist in plissé horren en gordijnen voor Nederlandse woningen. Vakmanschap, kwaliteit en persoonlijke service.",
+            "service": "Service",
+            "specialist": "Dé Plissé Specialist"
+        },
+        "specialist_points": {
+            "price": "Scherpe prijzen, geen verborgen kosten",
+            "delivery": "Gratis bezorging vanaf €50",
+            "advice": "Deskundig advies via chat/telefoon"
+        },
+        "bottom": {
+            "copyright": "© {year} Window Specialist. Alle rechten voorbehouden.",
+            "privacy": "Privacybeleid",
+            "terms": "Algemene voorwaarden",
+            "cookies": "Cookiebeleid",
+            "made_in": "Gemaakt in Nederland",
+            "social_follow": "Volg ons"
+        },
+        "newsletter": {
+            "title": "Blijf op de hoogte",
+            "desc": "Ontvang exclusieve aanbiedingen en tips",
+            "placeholder": "Uw e-mailadres",
+            "button": "Aanmelden"
         }
     },
     "Chatbot": {

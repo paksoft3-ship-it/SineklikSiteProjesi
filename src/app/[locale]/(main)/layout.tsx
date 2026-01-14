@@ -1,5 +1,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import { SkipToMain, AccessibilityToolbar } from '@/components/accessibility/A11yEnhancements';
+import { RecentPurchases } from '@/components/ui/SocialProof';
 
 export default function MainLayout({
   children,
@@ -8,9 +10,18 @@ export default function MainLayout({
 }) {
   return (
     <div className="flex flex-col min-h-screen">
+      {/* Accessibility: Skip to main content link */}
+      <SkipToMain />
+
       <Header />
-      <main className="flex-grow">{children}</main>
+      <main id="main-content" className="flex-grow">{children}</main>
       <Footer />
+
+      {/* Accessibility toolbar for user preferences */}
+      <AccessibilityToolbar />
+
+      {/* Social proof: Recent purchases notification */}
+      <RecentPurchases interval={12000} />
     </div>
   );
 }

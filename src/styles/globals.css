@@ -208,3 +208,138 @@
 .whatsapp-float {
   @apply fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg hover:bg-green-600 transition-all hover:scale-110;
 }
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* High Contrast Mode */
+html.high-contrast {
+  --primary: #0056b3;
+  --bg-light-1: #ffffff;
+  --bg-light-2: #f0f0f0;
+  --bg-dark-1: #000000;
+  --bg-dark-2: #1a1a1a;
+  --text-dark: #000000;
+  --text-light: #ffffff;
+}
+
+html.high-contrast body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+html.dark.high-contrast body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html.high-contrast .card {
+  border: 2px solid #000000;
+}
+
+html.dark.high-contrast .card {
+  border: 2px solid #ffffff;
+}
+
+html.high-contrast a,
+html.high-contrast button {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* Reduced Motion */
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Dyslexic Font */
+html.dyslexic-font {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif;
+  letter-spacing: 0.1em;
+  word-spacing: 0.2em;
+  line-height: 1.8;
+}
+
+/* Focus Visible Ring */
+html.focus-visible-ring *:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #007BFF;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible when not using sr-only */
+.sr-only:focus,
+.sr-only:active {
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Skip Link Styling */
+a[href="#main-content"]:focus {
+  z-index: 100;
+  background-color: #007BFF;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+
+/* Improved Focus States */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #007BFF;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #007BFF;
+}
+
+/* Marquee Animation for Trust Badges */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

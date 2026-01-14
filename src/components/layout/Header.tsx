@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from '@/navigation';
 import TopBar from './TopBar';
@@ -8,6 +8,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import { useAuth } from '@/context/AuthContext';
 import { AuthModal, UserDropdown } from '@/components/auth';
+import EnhancedSearch from '@/components/search/EnhancedSearch';
 import { dropdownVariants, mobileMenuVariants, badgePulseVariants } from '@/lib/animation-variants';
 import { easings, durations, delays } from '@/lib/animation-config';
 
@@ -16,8 +17,21 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const t = useTranslations('Header');
   const { isAuthenticated, isLoading } = useAuth();
+
+  // Keyboard shortcut for search (Cmd/Ctrl + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   type NavItem = {
     name: string;
@@ -144,13 +158,17 @@ const Header = () => {
                   <LanguageSwitcher />
 
                   <motion.button
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary p-2"
-                    variants={iconButtonVariants}
-                    initial="rest"
-                    whileHover="hover"
-                    whileTap="tap"
+                    onClick={() => setIsSearchOpen(true)}
+                    className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    aria-label="Open zoeken"
                   >
-                    <i className="fas fa-search text-lg"></i>
+                    <i className="fas fa-search text-sm"></i>
+                    <span className="text-sm hidden xl:inline">Zoeken...</span>
+                    <kbd className="hidden xl:inline-block px-1.5 py-0.5 bg-white dark:bg-gray-700 rounded text-xs text-gray-400">
+                      ⌘K
+                    </kbd>
                   </motion.button>
 
                   <motion.button
@@ -557,6 +575,16 @@ const Header = () => {
         onClose={() => setIsAuthModalOpen(false)}
         initialMode={authMode}
       />
+
+      {/* Enhanced Search Modal */}
+      <AnimatePresence>
+        {isSearchOpen && (
+          <EnhancedSearch
+            variant="modal"
+            onClose={() => setIsSearchOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </>
   );
 };
