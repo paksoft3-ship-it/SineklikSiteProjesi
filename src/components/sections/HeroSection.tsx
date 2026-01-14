@@ -17,7 +17,10 @@ const HeroSection = () => {
   });
 
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  // Text moves UP (negative) on scroll for a layered parallax effect
+  const textY = useTransform(scrollYProgress, [0, 1], ['0%', '-15%']);
+  // Fade out content as user scrolls
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const panels = [
     {
@@ -178,8 +181,8 @@ const HeroSection = () => {
 
             {/* Content with text reveal animation */}
             <motion.div
-              className="relative h-full flex flex-col justify-end p-6 sm:p-8 lg:p-10 xl:p-12 z-10"
-              style={{ y: textY }}
+              className="relative h-full flex flex-col justify-end p-6 sm:p-8 lg:p-10 xl:p-12 pb-16 sm:pb-20 lg:pb-24 z-10"
+              style={{ y: textY, opacity: textOpacity }}
             >
               {/* Title with reveal animation */}
               <motion.h1
