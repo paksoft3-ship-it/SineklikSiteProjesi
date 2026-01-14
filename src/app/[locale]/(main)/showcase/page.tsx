@@ -32,12 +32,14 @@ import Badge, {
 } from '@/components/ui/Badge';
 
 const sampleImages = [
-  { src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600', alt: 'Living Room', caption: 'Modern living room with natural light' },
-  { src: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?w=600', alt: 'Bedroom', caption: 'Cozy bedroom setup' },
-  { src: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600', alt: 'Modern Room', caption: 'Contemporary interior design' },
-  { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600', alt: 'Kitchen', caption: 'Bright kitchen space' },
-  { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600', alt: 'Attic', caption: 'Stylish attic room' },
-  { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600', alt: 'Balcony', caption: 'Beautiful balcony view' },
+  { src: '/images/gallery/pleated-fly-screen.png', alt: 'Pleated Fly Screen', caption: 'High-quality pleated mesh detail' },
+  { src: '/images/gallery/roller-blind-detail.png', alt: 'Roller Blind Fabric', caption: 'Premium woven texture' },
+  { src: '/images/gallery/modern-kitchen-blind.png', alt: 'Kitchen Blinds', caption: 'Moisture-resistant kitchen solution' },
+  { src: '/images/gallery/bedroom-blackout.png', alt: 'Bedroom Blackout', caption: 'Complete light control' },
+  { src: '/images/gallery/large-sliding-door-screen.png', alt: 'Sliding Door Screen', caption: 'Seamless large opening protection' },
+  { src: '/images/gallery/living-room-sheer.png', alt: 'Living Room Sheers', caption: 'Soft light diffusion' },
+  { src: '/images/gallery/skylight-screen.png', alt: 'Skylight Screen', caption: 'Perfect fit for roof windows' },
+  { src: '/images/gallery/office-blinds.png', alt: 'Office Blinds', caption: 'Productive workspace lighting' },
 ];
 
 export default function ShowcasePage() {
@@ -96,11 +98,10 @@ export default function ShowcasePage() {
               <motion.button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition flex items-center gap-2 ${
-                  activeCategory === cat.id
+                className={`px-4 py-2 rounded-full text-sm font-medium transition flex items-center gap-2 ${activeCategory === cat.id
                     ? 'bg-primary text-white shadow-lg shadow-primary/30'
                     : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200'
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

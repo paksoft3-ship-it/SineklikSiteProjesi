@@ -27,7 +27,7 @@ const HeroSection = () => {
       id: 'horren',
       title: t('horren.title'),
       description: t('horren.description'),
-      image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=1200',
+      image: '/images/hero/sineklik-hero-main.png',
       link: '/producten/plisse-horren',
       buttonText: t('horren.button'),
       tags: [
@@ -40,7 +40,7 @@ const HeroSection = () => {
       id: 'gordijnen',
       title: t('gordijnen.title'),
       description: t('gordijnen.description'),
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200',
+      image: '/images/hero/perde-hero-main.png',
       link: '/producten/plisse-gordijnen',
       buttonText: t('gordijnen.button'),
       tags: [
