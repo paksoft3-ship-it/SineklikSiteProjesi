@@ -3,6 +3,8 @@
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/animations/ScrollAnimation';
+import { easings, durations } from '@/lib/animation-config';
 
 const ProductCategoryGrid = () => {
     const t = useTranslations('HomePage.categoryGrid');
@@ -58,92 +60,208 @@ const ProductCategoryGrid = () => {
         },
     ];
 
-    const container = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
+    // Card 3D tilt effect variants
+    const cardVariants = {
+        rest: {
+            y: 0,
+            rotateX: 0,
+            rotateY: 0,
+            boxShadow: '0 10px 30px -10px rgba(0, 0, 0, 0.2)',
+        },
+        hover: {
+            y: -12,
+            boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.35)',
             transition: {
-                staggerChildren: 0.1
-            }
-        }
+                duration: durations.normal,
+                ease: easings.smooth,
+            },
+        },
     };
 
-    const item = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    // Image animation
+    const imageVariants = {
+        rest: { scale: 1, rotate: 0 },
+        hover: {
+            scale: 1.15,
+            rotate: 2,
+            transition: {
+                duration: durations.slow,
+                ease: easings.premium,
+            },
+        },
+    };
+
+    // Title slide up animation
+    const titleVariants = {
+        rest: { y: 8, opacity: 0.9 },
+        hover: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: durations.fast,
+                ease: easings.smooth,
+            },
+        },
+    };
+
+    // View Collection link animation
+    const linkVariants = {
+        rest: { opacity: 0, y: 10 },
+        hover: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: durations.fast,
+                ease: easings.smooth,
+            },
+        },
+    };
+
+    // Container stagger animation
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                duration: durations.normal,
+                ease: easings.smooth,
+            },
+        },
     };
 
     return (
         <section className="py-20 bg-white dark:bg-gray-900 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Title & Description */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-4">
-                        {t('title')}
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        {t('description')}
-                    </p>
-                </motion.div>
+                {/* Title & Description with animation */}
+                <ScrollAnimation variant="fadeUp">
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: durations.slow, ease: easings.smooth }}
+                    >
+                        <motion.h2
+                            className="font-display text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-4"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: durations.normal, delay: 0.1 }}
+                        >
+                            {t('title')}
+                        </motion.h2>
+                        <motion.p
+                            className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: durations.normal, delay: 0.2 }}
+                        >
+                            {t('description')}
+                        </motion.p>
+                    </motion.div>
+                </ScrollAnimation>
 
-                {/* Grid */}
+                {/* Grid with staggered animation */}
                 <motion.div
-                    variants={container}
+                    variants={containerVariants}
                     initial="hidden"
-                    whileInView="show"
+                    whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
                 >
-                    {categories.map((category) => (
-                        <motion.div key={category.id} variants={item}>
-                            <Link
-                                href={category.link as any}
-                                className="group relative aspect-[4/5] block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                    {categories.map((category, index) => (
+                        <motion.div
+                            key={category.id}
+                            variants={itemVariants}
+                            className="perspective-1000"
+                        >
+                            <motion.div
+                                variants={cardVariants}
+                                initial="rest"
+                                whileHover="hover"
+                                className="h-full"
                             >
-                                {/* Image */}
-                                <div className="absolute inset-0 overflow-hidden">
-                                    <motion.img
-                                        src={category.image}
-                                        alt={category.name}
-                                        className="w-full h-full object-cover"
-                                        whileHover={{ scale: 1.1 }}
-                                        transition={{ duration: 0.7 }}
-                                    />
-                                </div>
-
-                                {/* Gradient Overlay - Matching Hero Section Style */}
-                                <div
-                                    className="absolute inset-0 opacity-80 group-hover:opacity-90 transition-opacity duration-300"
-                                    style={{
-                                        background: `linear-gradient(
-                        to top,
-                        rgba(15, 35, 75, 0.95) 0%,
-                        rgba(15, 35, 75, 0.6) 40%,
-                        rgba(15, 35, 75, 0.1) 80%,
-                        transparent 100%
-                    )`
-                                    }}
-                                />
-
-                                {/* Content */}
-                                <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                    <h3 className="font-display text-xl md:text-2xl font-bold text-white text-center mb-2 drop-shadow-md">
-                                        {category.name}
-                                    </h3>
-
-                                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
-                                        <span className="text-white/90 text-sm font-medium tracking-wide border-b border-primary pb-0.5">
-                                            View Collection
-                                        </span>
+                                <Link
+                                    href={category.link as any}
+                                    className="group relative aspect-[4/5] block rounded-2xl overflow-hidden shadow-lg"
+                                >
+                                    {/* Image with zoom + rotation */}
+                                    <div className="absolute inset-0 overflow-hidden">
+                                        <motion.img
+                                            src={category.image}
+                                            alt={category.name}
+                                            className="w-full h-full object-cover"
+                                            variants={imageVariants}
+                                            initial="rest"
+                                            whileHover="hover"
+                                        />
                                     </div>
-                                </div>
-                            </Link>
+
+                                    {/* Gradient Overlay */}
+                                    <motion.div
+                                        className="absolute inset-0"
+                                        initial={{ opacity: 0.8 }}
+                                        whileHover={{ opacity: 0.9 }}
+                                        transition={{ duration: durations.normal }}
+                                        style={{
+                                            background: `linear-gradient(
+                                                to top,
+                                                rgba(15, 35, 75, 0.95) 0%,
+                                                rgba(15, 35, 75, 0.6) 40%,
+                                                rgba(15, 35, 75, 0.1) 80%,
+                                                transparent 100%
+                                            )`
+                                        }}
+                                    />
+
+                                    {/* Content with slide-up animation */}
+                                    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end">
+                                        <motion.h3
+                                            className="font-display text-xl md:text-2xl font-bold text-white text-center mb-2 drop-shadow-md"
+                                            variants={titleVariants}
+                                        >
+                                            {category.name}
+                                        </motion.h3>
+
+                                        <motion.div
+                                            className="flex justify-center"
+                                            variants={linkVariants}
+                                        >
+                                            <motion.span
+                                                className="text-white/90 text-sm font-medium tracking-wide border-b border-primary pb-0.5"
+                                                whileHover={{ color: '#007BFF' }}
+                                            >
+                                                View Collection
+                                            </motion.span>
+                                        </motion.div>
+                                    </div>
+
+                                    {/* Hover shine effect */}
+                                    <motion.div
+                                        className="absolute inset-0 pointer-events-none"
+                                        initial={{ x: '-100%', opacity: 0 }}
+                                        whileHover={{ x: '100%', opacity: 0.3 }}
+                                        transition={{ duration: 0.6, ease: 'easeInOut' }}
+                                        style={{
+                                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
+                                        }}
+                                    />
+                                </Link>
+                            </motion.div>
                         </motion.div>
                     ))}
                 </motion.div>

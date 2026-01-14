@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { easings, durations } from '@/lib/animation-config';
 
 interface Message {
     id: string;
@@ -88,12 +90,11 @@ const FloatingActionButtons = () => {
     const [isInitialized, setIsInitialized] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
-    const phoneNumber = '31612345678'; // Replace with actual number
+    const phoneNumber = '31612345678';
     const whatsappMessage = encodeURIComponent('Hallo, ik heb een vraag over uw producten.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
     const phoneUrl = `tel:+${phoneNumber}`;
 
-    // Initialize welcome message with translation
     useEffect(() => {
         if (!isInitialized) {
             setMessages([{
@@ -114,19 +115,17 @@ const FloatingActionButtons = () => {
         scrollToBottom();
     }, [messages]);
 
-    // RAG search with locale awareness
+    // RAG search function (unchanged)
     const searchKnowledge = (query: string): { answer: string; sources: string[] } => {
         const queryLower = query.toLowerCase();
         const sources: string[] = [];
         let answer = '';
 
-        // Detect locale from query patterns
         const isEnglish = queryLower.includes('product') || queryLower.includes('price') ||
             queryLower.includes('delivery') || queryLower.includes('contact') ||
             queryLower.includes('what') || queryLower.includes('how');
         const locale = isEnglish ? 'en' : 'nl';
 
-        // Check for product queries
         if (queryLower.includes('hor') || queryLower.includes('insect') || queryLower.includes('mug') ||
             queryLower.includes('screen') || queryLower.includes('product')) {
             const product = knowledgeBase.products['plisse-horren'];
@@ -142,7 +141,6 @@ const FloatingActionButtons = () => {
             sources.push('Products > Plissé Curtains');
         }
 
-        // Check for service queries
         if (queryLower.includes('lever') || queryLower.includes('bezorg') || queryLower.includes('verzend') ||
             queryLower.includes('deliver') || queryLower.includes('ship')) {
             answer += answer ? '\n\n' : '';
@@ -174,7 +172,6 @@ const FloatingActionButtons = () => {
             sources.push('Service > Returns');
         }
 
-        // Check for contact queries
         if (queryLower.includes('contact') || queryLower.includes('telefoon') || queryLower.includes('email') ||
             queryLower.includes('adres') || queryLower.includes('bereik') || queryLower.includes('phone') || queryLower.includes('address')) {
             answer += answer ? '\n\n' : '';
@@ -182,7 +179,6 @@ const FloatingActionButtons = () => {
             sources.push('Contact');
         }
 
-        // Check for FAQ queries
         if (queryLower.includes('meet') || queryLower.includes('opmeten') || queryLower.includes('measure')) {
             answer += answer ? '\n\n' : '';
             answer += knowledgeBase.faq.measurement[locale];
@@ -208,7 +204,6 @@ const FloatingActionButtons = () => {
             sources.push('FAQ > Child Safety');
         }
 
-        // Check for price queries
         if (queryLower.includes('prijs') || queryLower.includes('kost') || queryLower.includes('€') ||
             queryLower.includes('euro') || queryLower.includes('price') || queryLower.includes('cost')) {
             answer += answer ? '\n\n' : '';
@@ -219,7 +214,6 @@ const FloatingActionButtons = () => {
             sources.push('Prices');
         }
 
-        // Default response if no match
         if (!answer) {
             answer = `${t('responses.default_response')}\n📞 ${knowledgeBase.contact.phone}`;
             sources.push('General');
@@ -242,10 +236,8 @@ const FloatingActionButtons = () => {
         setInput('');
         setIsTyping(true);
 
-        // Simulate typing delay
         await new Promise((resolve) => setTimeout(resolve, 1000 + Math.random() * 1000));
 
-        // Get RAG response
         const { answer, sources } = searchKnowledge(input);
 
         const assistantMessage: Message = {
@@ -297,170 +289,321 @@ const FloatingActionButtons = () => {
         },
     ];
 
+    // Animation variants
+    const mainButtonVariants = {
+        idle: {
+            scale: 1,
+            boxShadow: '0 10px 30px -12px rgba(0, 123, 255, 0.4)',
+        },
+        hover: {
+            scale: 1.1,
+            boxShadow: '0 15px 40px -10px rgba(0, 123, 255, 0.5)',
+        },
+        tap: { scale: 0.95 },
+    };
+
+    const expandedContainerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+        },
+        exit: {
+            opacity: 0,
+            transition: { staggerChildren: 0.05, staggerDirection: -1 },
+        },
+    };
+
+    const buttonItemVariants = {
+        hidden: { opacity: 0, x: 20, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: { type: 'spring', stiffness: 400, damping: 20 },
+        },
+        exit: { opacity: 0, x: 20, scale: 0.8 },
+    };
+
+    const chatWindowVariants = {
+        hidden: { opacity: 0, scale: 0.8, y: 20, originX: 1, originY: 1 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { type: 'spring', stiffness: 300, damping: 25 },
+        },
+        exit: {
+            opacity: 0,
+            scale: 0.8,
+            y: 20,
+            transition: { duration: durations.fast },
+        },
+    };
+
+    const messageVariants = {
+        hidden: { opacity: 0, y: 10, scale: 0.95 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: { type: 'spring', stiffness: 400, damping: 25 },
+        },
+    };
+
     return (
         <>
             {/* Floating Action Buttons */}
             <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
                 {/* Expanded buttons */}
-                {isExpanded && (
-                    <div className="flex flex-col gap-3 animate-fadeIn">
-                        {actionButtons.map((button, index) => (
-                            <div
-                                key={button.id}
-                                className="flex items-center gap-3 animate-slideUp"
-                                style={{ animationDelay: `${index * 0.05}s` }}
-                            >
-                                {/* Label */}
-                                <span className="px-3 py-1.5 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg shadow-lg whitespace-nowrap">
-                                    {button.label}
-                                </span>
+                <AnimatePresence>
+                    {isExpanded && (
+                        <motion.div
+                            className="flex flex-col gap-3"
+                            variants={expandedContainerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                        >
+                            {actionButtons.map((button) => (
+                                <motion.div
+                                    key={button.id}
+                                    className="flex items-center gap-3"
+                                    variants={buttonItemVariants}
+                                >
+                                    {/* Label */}
+                                    <motion.span
+                                        className="px-3 py-1.5 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium rounded-lg shadow-lg whitespace-nowrap"
+                                        initial={{ opacity: 0, x: 10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.1 }}
+                                    >
+                                        {button.label}
+                                    </motion.span>
 
-                                {/* Button */}
-                                {button.isLink ? (
-                                    <a
-                                        href={button.href}
-                                        target={button.id === 'whatsapp' ? '_blank' : undefined}
-                                        rel={button.id === 'whatsapp' ? 'noopener noreferrer' : undefined}
-                                        className={`w-12 h-12 ${button.color} text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110`}
-                                        aria-label={button.label}
-                                    >
-                                        <i className={`${button.icon} text-lg`}></i>
-                                    </a>
-                                ) : (
-                                    <button
-                                        onClick={button.onClick}
-                                        className={`w-12 h-12 ${button.color} text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110`}
-                                        aria-label={button.label}
-                                    >
-                                        <i className={`${button.icon} text-lg`}></i>
-                                    </button>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                )}
+                                    {/* Button */}
+                                    {button.isLink ? (
+                                        <motion.a
+                                            href={button.href}
+                                            target={button.id === 'whatsapp' ? '_blank' : undefined}
+                                            rel={button.id === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                                            className={`w-12 h-12 ${button.color} text-white rounded-full flex items-center justify-center shadow-lg`}
+                                            aria-label={button.label}
+                                            whileHover={{ scale: 1.15 }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            <i className={`${button.icon} text-lg`}></i>
+                                        </motion.a>
+                                    ) : (
+                                        <motion.button
+                                            onClick={button.onClick}
+                                            className={`w-12 h-12 ${button.color} text-white rounded-full flex items-center justify-center shadow-lg`}
+                                            aria-label={button.label}
+                                            whileHover={{ scale: 1.15 }}
+                                            whileTap={{ scale: 0.9 }}
+                                        >
+                                            <i className={`${button.icon} text-lg`}></i>
+                                        </motion.button>
+                                    )}
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 {/* Main toggle button */}
-                <button
+                <motion.button
                     onClick={() => setIsExpanded(!isExpanded)}
-                    className={`w-14 h-14 ${isExpanded ? 'bg-gray-600 rotate-45' : 'bg-primary'} hover:bg-blue-600 text-white rounded-full shadow-lg shadow-blue-500/30 flex items-center justify-center transition-all duration-300`}
+                    className={`w-14 h-14 ${isExpanded ? 'bg-gray-600' : 'bg-primary animate-subtlePulse'} text-white rounded-full shadow-lg flex items-center justify-center`}
                     aria-label={isExpanded ? 'Close menu' : 'Open contact menu'}
+                    variants={mainButtonVariants}
+                    initial="idle"
+                    whileHover="hover"
+                    whileTap="tap"
+                    animate={{ rotate: isExpanded ? 45 : 0 }}
+                    transition={{ duration: durations.normal, ease: easings.snappy }}
                 >
-                    <i className={`fas ${isExpanded ? 'fa-plus' : 'fa-headset'} text-xl`}></i>
-                </button>
+                    <motion.i
+                        className={`fas ${isExpanded ? 'fa-plus' : 'fa-headset'} text-xl`}
+                        animate={{ rotate: isExpanded ? 0 : 0 }}
+                    />
+                </motion.button>
             </div>
 
             {/* Chat Window */}
-            {isChatOpen && (
-                <div className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[80vh] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden animate-fadeIn">
-                    {/* Header */}
-                    <div className="p-4 bg-gradient-to-r from-primary to-blue-600 text-white">
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                    <i className="fas fa-robot"></i>
-                                </div>
-                                <div>
-                                    <h3 className="font-bold">{t('chat.title')}</h3>
-                                    <p className="text-xs text-blue-100 flex items-center gap-1">
-                                        <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                                        {t('chat.status')}
-                                    </p>
-                                </div>
-                            </div>
-                            <button
-                                onClick={() => setIsChatOpen(false)}
-                                className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition"
-                            >
-                                <i className="fas fa-times"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Messages */}
-                    <div className="flex-1 overflow-y-auto p-4 space-y-4">
-                        {messages.map((message) => (
-                            <div
-                                key={message.id}
-                                className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
-                            >
-                                <div
-                                    className={`max-w-[80%] rounded-2xl px-4 py-3 ${message.role === 'user'
-                                        ? 'bg-primary text-white rounded-br-sm'
-                                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-sm'
-                                        }`}
-                                >
-                                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
-                                    {message.sources && message.sources.length > 0 && (
-                                        <div className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600">
-                                            <p className="text-xs opacity-70">
-                                                <i className="fas fa-info-circle mr-1"></i>
-                                                {t('chat.source')}: {message.sources.join(', ')}
-                                            </p>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-
-                        {isTyping && (
-                            <div className="flex justify-start">
-                                <div className="bg-gray-100 dark:bg-gray-700 rounded-2xl rounded-bl-sm px-4 py-3">
-                                    <div className="flex gap-1">
-                                        <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-                                        <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></span>
-                                        <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+            <AnimatePresence>
+                {isChatOpen && (
+                    <motion.div
+                        className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[80vh] bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 flex flex-col overflow-hidden"
+                        variants={chatWindowVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                    >
+                        {/* Header */}
+                        <motion.div
+                            className="p-4 bg-gradient-to-r from-primary to-blue-600 text-white"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                        >
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <motion.div
+                                        className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
+                                        whileHover={{ scale: 1.1, rotate: 10 }}
+                                    >
+                                        <i className="fas fa-robot"></i>
+                                    </motion.div>
+                                    <div>
+                                        <h3 className="font-bold">{t('chat.title')}</h3>
+                                        <p className="text-xs text-blue-100 flex items-center gap-1">
+                                            <motion.span
+                                                className="w-2 h-2 bg-green-400 rounded-full"
+                                                animate={{ scale: [1, 1.2, 1] }}
+                                                transition={{ repeat: Infinity, duration: 2 }}
+                                            />
+                                            {t('chat.status')}
+                                        </p>
                                     </div>
                                 </div>
+                                <motion.button
+                                    onClick={() => setIsChatOpen(false)}
+                                    className="w-8 h-8 rounded-full hover:bg-white/20 flex items-center justify-center transition"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <i className="fas fa-times"></i>
+                                </motion.button>
                             </div>
-                        )}
-                        <div ref={messagesEndRef} />
-                    </div>
+                        </motion.div>
 
-                    {/* Quick Actions */}
-                    {messages.length <= 2 && (
-                        <div className="px-4 pb-2">
-                            <div className="flex flex-wrap gap-2">
-                                {quickActions.map((action, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => {
-                                            setInput(action.query);
-                                        }}
-                                        className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-sm text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary hover:text-white transition"
+                        {/* Messages */}
+                        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+                            {messages.map((message, index) => (
+                                <motion.div
+                                    key={message.id}
+                                    className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                                    variants={messageVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    transition={{ delay: index * 0.05 }}
+                                >
+                                    <motion.div
+                                        className={`max-w-[80%] rounded-2xl px-4 py-3 ${message.role === 'user'
+                                            ? 'bg-primary text-white rounded-br-sm'
+                                            : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-bl-sm'
+                                            }`}
+                                        whileHover={{ scale: 1.02 }}
                                     >
-                                        {action.label}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    )}
+                                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                                        {message.sources && message.sources.length > 0 && (
+                                            <motion.div
+                                                className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-600"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ delay: 0.2 }}
+                                            >
+                                                <p className="text-xs opacity-70">
+                                                    <i className="fas fa-info-circle mr-1"></i>
+                                                    {t('chat.source')}: {message.sources.join(', ')}
+                                                </p>
+                                            </motion.div>
+                                        )}
+                                    </motion.div>
+                                </motion.div>
+                            ))}
 
-                    {/* Input */}
-                    <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-                        <div className="flex gap-2">
-                            <input
-                                type="text"
-                                value={input}
-                                onChange={(e) => setInput(e.target.value)}
-                                onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                                placeholder={t('chat.placeholder')}
-                                className="flex-1 px-4 py-2 bg-gray-100 dark:bg-gray-700 border-0 rounded-full focus:ring-2 focus:ring-primary text-sm"
-                            />
-                            <button
-                                onClick={handleSend}
-                                disabled={!input.trim() || isTyping}
-                                className="w-10 h-10 bg-primary hover:bg-blue-600 disabled:bg-gray-300 text-white rounded-full flex items-center justify-center transition"
-                            >
-                                <i className="fas fa-paper-plane"></i>
-                            </button>
+                            {isTyping && (
+                                <motion.div
+                                    className="flex justify-start"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                >
+                                    <div className="bg-gray-100 dark:bg-gray-700 rounded-2xl rounded-bl-sm px-4 py-3">
+                                        <div className="flex gap-1">
+                                            {[0, 1, 2].map((i) => (
+                                                <motion.span
+                                                    key={i}
+                                                    className="w-2 h-2 bg-gray-400 rounded-full"
+                                                    animate={{ y: [0, -6, 0] }}
+                                                    transition={{
+                                                        repeat: Infinity,
+                                                        duration: 0.6,
+                                                        delay: i * 0.1,
+                                                    }}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                            <div ref={messagesEndRef} />
                         </div>
-                        <p className="text-xs text-center text-gray-400 mt-2">
-                            {t('chat.footer')}
-                        </p>
-                    </div>
-                </div>
-            )}
+
+                        {/* Quick Actions */}
+                        <AnimatePresence>
+                            {messages.length <= 2 && (
+                                <motion.div
+                                    className="px-4 pb-2"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: 10 }}
+                                >
+                                    <div className="flex flex-wrap gap-2">
+                                        {quickActions.map((action, index) => (
+                                            <motion.button
+                                                key={index}
+                                                onClick={() => setInput(action.query)}
+                                                className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-sm text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary hover:text-white transition"
+                                                whileHover={{ scale: 1.05, y: -2 }}
+                                                whileTap={{ scale: 0.95 }}
+                                                initial={{ opacity: 0, scale: 0.8 }}
+                                                animate={{ opacity: 1, scale: 1 }}
+                                                transition={{ delay: index * 0.05 }}
+                                            >
+                                                {action.label}
+                                            </motion.button>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* Input */}
+                        <motion.div
+                            className="p-4 border-t border-gray-200 dark:border-gray-700"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <div className="flex gap-2">
+                                <motion.input
+                                    type="text"
+                                    value={input}
+                                    onChange={(e) => setInput(e.target.value)}
+                                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                                    placeholder={t('chat.placeholder')}
+                                    className="flex-1 px-4 py-2 bg-gray-100 dark:bg-gray-700 border-0 rounded-full focus:ring-2 focus:ring-primary text-sm"
+                                    whileFocus={{ scale: 1.02 }}
+                                />
+                                <motion.button
+                                    onClick={handleSend}
+                                    disabled={!input.trim() || isTyping}
+                                    className="w-10 h-10 bg-primary hover:bg-blue-600 disabled:bg-gray-300 text-white rounded-full flex items-center justify-center transition"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <i className="fas fa-paper-plane"></i>
+                                </motion.button>
+                            </div>
+                            <p className="text-xs text-center text-gray-400 mt-2">
+                                {t('chat.footer')}
+                            </p>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </>
     );
 };

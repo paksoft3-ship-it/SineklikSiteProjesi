@@ -1,7 +1,10 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
+import { ScrollAnimation, StaggerContainer, StaggerItem } from '@/components/animations/ScrollAnimation';
+import { easings, durations } from '@/lib/animation-config';
 
 const RoomsSection = () => {
   const t = useTranslations('HomePage.rooms');
@@ -53,51 +56,148 @@ const RoomsSection = () => {
     },
   ];
 
+  // Card hover variants with 3D tilt effect
+  const cardVariants = {
+    rest: {
+      y: 0,
+      rotateX: 0,
+      rotateY: 0,
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+    },
+    hover: {
+      y: -8,
+      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      transition: { duration: durations.normal, ease: easings.smooth },
+    },
+  };
+
+  // Tag animation variants
+  const tagVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        delay: 0.3 + i * 0.1,
+        type: 'spring',
+        stiffness: 400,
+        damping: 15,
+      },
+    }),
+  };
+
+  // Image Ken Burns effect
+  const imageVariants = {
+    rest: { scale: 1, x: 0, y: 0 },
+    hover: {
+      scale: 1.15,
+      x: 5,
+      y: -5,
+      transition: { duration: 8, ease: 'linear' },
+    },
+  };
+
   return (
     <section className="py-20 bg-bg-light-2 dark:bg-bg-dark-2" id="kamers">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-4">
-            {t('title')}
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {t('description')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-          {rooms.map((room) => (
-            <Link
-              key={room.id}
-              href={`/kamers/${room.id}` as any}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+        {/* Header with animation */}
+        <ScrollAnimation variant="fadeUp">
+          <div className="text-center mb-16">
+            <motion.h2
+              className="font-display text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: durations.normal, ease: easings.smooth }}
             >
-              <div className="h-48 overflow-hidden">
-                <img
-                  alt={room.name}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
-                  src={room.image}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-3">
-                  {room.name}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {room.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className={`px-2 py-1 text-[10px] font-semibold tracking-wide uppercase rounded ${tag.color}`}
+              {t('title')}
+            </motion.h2>
+            <motion.p
+              className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: durations.normal, ease: easings.smooth, delay: 0.1 }}
+            >
+              {t('description')}
+            </motion.p>
+          </div>
+        </ScrollAnimation>
+
+        {/* Rooms Grid with stagger animation */}
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6" staggerDelay={0.1}>
+          {rooms.map((room, index) => (
+            <StaggerItem key={room.id} variant="fadeUp">
+              <motion.div
+                variants={cardVariants}
+                initial="rest"
+                whileHover="hover"
+                className="h-full"
+              >
+                <Link
+                  href={`/kamers/${room.id}` as any}
+                  className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm block h-full"
+                >
+                  {/* Image with Ken Burns effect */}
+                  <div className="h-48 overflow-hidden">
+                    <motion.img
+                      alt={room.name}
+                      className="w-full h-full object-cover"
+                      src={room.image}
+                      variants={imageVariants}
+                      initial="rest"
+                      whileHover="hover"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-5">
+                    <motion.h3
+                      className="font-display text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors"
+                      whileHover={{ x: 4 }}
+                      transition={{ duration: durations.fast }}
                     >
-                      <i className={`fas ${tag.icon} mr-1`}></i>
-                      {tag.label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </Link>
+                      {room.name}
+                    </motion.h3>
+
+                    {/* Tags with staggered pop-in animation */}
+                    <div className="flex flex-wrap gap-2">
+                      {room.tags.map((tag, tagIndex) => (
+                        <motion.span
+                          key={tagIndex}
+                          className={`px-2 py-1 text-[10px] font-semibold tracking-wide uppercase rounded ${tag.color}`}
+                          custom={tagIndex}
+                          variants={tagVariants}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          whileHover={{ scale: 1.1, y: -2 }}
+                          transition={{ duration: durations.fast }}
+                        >
+                          <motion.i
+                            className={`fas ${tag.icon} mr-1`}
+                            whileHover={{ rotate: 15 }}
+                            transition={{ duration: durations.fast }}
+                          />
+                          {tag.label}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hover overlay gradient */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: durations.normal }}
+                  />
+                </Link>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

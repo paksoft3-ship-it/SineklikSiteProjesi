@@ -487,3 +487,543 @@
 .dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #007BFF;
 }
+
+/* ================================
+   PREMIUM ANIMATION SYSTEM
+   ================================ */
+
+/* ================================
+   Button Ripple Effect
+   ================================ */
+@keyframes rippleEffect {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  animation: rippleEffect 0.6s ease-out;
+}
+
+/* ================================
+   Button Glow Effects
+   ================================ */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 123, 255, 0.6);
+  }
+}
+
+.btn-glow {
+  transition: box-shadow 0.4s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
+}
+
+.btn-glow-danger:hover {
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+}
+
+.btn-glow-success:hover {
+  box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+}
+
+/* ================================
+   Shine Effect (Sweep)
+   ================================ */
+@keyframes shineEffect {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: translateX(-100%) skewX(-15deg);
+}
+
+.btn-shine:hover::after {
+  animation: shineEffect 0.6s ease-in-out;
+}
+
+/* ================================
+   Card Lift Effect
+   ================================ */
+@keyframes cardLift {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96),
+              box-shadow 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   3D Tilt Effect (CSS fallback)
+   ================================ */
+.card-tilt {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.3s ease;
+}
+
+.card-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* ================================
+   Link Underline Animation
+   ================================ */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+.link-underline-right::after {
+  transform-origin: right;
+}
+
+.link-underline-center::after {
+  transform-origin: center;
+}
+
+/* ================================
+   Image Zoom with Overlay
+   ================================ */
+.image-zoom-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.1);
+}
+
+.image-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-zoom-container:hover .image-zoom-overlay {
+  opacity: 1;
+}
+
+/* ================================
+   Magnetic Hover Effect (CSS)
+   ================================ */
+.magnetic-hover {
+  transition: transform 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+/* ================================
+   Stagger Animation Delays
+   ================================ */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* ================================
+   Blur In Animation
+   ================================ */
+@keyframes blurInAnimation {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-blur-in {
+  animation: blurInAnimation 0.6s ease-out forwards;
+}
+
+/* ================================
+   Text Reveal Animation
+   ================================ */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal {
+  animation: textReveal 0.4s ease-out forwards;
+  animation-play-state: paused;
+}
+
+.text-reveal.visible {
+  animation-play-state: running;
+}
+
+/* ================================
+   Clip Path Reveal
+   ================================ */
+@keyframes clipRevealUp {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+@keyframes clipRevealRight {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.clip-reveal-up {
+  animation: clipRevealUp 0.8s cubic-bezier(0.6, 0.01, 0.05, 0.95) forwards;
+}
+
+.clip-reveal-right {
+  animation: clipRevealRight 0.8s cubic-bezier(0.6, 0.01, 0.05, 0.95) forwards;
+}
+
+/* ================================
+   Float Animation
+   ================================ */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+/* ================================
+   Gradient Background Animation
+   ================================ */
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientBackground 4s ease infinite;
+}
+
+/* ================================
+   Icon Bounce
+   ================================ */
+@keyframes iconBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.1);
+  }
+}
+
+.icon-bounce:hover {
+  animation: iconBounce 0.4s ease-out;
+}
+
+/* ================================
+   Success Checkmark Animation
+   ================================ */
+@keyframes checkmark {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+.checkmark-animate {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: checkmark 0.6s ease-out forwards;
+}
+
+/* ================================
+   Modal/Backdrop Animations
+   ================================ */
+@keyframes backdropFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes modalSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.backdrop-animate {
+  animation: backdropFadeIn 0.3s ease-out forwards;
+}
+
+.modal-animate {
+  animation: modalSlideUp 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96) forwards;
+}
+
+/* ================================
+   Form Input Focus Animation
+   ================================ */
+@keyframes inputFocusRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+  }
+}
+
+.input-focus-animate:focus {
+  animation: inputFocusRing 0.3s ease-out forwards;
+}
+
+/* ================================
+   Shake Animation (for errors)
+   ================================ */
+@keyframes shakeError {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-4px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+.shake-error {
+  animation: shakeError 0.5s ease-in-out;
+}
+
+/* ================================
+   Counter Animation (number change)
+   ================================ */
+@keyframes counterPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.counter-pop {
+  animation: counterPop 0.3s ease-out;
+}
+
+/* ================================
+   Accordion Content Animation
+   ================================ */
+@keyframes accordionOpen {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.accordion-content {
+  animation: accordionOpen 0.3s ease-out;
+}
+
+/* ================================
+   Tooltip Animation
+   ================================ */
+@keyframes tooltipFade {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tooltip-animate {
+  animation: tooltipFade 0.2s ease-out forwards;
+}
+
+/* ================================
+   Mobile Menu Animation
+   ================================ */
+@keyframes mobileMenuSlide {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu-animate {
+  animation: mobileMenuSlide 0.4s cubic-bezier(0.6, 0.01, 0.05, 0.95) forwards;
+}
+
+/* ================================
+   Page Transition Effects
+   ================================ */
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pageExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    filter: blur(4px);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.5s cubic-bezier(0.6, 0.01, 0.05, 0.95) forwards;
+}
+
+.page-exit {
+  animation: pageExit 0.3s ease-out forwards;
+}
+
+/* ================================
+   Reduced Motion Support
+   ================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
