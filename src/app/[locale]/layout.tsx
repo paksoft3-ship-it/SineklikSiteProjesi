@@ -6,6 +6,7 @@ import '@/styles/globals.css';
 import '@/styles/animations.css';
 import { AuthProvider } from '@/context/AuthContext';
 import FloatingActionButtons from '@/components/ui/FloatingActionButtons';
+import TrustWidget from '@/components/ui/TrustWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -120,6 +121,7 @@ export default async function LocaleLayout({
           <AuthProvider>
             {children}
             <FloatingActionButtons />
+            <TrustWidget />
           </AuthProvider>
         </NextIntlClientProvider>
       </body>

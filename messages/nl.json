@@ -303,7 +303,7 @@
             "horren": "Horren",
             "gordijnen": "Gordijnen",
             "gordijnen_main": "Gordijnen",
-            "houten_jaloezieen": "Houten Jaloezieën",
+            "houten_jaloezieen": "Jaloezieën",
             "plisse_gordijnen": "Plisségordijnen",
             "rolgordijnen": "Rolgordijnen",
             "duo_rolgordijnen": "Duo rolgordijnen",
@@ -389,10 +389,13 @@
             "houten_jaloezieen": {
                 "lamel_50": "50mm Lamel",
                 "lamel_63": "63mm Lamel",
-                "bamboe": "Bamboe",
+                "bamboe": "Bamboe jaloezieën",
                 "basswood": "Basswood",
                 "zwart": "Zwart",
-                "wit": "Wit"
+                "wit": "Wit",
+                "houten": "Houten jaloezieën",
+                "aluminium": "Aluminium jaloezieën",
+                "kunststof": "Kunststof jaloezieën"
             },
             "service_contact": {
                 "bezorging_montage": "Bezorging & Montage",
