@@ -1,0 +1,89 @@
+'use client';
+
+import { Link } from '@/navigation';
+import { motion } from 'framer-motion';
+
+const products = [
+  {
+    id: 'alu-25mm',
+    name: 'Aluminium 25mm',
+    description: 'Compacte 25mm lamellen voor een strakke look.',
+    price: 49,
+    image: '/images/nav/wood_white_1769529243896.png',
+    features: ['25mm lamellen', 'Aluminium', 'Compact'],
+  },
+  {
+    id: 'alu-50mm',
+    name: 'Aluminium 50mm',
+    description: 'Brede 50mm lamellen voor meer lichtinval.',
+    price: 59,
+    image: '/images/nav/wood_white_1769529243896.png',
+    features: ['50mm lamellen', 'Aluminium', 'Modern'],
+  },
+  {
+    id: 'alu-perforated',
+    name: 'Geperforeerd Aluminium',
+    description: 'Geperforeerde lamellen voor subtiel licht.',
+    price: 69,
+    image: '/images/nav/wood_white_1769529243896.png',
+    features: ['Geperforeerd', 'Subtiel licht', 'Privacy'],
+  },
+];
+
+export default function AluminumVenetianPage() {
+  return (
+    <div className="bg-bg-light-1 dark:bg-bg-dark-1 min-h-screen">
+      <section className="bg-secondary dark:bg-bg-dark-2 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            <Link href="/products/venetian-blinds" className="inline-flex items-center text-gray-300 hover:text-white mb-4">
+              <i className="fas fa-arrow-left mr-2"></i> Terug naar Jaloezieën
+            </Link>
+            <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
+              Aluminium Jaloezieën
+            </h1>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Strak en modern, perfect voor kantoren en hedendaagse woningen.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <motion.div
+                key={product.id}
+                className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -8 }}
+              >
+                <div className="h-48 overflow-hidden">
+                  <img alt={product.name} className="w-full h-full object-cover" src={product.image} />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-xl font-bold text-gray-900 dark:text-white mb-2">{product.name}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">{product.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {product.features.map((feat, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded">{feat}</span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <span className="text-xs text-gray-500">Vanaf</span>
+                      <span className="text-xl font-bold text-primary ml-1">€{product.price},-</span>
+                    </div>
+                    <Link href="/configurator" className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-blue-600 transition">
+                      Configureren
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
