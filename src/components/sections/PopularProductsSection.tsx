@@ -13,38 +13,38 @@ const PopularProductsSection = () => {
   const products = [
     {
       id: 'plisse-hor-deur',
-      name: tHeader('items.horren.deur'),
+      name: 'Plissé Hordeur',
       description: t('products.door_desc'),
       price: 199,
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600',
-      link: '/producten/plisse-horren/deur',
+      image: '/images/nav/horren-door.png',
+      link: '/products/plisse-screens/doors',
       badge: tHeader('badges.populair'),
     },
     {
-      id: 'plisse-gordijn-honeycomb',
-      name: tHeader('items.gordijnen.honeycomb'),
-      description: t('products.honey_desc'),
-      price: 129,
-      image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600',
-      link: '/producten/plisse-gordijnen/honeycomb',
+      id: 'rolgordijn-verduisterend',
+      name: 'Verduisterend Rolgordijn',
+      description: t('products.blackout_desc'),
+      price: 89,
+      image: '/images/nav/nav-gordijn-verduisterend.jpg',
+      link: '/products/roller-blinds/blackout',
       badge: tHeader('badges.bestseller'),
     },
     {
-      id: 'plisse-gordijn-verduisterend',
-      name: tHeader('items.gordijnen.verduisterend'),
-      description: t('products.blackout_desc'),
-      price: 99,
-      image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600',
-      link: '/producten/plisse-gordijnen/verduisterend',
+      id: 'houten-jaloezie',
+      name: 'Houten Jaloezie 50mm',
+      description: 'Tijdloze elegantie met natuurlijk hout',
+      price: 129,
+      image: '/images/nav/wood_50mm_1769528823646.png',
+      link: '/products/wooden-blinds/50mm',
       badge: null,
     },
     {
-      id: 'plisse-hor-raam',
-      name: tHeader('items.horren.raam'),
-      description: t('products.window_desc'),
-      price: 89,
-      image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600',
-      link: '/producten/plisse-horren/raam',
+      id: 'duo-rolgordijn',
+      name: 'Duo Rolgordijn',
+      description: 'Zebra-effect voor perfecte lichtregeling',
+      price: 99,
+      image: '/images/nav/nav-gordijn-licht.jpg',
+      link: '/products/duo-roller-blinds/light-filtering',
       badge: null,
     },
   ];
@@ -116,7 +116,7 @@ const PopularProductsSection = () => {
               whileHover={{ x: 4 }}
             >
               <Link
-                href="/products/plisse-screens"
+                href="/products"
                 className="mt-4 md:mt-0 inline-flex items-center text-primary font-semibold hover:text-primary-dark transition"
               >
                 {t('view_all')}

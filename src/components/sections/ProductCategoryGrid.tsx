@@ -11,52 +11,52 @@ const ProductCategoryGrid = () => {
 
     const categories = [
         {
-            id: 'jalozieen',
-            name: t('categories.jalozieen'),
-            image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600',
-            link: '/producten/jalozieen',
-        },
-        {
-            id: 'plisse-gordijnen',
-            name: t('categories.plisseGordijnen'),
-            image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=600',
-            link: '/producten/plisse-gordijnen',
-        },
-        {
-            id: 'duette',
-            name: t('categories.duette'),
-            image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600',
-            link: '/producten/duette',
-        },
-        {
-            id: 'rolgordijnen',
-            name: t('categories.rolgordijnen'),
-            image: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=600',
-            link: '/producten/rolgordijnen',
-        },
-        {
             id: 'horren',
-            name: t('categories.horren'),
-            image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600',
-            link: '/producten/plisse-horren',
-        },
-        {
-            id: 'vouwgordijnen',
-            name: t('categories.vouwgordijnen'),
-            image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600',
-            link: '/producten/vouwgordijnen',
+            name: 'Horren',
+            image: '/images/nav/horren-inset.png',
+            link: '/products/screens',
         },
         {
             id: 'gordijnen',
-            name: t('categories.gordijnen'),
-            image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600',
-            link: '/producten/gordijnen',
+            name: 'Gordijnen',
+            image: '/images/nav/nav-gordijn-kleur.jpg',
+            link: '/products/curtains',
         },
         {
-            id: 'lamellen',
-            name: t('categories.lamellen'),
-            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
-            link: '/producten/lamellen',
+            id: 'houten-jaloezieen',
+            name: 'Houten Jaloezieën',
+            image: '/images/nav/wood_50mm_1769528823646.png',
+            link: '/products/wooden-blinds',
+        },
+        {
+            id: 'rolgordijnen',
+            name: 'Rolgordijnen',
+            image: '/images/nav/nav-gordijn-verduisterend.jpg',
+            link: '/products/roller-blinds',
+        },
+        {
+            id: 'duo-rolgordijnen',
+            name: 'Duo Rolgordijnen',
+            image: '/images/nav/nav-gordijn-licht.jpg',
+            link: '/products/duo-roller-blinds',
+        },
+        {
+            id: 'plisse-gordijnen',
+            name: 'Plissé Gordijnen',
+            image: '/images/nav/nav-gordijn-honeycomb.jpg',
+            link: '/products/plisse',
+        },
+        {
+            id: 'vouwgordijnen',
+            name: 'Vouwgordijnen',
+            image: '/images/nav/roman_blackout_1769528343726.png',
+            link: '/products/roman-blinds',
+        },
+        {
+            id: 'jaloezieen',
+            name: 'Jaloezieën',
+            image: '/images/nav/wood_bamboo_1769529056827.png',
+            link: '/products/venetian-blinds',
         },
     ];
 

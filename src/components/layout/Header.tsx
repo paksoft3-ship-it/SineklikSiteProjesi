@@ -1285,200 +1285,334 @@ const Header = () => {
                 exit="exit"
                 variants={mobileMenuVariants}
               >
-                <div className="flex flex-col space-y-2 py-4">
+                <div className="flex flex-col space-y-4 py-4">
+                  {/* Mobile Search */}
+                  <div className="px-4">
+                    <button
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        setIsSearchOpen(true);
+                      }}
+                      className="w-full flex items-center gap-3 px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-500"
+                    >
+                      <i className="fas fa-search"></i>
+                      <span className="text-sm">{t('search.placeholder')}</span>
+                    </button>
+                  </div>
+
+                  {/* Horren Section with Mini Cards */}
                   <motion.div
-                    className="px-4 py-2"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className="px-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
                   >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.horren')}</p>
-                    {plisseHorrenCategories.flatMap(c => c.items).slice(0, 4).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                    <Link href="/products/plisse-screens" className="block py-2 text-primary font-semibold">
-                      {t('nav.view_all_horren')} →
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.horren')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {plisseHorrenCategories.flatMap(c => c.items).slice(0, 4).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.1 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                    <Link
+                      href="/products/plisse-screens"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-1 mt-2 py-2 text-primary font-semibold text-sm"
+                    >
+                      {t('nav.view_all_horren')} <i className="fas fa-arrow-right text-xs"></i>
                     </Link>
                   </motion.div>
 
+                  {/* Plissé Gordijnen Section with Mini Cards */}
                   <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15 }}
+                  >
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.plisse_gordijnen')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {plisseGordijnenCategories.flatMap(c => c.items).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.15 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Houten Jaloezieën Section with Mini Cards */}
+                  <motion.div
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.gordijnen')}</p>
-                    {plisseGordijnenCategories.flatMap(c => c.items).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.houten_jaloezieen')}</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      {houtenJaloezieenCategories.flatMap(c => c.items).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.2 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex flex-col items-center gap-1 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-[10px] font-medium text-gray-700 dark:text-gray-200 text-center line-clamp-1">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
 
+                  {/* Gordijnen Section with Mini Cards */}
                   <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.25 }}
                   >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.houten_jaloezieen')}</p>
-                    {houtenJaloezieenCategories.flatMap(c => c.items).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.gordijnen_main')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {gordijnenCategories.flatMap(c => c.items).slice(0, 6).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.25 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
 
+                  {/* Rolgordijnen Section with Mini Cards */}
                   <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.26 }}
-                  >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.gordijnen_main')}</p>
-                    {gordijnenCategories.flatMap(c => c.items).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.265 }}
-                  >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.rolgordijnen')}</p>
-                    {rolgordijnenCategories.flatMap(c => c.items).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.27 }}
-                  >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.duo_rolgordijnen')}</p>
-                    {duoRolgordijnenCategories.flatMap(c => c.items).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.28 }}
-                  >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.vouwgordijnen')}</p>
-                    {vouwgordijnenItems.map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.29 }}
-                  >
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{t('nav.service_contact')}</p>
-                    {serviceContactItems.map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 + index * 0.05 }}
-                      >
-                        <Link href={item.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary transition-colors">
-                          {item.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                  <motion.div
-                    className="px-4 py-2 border-t border-gray-200 dark:border-gray-700"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    {[
-                      { href: '/configurator', label: t('nav.configurator') },
-                      { href: '/measurement-guide', label: t('nav.meetgids') },
-                      { href: '/tools', label: t('nav.tools') },
-                    ].map((link, index) => (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 + index * 0.05 }}
-                      >
-                        <Link href={link.href as any} className="block py-2 text-gray-700 dark:text-gray-200 hover:text-primary font-medium transition-colors">
-                          {link.label}
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.rolgordijnen')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {rolgordijnenCategories.flatMap(c => c.items).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.3 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Duo Rolgordijnen Section with Mini Cards */}
+                  <motion.div
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35 }}
+                  >
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.duo_rolgordijnen')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {duoRolgordijnenCategories.flatMap(c => c.items).map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.35 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Vouwgordijnen Section with Mini Cards */}
+                  <motion.div
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.vouwgordijnen')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {vouwgordijnenItems.map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.4 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Service & Contact Section */}
+                  <motion.div
+                    className="px-4 pt-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45 }}
+                  >
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">{t('nav.service_contact')}</p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {serviceContactItems.map((item, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.45 + index * 0.03 }}
+                        >
+                          <Link
+                            href={item.href as any}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center gap-2 p-2 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                          >
+                            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                              <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                            </div>
+                            <span className="text-xs font-medium text-gray-700 dark:text-gray-200 line-clamp-2">{item.name}</span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Quick Actions */}
+                  <motion.div
+                    className="px-4 pt-4 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <div className="grid grid-cols-3 gap-2">
+                      {[
+                        { href: '/configurator', label: t('nav.configurator'), icon: 'fa-sliders-h', color: 'bg-primary' },
+                        { href: '/measurement-guide', label: t('nav.meetgids'), icon: 'fa-ruler', color: 'bg-green-500' },
+                        { href: '/tools', label: t('nav.tools'), icon: 'fa-tools', color: 'bg-purple-500' },
+                      ].map((link, index) => (
+                        <Link
+                          key={link.href}
+                          href={link.href as any}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex flex-col items-center gap-2 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        >
+                          <div className={`w-10 h-10 ${link.color} rounded-full flex items-center justify-center`}>
+                            <i className={`fas ${link.icon} text-white`}></i>
+                          </div>
+                          <span className="text-[10px] font-medium text-gray-700 dark:text-gray-200 text-center">{link.label}</span>
                         </Link>
-                      </motion.div>
-                    ))}
+                      ))}
+                    </div>
+                  </motion.div>
+
+                  {/* Mobile Auth & Cart */}
+                  <motion.div
+                    className="px-4 pt-4 pb-2 border-t border-gray-200 dark:border-gray-700"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.55 }}
+                  >
+                    <div className="flex gap-2">
+                      {!isAuthenticated && (
+                        <button
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setAuthMode('login');
+                            setIsAuthModalOpen(true);
+                          }}
+                          className="flex-1 flex items-center justify-center gap-2 py-3 bg-primary text-white font-semibold rounded-xl"
+                        >
+                          <i className="fas fa-user"></i>
+                          <span className="text-sm">{t('auth.login_signup')}</span>
+                        </button>
+                      )}
+                      <Link
+                        href="/cart"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-semibold rounded-xl"
+                      >
+                        <i className="fas fa-shopping-cart"></i>
+                        <span className="bg-primary text-white text-xs rounded-full px-2 py-0.5">0</span>
+                      </Link>
+                    </div>
                   </motion.div>
                 </div>
               </motion.div>

@@ -61,12 +61,15 @@ const Footer = () => {
     { icon: 'fa-linkedin-in', href: '#', label: 'LinkedIn' },
   ];
 
+  // Payment method cards with SVG logos
   const paymentMethods = [
-    { icon: 'fa-building-columns', name: 'iDEAL' },
-    { icon: 'fa-cc-visa', name: 'Visa' },
-    { icon: 'fa-cc-mastercard', name: 'Mastercard' },
-    { icon: 'fa-cc-paypal', name: 'PayPal' },
-    { icon: 'fa-credit-card', name: 'Klarna' },
+    { name: 'iDEAL', logo: '/images/payments/ideal.svg' },
+    { name: 'Bancontact', logo: '/images/payments/bancontact.svg' },
+    { name: 'Klarna', logo: '/images/payments/klarna.svg' },
+    { name: 'PayPal', logo: '/images/payments/paypal.svg' },
+    { name: 'Mastercard', logo: '/images/payments/mastercard.svg' },
+    { name: 'Visa', logo: '/images/payments/visa.svg' },
+    { name: 'SEPA', logo: '/images/payments/sepa.svg' },
   ];
 
   const certifications = [
@@ -191,7 +194,7 @@ const Footer = () => {
               </div>
             </motion.div>
 
-            {/* Plissé Horren Links */}
+            {/* Raamdecoratie Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -199,15 +202,17 @@ const Footer = () => {
               transition={{ duration: durations.normal, delay: 0.2 }}
             >
               <h6 className="font-bold text-white uppercase text-sm tracking-wider mb-4">
-                {tHeader('nav.horren')}
+                Raamdecoratie
               </h6>
               <ul className="space-y-3 text-sm">
                 {[
-                  { href: '/products/plisse-screens/door', label: tHeader('items.horren.deur') },
-                  { href: '/products/plisse-screens/window', label: tHeader('items.horren.raam') },
-                  { href: '/products/plisse-screens/glass-balcony', label: tHeader('items.horren.balkon') },
-                  { href: '/products/plisse-screens/screen-curtain', label: tHeader('items.horren.combi') },
-                  { href: '/products/plisse-screens/barrier-free', label: tHeader('items.horren.drempel') },
+                  { href: '/products/curtains', label: 'Gordijnen' },
+                  { href: '/products/roller-blinds', label: 'Rolgordijnen' },
+                  { href: '/products/duo-roller-blinds', label: 'Duo Rolgordijnen' },
+                  { href: '/products/wooden-blinds', label: 'Houten Jaloezieën' },
+                  { href: '/products/venetian-blinds', label: 'Jaloezieën' },
+                  { href: '/products/plisse', label: 'Plissé Gordijnen' },
+                  { href: '/products/roman-blinds', label: 'Vouwgordijnen' },
                 ].map((link, index) => (
                   <motion.li
                     key={link.href}
@@ -218,7 +223,6 @@ const Footer = () => {
                   >
                     <motion.div variants={linkVariants} initial="rest" whileHover="hover">
                       <Link href={link.href as any} className="text-gray-400 hover:text-primary transition inline-flex items-center gap-2">
-                        <i className="fas fa-chevron-right text-[8px] text-primary opacity-0 group-hover:opacity-100"></i>
                         {link.label}
                       </Link>
                     </motion.div>
@@ -227,7 +231,7 @@ const Footer = () => {
               </ul>
             </motion.div>
 
-            {/* Plissé Gordijnen Links */}
+            {/* Horren Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -235,14 +239,15 @@ const Footer = () => {
               transition={{ duration: durations.normal, delay: 0.3 }}
             >
               <h6 className="font-bold text-white uppercase text-sm tracking-wider mb-4">
-                {tHeader('nav.gordijnen')}
+                Horren
               </h6>
               <ul className="space-y-3 text-sm">
                 {[
-                  { href: '/products/plisse-curtains/honeycomb', label: tHeader('items.gordijnen.honeycomb') },
-                  { href: '/products/plisse-curtains/blackout', label: tHeader('items.gordijnen.verduisterend') },
-                  { href: '/products/plisse-curtains/light-filtering', label: tHeader('items.gordijnen.licht') },
-                  { href: '/products/plisse-curtains/colors', label: tHeader('items.gordijnen.kleur') },
+                  { href: '/products/screens/inset', label: 'Inzethorren' },
+                  { href: '/products/screens/doors', label: 'Deurhorren' },
+                  { href: '/products/screens/roller', label: 'Rolhorren' },
+                  { href: '/products/plisse-screens/doors', label: 'Plissé Hordeur' },
+                  { href: '/products/screens/fly-curtains', label: 'Vliegengordijnen' },
                 ].map((link, index) => (
                   <motion.li
                     key={link.href}
@@ -274,10 +279,11 @@ const Footer = () => {
               <ul className="space-y-3 text-sm">
                 {[
                   { href: '/contact', label: 'Contact' },
-                  { href: '/faq', label: 'FAQ' },
-                  { href: '/measurement-guide', label: tHeader('nav.meetgids') },
-                  { href: '/configurator', label: tHeader('nav.configurator') },
-                  { href: '/about', label: tHeader('nav.over_ons') },
+                  { href: '/service/faq', label: 'Veelgestelde Vragen' },
+                  { href: '/service/delivery', label: 'Bezorging & Montage' },
+                  { href: '/measurement-guide', label: 'Inmeetinstructie' },
+                  { href: '/configurator', label: 'Configurator' },
+                  { href: '/blog', label: 'Blog' },
                 ].map((link, index) => (
                   <motion.li
                     key={link.href}
@@ -372,19 +378,24 @@ const Footer = () => {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
               {/* Payment Methods */}
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <span className="text-sm text-gray-400 font-medium">{tCommon('trust_badges.pay_with')}</span>
-                <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-400 font-medium hidden sm:block">{tCommon('trust_badges.pay_with')}</span>
+                <div className="flex flex-wrap items-center justify-center gap-2">
                   {paymentMethods.map((method, index) => (
                     <motion.div
                       key={index}
-                      className="w-14 h-9 bg-white dark:bg-gray-800 rounded-md flex items-center justify-center shadow-sm"
+                      className="h-8 sm:h-10 w-12 sm:w-16 rounded-lg overflow-hidden shadow-md"
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
+                      transition={{ delay: index * 0.05 }}
                       whileHover={{ scale: 1.1, y: -2 }}
+                      title={method.name}
                     >
-                      <i className={`fab ${method.icon} text-xl text-gray-700 dark:text-gray-300`}></i>
+                      <img
+                        src={method.logo}
+                        alt={method.name}
+                        className="w-full h-full object-cover"
+                      />
                     </motion.div>
                   ))}
                 </div>
