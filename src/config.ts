@@ -139,6 +139,328 @@ export const pathnames = {
     '/cart': {
         en: '/cart',
         nl: '/winkelwagen'
+    },
+
+    // Blog
+    '/blog': {
+        en: '/blog',
+        nl: '/blog'
+    },
+
+    // Service Pages
+    '/service/delivery': {
+        en: '/service/delivery',
+        nl: '/service/bezorging'
+    },
+    '/service/faq': {
+        en: '/service/faq',
+        nl: '/service/veelgestelde-vragen'
+    },
+
+    // Curtains (Gordijnen)
+    '/products/curtains': {
+        en: '/products/curtains',
+        nl: '/producten/gordijnen'
+    },
+    '/products/curtains/blackout': {
+        en: '/products/curtains/blackout',
+        nl: '/producten/gordijnen/verduisterend'
+    },
+    '/products/curtains/light-filtering': {
+        en: '/products/curtains/light-filtering',
+        nl: '/producten/gordijnen/lichtdoorlatend'
+    },
+    '/products/curtains/sheer': {
+        en: '/products/curtains/sheer',
+        nl: '/producten/gordijnen/transparant'
+    },
+    '/products/curtains/drapes': {
+        en: '/products/curtains/drapes',
+        nl: '/producten/gordijnen/overgordijnen'
+    },
+    '/products/curtains/inbetween': {
+        en: '/products/curtains/inbetween',
+        nl: '/producten/gordijnen/inbetween'
+    },
+    '/products/curtains/voiles': {
+        en: '/products/curtains/voiles',
+        nl: '/producten/gordijnen/vitrages'
+    },
+    '/products/curtains/custom': {
+        en: '/products/curtains/custom',
+        nl: '/producten/gordijnen/op-maat'
+    },
+    '/products/curtains/rails': {
+        en: '/products/curtains/rails',
+        nl: '/producten/gordijnen/rails'
+    },
+    '/products/curtains/rods': {
+        en: '/products/curtains/rods',
+        nl: '/producten/gordijnen/roedes'
+    },
+    '/products/curtains/rail-rods': {
+        en: '/products/curtains/rail-rods',
+        nl: '/producten/gordijnen/rail-roedes'
+    },
+
+    // Venetian Blinds (Jaloezieën)
+    '/products/venetian-blinds': {
+        en: '/products/venetian-blinds',
+        nl: '/producten/jaloezieen'
+    },
+    '/products/venetian/wood': {
+        en: '/products/venetian/wood',
+        nl: '/producten/jaloezieen/hout'
+    },
+    '/products/venetian/bamboo': {
+        en: '/products/venetian/bamboo',
+        nl: '/producten/jaloezieen/bamboe'
+    },
+    '/products/venetian/aluminum': {
+        en: '/products/venetian/aluminum',
+        nl: '/producten/jaloezieen/aluminium'
+    },
+    '/products/venetian/pvc': {
+        en: '/products/venetian/pvc',
+        nl: '/producten/jaloezieen/pvc'
+    },
+    '/products/venetian/custom': {
+        en: '/products/venetian/custom',
+        nl: '/producten/jaloezieen/op-maat'
+    },
+    '/products/venetian/ready-made': {
+        en: '/products/venetian/ready-made',
+        nl: '/producten/jaloezieen/kant-en-klaar'
+    },
+
+    // Wooden Blinds (Houten Jaloezieën)
+    '/products/wooden-blinds': {
+        en: '/products/wooden-blinds',
+        nl: '/producten/houten-jaloezieen'
+    },
+    '/products/wooden-blinds/50mm': {
+        en: '/products/wooden-blinds/50mm',
+        nl: '/producten/houten-jaloezieen/50mm'
+    },
+    '/products/wooden-blinds/63mm': {
+        en: '/products/wooden-blinds/63mm',
+        nl: '/producten/houten-jaloezieen/63mm'
+    },
+    '/products/wooden-blinds/bamboo': {
+        en: '/products/wooden-blinds/bamboo',
+        nl: '/producten/houten-jaloezieen/bamboe'
+    },
+    '/products/wooden-blinds/basswood': {
+        en: '/products/wooden-blinds/basswood',
+        nl: '/producten/houten-jaloezieen/lindehout'
+    },
+    '/products/wooden-blinds/white': {
+        en: '/products/wooden-blinds/white',
+        nl: '/producten/houten-jaloezieen/wit'
+    },
+    '/products/wooden-blinds/black': {
+        en: '/products/wooden-blinds/black',
+        nl: '/producten/houten-jaloezieen/zwart'
+    },
+
+    // Roller Blinds (Rolgordijnen)
+    '/products/roller-blinds': {
+        en: '/products/roller-blinds',
+        nl: '/producten/rolgordijnen'
+    },
+    '/products/roller-blinds/blackout': {
+        en: '/products/roller-blinds/blackout',
+        nl: '/producten/rolgordijnen/verduisterend'
+    },
+    '/products/roller-blinds/light-filtering': {
+        en: '/products/roller-blinds/light-filtering',
+        nl: '/producten/rolgordijnen/lichtdoorlatend'
+    },
+    '/products/roller-blinds/sheer': {
+        en: '/products/roller-blinds/sheer',
+        nl: '/producten/rolgordijnen/transparant'
+    },
+    '/products/roller-blinds/screen': {
+        en: '/products/roller-blinds/screen',
+        nl: '/producten/rolgordijnen/screen'
+    },
+    '/products/roller-blinds/custom': {
+        en: '/products/roller-blinds/custom',
+        nl: '/producten/rolgordijnen/op-maat'
+    },
+    '/products/roller-blinds/ready-made': {
+        en: '/products/roller-blinds/ready-made',
+        nl: '/producten/rolgordijnen/kant-en-klaar'
+    },
+    '/products/roller/blackout': {
+        en: '/products/roller/blackout',
+        nl: '/producten/roller/verduisterend'
+    },
+    '/products/roller/light-filtering': {
+        en: '/products/roller/light-filtering',
+        nl: '/producten/roller/lichtdoorlatend'
+    },
+    '/products/roller/sheer': {
+        en: '/products/roller/sheer',
+        nl: '/producten/roller/transparant'
+    },
+    '/products/roller/custom': {
+        en: '/products/roller/custom',
+        nl: '/producten/roller/op-maat'
+    },
+    '/products/roller/ready-made': {
+        en: '/products/roller/ready-made',
+        nl: '/producten/roller/kant-en-klaar'
+    },
+
+    // Duo Roller Blinds (Duo Rolgordijnen)
+    '/products/duo-roller-blinds': {
+        en: '/products/duo-roller-blinds',
+        nl: '/producten/duo-rolgordijnen'
+    },
+    '/products/duo-roller-blinds/blackout': {
+        en: '/products/duo-roller-blinds/blackout',
+        nl: '/producten/duo-rolgordijnen/verduisterend'
+    },
+    '/products/duo-roller-blinds/light-filtering': {
+        en: '/products/duo-roller-blinds/light-filtering',
+        nl: '/producten/duo-rolgordijnen/lichtdoorlatend'
+    },
+    '/products/duo-roller-blinds/custom': {
+        en: '/products/duo-roller-blinds/custom',
+        nl: '/producten/duo-rolgordijnen/op-maat'
+    },
+    '/products/duo-roller-blinds/ready-made': {
+        en: '/products/duo-roller-blinds/ready-made',
+        nl: '/producten/duo-rolgordijnen/kant-en-klaar'
+    },
+    '/products/duo-roller/blackout': {
+        en: '/products/duo-roller/blackout',
+        nl: '/producten/duo-roller/verduisterend'
+    },
+    '/products/duo-roller/light-filtering': {
+        en: '/products/duo-roller/light-filtering',
+        nl: '/producten/duo-roller/lichtdoorlatend'
+    },
+    '/products/duo-roller/custom': {
+        en: '/products/duo-roller/custom',
+        nl: '/producten/duo-roller/op-maat'
+    },
+    '/products/duo-roller/ready-made': {
+        en: '/products/duo-roller/ready-made',
+        nl: '/producten/duo-roller/kant-en-klaar'
+    },
+
+    // Plissé (Plissé Gordijnen)
+    '/products/plisse': {
+        en: '/products/plisse',
+        nl: '/producten/plisse'
+    },
+    '/products/plisse/blackout': {
+        en: '/products/plisse/blackout',
+        nl: '/producten/plisse/verduisterend'
+    },
+    '/products/plisse/light-filtering': {
+        en: '/products/plisse/light-filtering',
+        nl: '/producten/plisse/lichtdoorlatend'
+    },
+    '/products/plisse/sheer': {
+        en: '/products/plisse/sheer',
+        nl: '/producten/plisse/transparant'
+    },
+    '/products/plisse/custom': {
+        en: '/products/plisse/custom',
+        nl: '/producten/plisse/op-maat'
+    },
+    '/products/plisse/ready-made': {
+        en: '/products/plisse/ready-made',
+        nl: '/producten/plisse/kant-en-klaar'
+    },
+
+    // Roman Blinds (Vouwgordijnen)
+    '/products/roman-blinds': {
+        en: '/products/roman-blinds',
+        nl: '/producten/vouwgordijnen'
+    },
+    '/products/roman-blinds/blackout': {
+        en: '/products/roman-blinds/blackout',
+        nl: '/producten/vouwgordijnen/verduisterend'
+    },
+    '/products/roman-blinds/light-filtering': {
+        en: '/products/roman-blinds/light-filtering',
+        nl: '/producten/vouwgordijnen/lichtdoorlatend'
+    },
+    '/products/roman-blinds/inbetween': {
+        en: '/products/roman-blinds/inbetween',
+        nl: '/producten/vouwgordijnen/inbetween'
+    },
+    '/products/roman-blinds/linen': {
+        en: '/products/roman-blinds/linen',
+        nl: '/producten/vouwgordijnen/linnen'
+    },
+
+    // Screens sub-pages
+    '/products/screens/inset': {
+        en: '/products/screens/inset',
+        nl: '/producten/horren/inzethorren'
+    },
+    '/products/screens/doors': {
+        en: '/products/screens/doors',
+        nl: '/producten/horren/deuren'
+    },
+    '/products/screens/fixed': {
+        en: '/products/screens/fixed',
+        nl: '/producten/horren/vaste-horren'
+    },
+    '/products/screens/windows': {
+        en: '/products/screens/windows',
+        nl: '/producten/horren/ramen'
+    },
+    '/products/screens/roller': {
+        en: '/products/screens/roller',
+        nl: '/producten/horren/rolhorren'
+    },
+    '/products/screens/fly-curtains': {
+        en: '/products/screens/fly-curtains',
+        nl: '/producten/horren/vliegengordijnen'
+    },
+    '/products/screens/custom': {
+        en: '/products/screens/custom',
+        nl: '/producten/horren/op-maat'
+    },
+    '/products/screens/ready-made': {
+        en: '/products/screens/ready-made',
+        nl: '/producten/horren/kant-en-klaar'
+    },
+
+    // Plissé Screens sub-pages
+    '/products/plisse-screens/inset-screens': {
+        en: '/products/plisse-screens/inset-screens',
+        nl: '/producten/plisse-horren/inzethorren'
+    },
+    '/products/plisse-screens/doors': {
+        en: '/products/plisse-screens/doors',
+        nl: '/producten/plisse-horren/deuren'
+    },
+    '/products/plisse-screens/windows': {
+        en: '/products/plisse-screens/windows',
+        nl: '/producten/plisse-horren/ramen'
+    },
+    '/products/plisse-screens/roller': {
+        en: '/products/plisse-screens/roller',
+        nl: '/producten/plisse-horren/rolhorren'
+    },
+    '/products/plisse-screens/fly-curtain': {
+        en: '/products/plisse-screens/fly-curtain',
+        nl: '/producten/plisse-horren/vliegengordijn'
+    },
+    '/products/plisse-screens/custom': {
+        en: '/products/plisse-screens/custom',
+        nl: '/producten/plisse-horren/op-maat'
+    },
+    '/products/plisse-screens/ready-made': {
+        en: '/products/plisse-screens/ready-made',
+        nl: '/producten/plisse-horren/kant-en-klaar'
     }
 } satisfies Pathnames<typeof locales>;
 

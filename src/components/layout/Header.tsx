@@ -97,8 +97,8 @@ const Header = () => {
     {
       title: t('categories.collectie'),
       items: [
-        { name: t('items.rolgordijnen.op_maat'), href: '/products/roller-blinds/custom' },
-        { name: t('items.rolgordijnen.kant_en_klaar'), href: '/products/roller-blinds/ready-made' },
+        { name: t('items.rolgordijnen.op_maat'), href: '/products/roller-blinds/custom', image: '/images/nav/nav-gordijn-kleur.jpg' },
+        { name: t('items.rolgordijnen.kant_en_klaar'), href: '/products/roller-blinds/ready-made', image: '/images/nav/nav-gordijn-kleur.jpg' },
       ]
     }
   ];
