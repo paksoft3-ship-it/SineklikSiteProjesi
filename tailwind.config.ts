@@ -23,6 +23,23 @@ const config: Config = {
         sans: ['Inter', 'sans-serif'],
         display: ['Outfit', 'sans-serif'],
       },
+      fontSize: {
+        // Responsive font sizes using clamp()
+        // clamp(min, preferred, max)
+        'xs': ['clamp(0.65rem, 0.6rem + 0.25vw, 0.75rem)', { lineHeight: '1rem' }],
+        'sm': ['clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)', { lineHeight: '1.25rem' }],
+        'base': ['clamp(0.875rem, 0.8rem + 0.375vw, 1rem)', { lineHeight: '1.5rem' }],
+        'lg': ['clamp(1rem, 0.9rem + 0.5vw, 1.125rem)', { lineHeight: '1.75rem' }],
+        'xl': ['clamp(1.125rem, 1rem + 0.625vw, 1.25rem)', { lineHeight: '1.75rem' }],
+        '2xl': ['clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)', { lineHeight: '2rem' }],
+        '3xl': ['clamp(1.5rem, 1.25rem + 1.25vw, 1.875rem)', { lineHeight: '2.25rem' }],
+        '4xl': ['clamp(1.75rem, 1.4rem + 1.75vw, 2.25rem)', { lineHeight: '2.5rem' }],
+        '5xl': ['clamp(2rem, 1.5rem + 2.5vw, 3rem)', { lineHeight: '1.2' }],
+        '6xl': ['clamp(2.5rem, 1.75rem + 3.75vw, 3.75rem)', { lineHeight: '1.1' }],
+        '7xl': ['clamp(3rem, 2rem + 5vw, 4.5rem)', { lineHeight: '1.1' }],
+        '8xl': ['clamp(3.5rem, 2.25rem + 6.25vw, 6rem)', { lineHeight: '1' }],
+        '9xl': ['clamp(4rem, 2.5rem + 7.5vw, 8rem)', { lineHeight: '1' }],
+      },
       borderRadius: {
         DEFAULT: '0.75rem',
         'xl': '1rem',

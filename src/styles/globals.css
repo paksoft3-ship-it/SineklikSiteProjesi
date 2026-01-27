@@ -9,12 +9,83 @@
 
 /* Base styles */
 @layer base {
+  /* Responsive base font size - scales from 14px to 16px based on viewport */
   html {
     scroll-behavior: smooth;
+    font-size: clamp(14px, 0.875rem + 0.25vw, 16px);
+  }
+
+  /* Even smaller base on very small screens */
+  @media (max-width: 360px) {
+    html {
+      font-size: 13px;
+    }
+  }
+
+  /* Larger base on very large screens */
+  @media (min-width: 1920px) {
+    html {
+      font-size: 18px;
+    }
   }
 
   body {
     @apply bg-bg-light-1 dark:bg-bg-dark-1 text-text-dark dark:text-text-light antialiased transition-colors duration-300;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive headings */
+  h1 {
+    font-size: clamp(1.75rem, 1.4rem + 1.75vw, 3rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+    line-height: 1.3;
+  }
+
+  h5 {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    line-height: 1.4;
+  }
+
+  h6 {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.125rem);
+    line-height: 1.4;
+  }
+
+  /* Responsive paragraphs */
+  p {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    line-height: 1.7;
+  }
+
+  /* Responsive links */
+  a {
+    font-size: inherit;
+  }
+
+  /* Responsive lists */
+  ul, ol {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    line-height: 1.7;
+  }
+
+  /* Responsive small text */
+  small {
+    font-size: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
   }
 
   /* Custom scrollbar */
@@ -39,17 +110,20 @@
 /* Component styles */
 @layer components {
 
-  /* Button styles */
+  /* Button styles - Responsive */
   .btn-primary {
-    @apply inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-blue-600 transition-all duration-200 shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] hover:shadow-blue-500/40;
+    @apply inline-flex justify-center items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 border border-transparent font-bold rounded-lg text-white bg-primary hover:bg-blue-600 transition-all duration-200 shadow-lg shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] hover:shadow-blue-500/40;
+    font-size: clamp(0.8rem, 0.75rem + 0.25vw, 1rem);
   }
 
   .btn-secondary {
-    @apply inline-flex justify-center items-center px-8 py-4 border-2 border-primary text-base font-bold rounded-lg text-primary bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    @apply inline-flex justify-center items-center px-4 py-2 sm:px-6 sm:py-3 lg:px-8 lg:py-4 border-2 border-primary font-bold rounded-lg text-primary bg-white dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    font-size: clamp(0.8rem, 0.75rem + 0.25vw, 1rem);
   }
 
   .btn-outline {
-    @apply inline-flex justify-center items-center px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 hover:border-primary hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    @apply inline-flex justify-center items-center px-3 py-2 sm:px-4 sm:py-2.5 lg:px-6 lg:py-3 border-2 border-gray-300 dark:border-gray-600 font-medium rounded-lg text-gray-700 dark:text-gray-200 hover:border-primary hover:text-primary transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    font-size: clamp(0.8rem, 0.75rem + 0.25vw, 1rem);
   }
 
   /* Card styles */
@@ -61,9 +135,10 @@
     @apply transform hover:-translate-y-1;
   }
 
-  /* Badge styles */
+  /* Badge styles - Responsive */
   .badge {
-    @apply px-2 py-1 text-[10px] font-semibold tracking-wide uppercase rounded;
+    @apply px-1.5 py-0.5 sm:px-2 sm:py-1 font-semibold tracking-wide uppercase rounded;
+    font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
   }
 
   .badge-green {
@@ -86,26 +161,73 @@
     @apply bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300;
   }
 
-  /* Form styles */
+  /* Form styles - Responsive */
   .input {
-    @apply w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition;
+    @apply w-full px-3 py-2 sm:px-4 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition;
+    font-size: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
   }
 
   .label {
-    @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+    @apply block font-medium text-gray-700 dark:text-gray-300 mb-2;
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   }
 
   /* Section styles */
   .section {
-    @apply py-20;
+    @apply py-12 sm:py-16 lg:py-20;
   }
 
   .section-title {
-    @apply font-display text-3xl md:text-4xl font-bold text-secondary dark:text-white mb-4;
+    @apply font-display font-bold text-secondary dark:text-white mb-4;
+    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.5rem);
+    line-height: 1.2;
   }
 
   .section-subtitle {
     @apply text-gray-600 dark:text-gray-400 max-w-2xl mx-auto;
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1.125rem);
+  }
+
+  /* Responsive text utility classes */
+  .text-responsive-xs {
+    font-size: clamp(0.65rem, 0.6rem + 0.25vw, 0.75rem);
+  }
+
+  .text-responsive-sm {
+    font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  }
+
+  .text-responsive-base {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+  }
+
+  .text-responsive-xl {
+    font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  }
+
+  .text-responsive-2xl {
+    font-size: clamp(1.25rem, 1.1rem + 0.75vw, 1.875rem);
+  }
+
+  .text-responsive-3xl {
+    font-size: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
+  }
+
+  .text-responsive-4xl {
+    font-size: clamp(1.75rem, 1.4rem + 1.75vw, 3rem);
+  }
+
+  .text-responsive-5xl {
+    font-size: clamp(2rem, 1.5rem + 2.5vw, 3.75rem);
+  }
+
+  .text-responsive-hero {
+    font-size: clamp(2.25rem, 1.5rem + 3.75vw, 4.5rem);
+    line-height: 1.1;
   }
 
   /* Container */
@@ -118,14 +240,16 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
 
-  /* Link styles */
+  /* Link styles - Responsive */
   .link-primary {
     @apply text-primary font-bold hover:underline inline-flex items-center;
+    font-size: inherit;
   }
 
-  /* Tag styles for room categories */
+  /* Tag styles for room categories - Responsive */
   .room-tag {
-    @apply px-2 py-1 text-[10px] font-semibold tracking-wide uppercase rounded inline-flex items-center gap-1;
+    @apply px-1.5 py-0.5 sm:px-2 sm:py-1 font-semibold tracking-wide uppercase rounded inline-flex items-center gap-1;
+    font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.625rem);
   }
 }
 
