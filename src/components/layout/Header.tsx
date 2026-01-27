@@ -219,138 +219,136 @@ const Header = () => {
         {/* Row 2: Logo and Actions */}
         <div className="border-b border-gray-200 dark:border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16 lg:h-20">
+            {/* Mobile Header: Toggle | Logo | Cart */}
+            <div className="flex lg:hidden items-center justify-between h-14">
               {/* Mobile: Toggle (Left) */}
-              <div className="lg:hidden flex items-center">
-                <motion.button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none p-2"
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <motion.i
-                    className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}
-                    animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
-                    transition={{ duration: durations.fast }}
-                  />
-                </motion.button>
-              </div>
+              <motion.button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="w-10 h-10 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none"
+                whileTap={{ scale: 0.9 }}
+              >
+                <motion.i
+                  className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}
+                  animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
+                  transition={{ duration: durations.fast }}
+                />
+              </motion.button>
 
-              {/* Logo (Center on mobile, Left on desktop) */}
+              {/* Mobile: Logo (Center) */}
+              <Link href="/" className="bg-white px-3 py-1.5 rounded-lg shadow-sm">
+                <span className="font-display font-bold text-base">
+                  <span className="text-secondary">Window</span>
+                  <span className="text-primary">Specialist</span>
+                </span>
+              </Link>
+
+              {/* Mobile: Cart (Right) */}
+              <Link href="/cart" className="w-10 h-10 flex items-center justify-center relative text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                <i className="fas fa-shopping-cart text-xl"></i>
+                <span className="absolute top-0 right-0 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                  0
+                </span>
+              </Link>
+            </div>
+
+            {/* Desktop Header */}
+            <div className="hidden lg:flex justify-between items-center h-20">
+              {/* Logo (Left) with hover animation */}
               <motion.div
-                className="flex-shrink-0 flex items-center absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-0 lg:transform-none"
+                className="flex-shrink-0 flex items-center"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: durations.fast, ease: easings.smooth }}
               >
-                <Link href="/" className="bg-white p-1.5 lg:p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <span className="font-display font-bold text-lg lg:text-xl">
+                <Link href="/" className="bg-white p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <span className="font-display font-bold text-xl">
                     <span className="text-secondary">Window</span>
                     <span className="text-primary">Specialist</span>
                   </span>
                 </Link>
               </motion.div>
 
-              {/* Mobile: Cart (Right) */}
-              <div className="lg:hidden flex items-center">
-                <Link href="/cart" className="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
-                  <i className="fas fa-shopping-cart text-xl"></i>
+              {/* Desktop Actions (Right) */}
+              <div className="flex items-center space-x-4">
+                {/* Auth Section */}
+                {isLoading ? (
+                  <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
+                ) : isAuthenticated ? (
+                  <UserDropdown />
+                ) : (
+                  <motion.div
+                    className="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-full hover:shadow-md transition-all duration-300 hover:border-primary/50"
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: durations.fast }}
+                  >
+                    <button
+                      onClick={() => {
+                        setAuthMode('signup');
+                        setIsAuthModalOpen(true);
+                      }}
+                      className="group flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-l-full"
+                    >
+                      <motion.img
+                        src="https://www.google.com/favicon.ico"
+                        alt="Google"
+                        className="w-4 h-4"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                      <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
+                        {t('auth.sign_up_google')}
+                      </span>
+                    </button>
+
+                    <div className="h-4 w-px bg-gray-200 dark:bg-gray-600"></div>
+
+                    <button
+                      onClick={() => {
+                        setAuthMode('login');
+                        setIsAuthModalOpen(true);
+                      }}
+                      className="group pl-3 pr-4 py-2.5 rounded-r-full"
+                    >
+                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">
+                        {t('auth.login_signup')}
+                      </span>
+                    </button>
+                  </motion.div>
+                )}
+
+                <LanguageSwitcher />
+
+                <motion.button
+                  onClick={() => setIsSearchOpen(true)}
+                  className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  aria-label={t('search.open')}
+                >
+                  <i className="fas fa-search text-sm"></i>
+                  <span className="text-sm hidden xl:inline">{t('search.placeholder')}</span>
+                  <kbd className="hidden xl:inline-block px-1.5 py-0.5 bg-white dark:bg-gray-700 rounded text-xs text-gray-400">
+                    ⌘K
+                  </kbd>
+                </motion.button>
+
+                <motion.button
+                  className="text-gray-600 dark:text-gray-300 hover:text-primary relative p-2"
+                  variants={iconButtonVariants}
+                  initial="rest"
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <i className="fas fa-shopping-cart text-lg"></i>
                   <motion.span
-                    className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 500 }}
+                    className="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+                    initial="initial"
+                    animate="pulse"
+                    variants={badgePulseVariants}
                   >
                     0
                   </motion.span>
-                </Link>
-              </div>
-
-              {/* Actions (Right) */}
-              <div className="flex items-center space-x-4">
-                {/* Desktop Actions */}
-                <div className="hidden lg:flex items-center space-x-4">
-                  {/* Auth Section */}
-                  {isLoading ? (
-                    <div className="w-8 h-8 bg-gray-200 rounded-full animate-pulse"></div>
-                  ) : isAuthenticated ? (
-                    <UserDropdown />
-                  ) : (
-                    <motion.div
-                      className="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-full hover:shadow-md transition-all duration-300 hover:border-primary/50"
-                      whileHover={{ y: -2 }}
-                      transition={{ duration: durations.fast }}
-                    >
-                      <button
-                        onClick={() => {
-                          setAuthMode('signup');
-                          setIsAuthModalOpen(true);
-                        }}
-                        className="group flex items-center gap-2 pl-4 pr-3 py-2.5 rounded-l-full"
-                      >
-                        <motion.img
-                          src="https://www.google.com/favicon.ico"
-                          alt="Google"
-                          className="w-4 h-4"
-                          whileHover={{ rotate: 360 }}
-                          transition={{ duration: 0.5 }}
-                        />
-                        <span className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-primary transition-colors">
-                          {t('auth.sign_up_google')}
-                        </span>
-                      </button>
-
-                      <div className="h-4 w-px bg-gray-200 dark:bg-gray-600"></div>
-
-                      <button
-                        onClick={() => {
-                          setAuthMode('login');
-                          setIsAuthModalOpen(true);
-                        }}
-                        className="group pl-3 pr-4 py-2.5 rounded-r-full"
-                      >
-                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400 group-hover:text-primary transition-colors">
-                          {t('auth.login_signup')}
-                        </span>
-                      </button>
-                    </motion.div>
-                  )}
-
-                  <LanguageSwitcher />
-
-                  <motion.button
-                    onClick={() => setIsSearchOpen(true)}
-                    className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    aria-label={t('search.open')}
-                  >
-                    <i className="fas fa-search text-sm"></i>
-                    <span className="text-sm hidden xl:inline">{t('search.placeholder')}</span>
-                    <kbd className="hidden xl:inline-block px-1.5 py-0.5 bg-white dark:bg-gray-700 rounded text-xs text-gray-400">
-                      ⌘K
-                    </kbd>
-                  </motion.button>
-
-                  <motion.button
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary relative p-2"
-                    variants={iconButtonVariants}
-                    initial="rest"
-                    whileHover="hover"
-                    whileTap="tap"
-                  >
-                    <i className="fas fa-shopping-cart text-lg"></i>
-                    <motion.span
-                      className="absolute -top-1 -right-1 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
-                      initial="initial"
-                      animate="pulse"
-                      variants={badgePulseVariants}
-                    >
-                      0
-                    </motion.span>
-                  </motion.button>
-                </div>
-
-                {/* Mobile Menu Button - Moved to left */}
+                </motion.button>
               </div>
             </div>
           </div>
