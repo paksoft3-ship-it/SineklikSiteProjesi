@@ -112,6 +112,29 @@
             "title_highlight": "Full transparency.",
             "description": "Enter your dimensions and receive an honest price indication immediately. No surprises, everything included including installation service.",
             "badge_inclusive": "All-inclusive service",
+            "houten_jaloezieen": {
+                "lamel_50": "50mm Slat",
+                "lamel_63": "63mm Slat",
+                "bamboe": "Bamboo",
+                "basswood": "Basswood",
+                "zwart": "Black",
+                "wit": "White"
+            },
+            "gordijnen_main": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "transparant": "Sheer",
+                "overgordijnen": "Drapes",
+                "inbetween": "Inbetween",
+                "vitrages": "Voiles",
+                "rails_roedes": "Rails & Rods"
+            },
+            "duo_rolgordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "op_maat": "Custom Made",
+                "kant_klaar": "Ready Made"
+            },
             "badges": {
                 "delivery": "Free delivery",
                 "warranty": "5 Year Warranty",
@@ -255,6 +278,16 @@
             "window": "Window",
             "specialist": "Specialist"
         },
+        "service_items": {
+            "contact": "Contact",
+            "over_ons": "About Us",
+            "bezorging": "Delivery",
+            "afhalen": "Pickup",
+            "montage": "Installation",
+            "blogs": "Blogs",
+            "betaalmethoden": "Payment Methods",
+            "garantie": "Warranty"
+        },
         "search": {
             "open": "Open search",
             "placeholder": "Search..."
@@ -266,13 +299,26 @@
         "nav": {
             "horren": "Pleated Screens",
             "gordijnen": "Pleated Curtains",
+            "houten_jaloezieen": "Wooden Blinds",
+            "plisse_gordijnen": "Pleated Blinds",
+            "rolgordijnen": "Roller Blinds",
+            "gordijnen_main": "Curtains",
+            "duo_rolgordijnen": "Double Roller Blinds",
+            "vouwgordijnen": "Roman Blinds",
             "configurator": "Configurator",
             "meetgids": "Measurement Guide",
             "tools": "Tools",
             "showcase": "Components",
             "over_ons": "About Us",
+            "service_contact": "Service & Contact",
             "view_all_horren": "View all screens",
             "view_all_gordijnen": "View all curtains",
+            "view_all_houten_jaloezieen": "View all wooden blinds",
+            "view_all_plisse_gordijnen": "View all pleated blinds",
+            "view_all_rolgordijnen": "View all roller blinds",
+            "view_all_gordijnen_main": "View all curtains",
+            "view_all_duo_rolgordijnen": "View all double roller blinds",
+            "view_all_vouwgordijnen": "View all roman blinds",
             "custom_sizes_available": "Custom sizes and professional installation available.",
             "premium_fabrics": "Premium fabrics in over 50+ colors.",
             "auth": {
@@ -280,9 +326,27 @@
                 "register": "Register"
             }
         },
+        "categories": {
+            "soort_stof": "Fabric Type",
+            "lamelbreedte": "Slat Width",
+            "materiaal": "Material",
+            "kleur": "Color",
+            "collectie": "Collection",
+            "rails_roedes": "Rails & Rods",
+            "soort_hor": "Screen Type",
+            "type": "Type"
+        },
         "actions": {},
         "items": {
             "horren": {
+                "inzethorren": "Inset Screens",
+                "hordeuren": "Screen Doors",
+                "voorzethorren": "Fixed Screens",
+                "raamhorren": "Window Screens",
+                "rolhorren": "Roller Screens",
+                "vliegengordijn": "Fly Curtains",
+                "op_maat": "Custom Made",
+                "kant_en_klaar": "Ready Made",
                 "deur": "Pleated Door Screen",
                 "raam": "Pleated Window Screen",
                 "balkon": "Glass Balcony Screen",
@@ -292,10 +356,61 @@
                 "drempel": "Thresholdless Screen"
             },
             "gordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "transparant": "Sheer",
+                "overgordijnen": "Drapes",
+                "inbetween": "Inbetween Curtains",
+                "vitrages": "Voiles",
+                "op_maat": "Custom Made",
+                "gordijnrails": "Curtain Rails",
+                "gordijnroedes": "Curtain Rods",
+                "railroedes": "Rail Rods",
                 "honeycomb": "Honeycomb / Duette",
-                "verduisterend": "Blackout Pleated",
                 "licht": "Light Filtering (70%)",
                 "kleur": "Color Options & Samples"
+            },
+            "plisse_gordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "transparant": "Sheer",
+                "op_maat": "Custom Made",
+                "kant_en_klaar": "Ready Made"
+            },
+            "rolgordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "transparant": "Sheer",
+                "screen": "Screen",
+                "op_maat": "Custom Made",
+                "kant_en_klaar": "Ready Made"
+            },
+            "duo_rolgordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "op_maat": "Custom Made",
+                "kant_en_klaar": "Ready Made"
+            },
+            "houten_jaloezieen": {
+                "lamel_50": "50mm Slat",
+                "lamel_63": "63mm Slat",
+                "bamboe": "Bamboo",
+                "basswood": "Basswood",
+                "zwart": "Black",
+                "wit": "White"
+            },
+            "service_contact": {
+                "bezorging_montage": "Delivery & Installation",
+                "faq": "FAQ",
+                "contact": "Contact",
+                "over_ons": "About Us",
+                "blog": "Blog"
+            },
+            "vouwgordijnen": {
+                "verduisterend": "Blackout",
+                "lichtdoorlatend": "Light Filtering",
+                "inbetween": "Inbetween",
+                "linen": "Linen Look"
             }
         },
         "badges": {

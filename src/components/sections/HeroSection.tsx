@@ -31,9 +31,9 @@ const HeroSection = () => {
       link: '/producten/plisse-horren',
       buttonText: t('horren.button'),
       tags: [
-        t('horren.tags.door'),
-        t('horren.tags.window'),
-        t('horren.tags.balcony'),
+        { label: t('horren.tags.door'), href: '/products/plisse-screens/doors' },
+        { label: t('horren.tags.window'), href: '/products/plisse-screens/windows' },
+        { label: t('horren.tags.balcony'), href: '/products/plisse-screens/doors' },
       ],
     },
     {
@@ -44,9 +44,9 @@ const HeroSection = () => {
       link: '/producten/plisse-gordijnen',
       buttonText: t('gordijnen.button'),
       tags: [
-        t('gordijnen.tags.blackout'),
-        t('gordijnen.tags.honeycomb'),
-        t('gordijnen.tags.lightFiltering'),
+        { label: t('gordijnen.tags.blackout'), href: '/products/curtains/blackout' },
+        { label: t('gordijnen.tags.honeycomb'), href: '/products/plisse-curtains/honeycomb' },
+        { label: t('gordijnen.tags.lightFiltering'), href: '/products/curtains/light-filtering' },
       ],
     },
   ];
@@ -134,7 +134,7 @@ const HeroSection = () => {
               delay: index * 0.2,
               ease: easings.premium,
             }}
-            className="relative group overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px]"
+            className="relative group overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] border-4 border-white dark:border-gray-800 rounded-3xl"
           >
             {/* Background Image with Parallax */}
             <motion.div
@@ -217,18 +217,19 @@ const HeroSection = () => {
                 animate="visible"
               >
                 {panel.tags.map((tag, idx) => (
-                  <motion.span
-                    key={idx}
-                    variants={tagItemVariants}
-                    whileHover={{
-                      scale: 1.08,
-                      backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                      y: -2,
-                    }}
-                    className="px-4 py-1.5 bg-white/15 backdrop-blur-md text-white text-sm font-medium rounded-full border border-white/20 cursor-default transition-colors"
-                  >
-                    {tag}
-                  </motion.span>
+                  <Link key={idx} href={tag.href as any}>
+                    <motion.span
+                      variants={tagItemVariants}
+                      whileHover={{
+                        scale: 1.08,
+                        backgroundColor: 'rgba(255, 255, 255, 0.25)',
+                        y: -2,
+                      }}
+                      className="inline-block px-4 py-1.5 bg-white/15 backdrop-blur-md text-white text-sm font-medium rounded-full border border-white/20 cursor-pointer transition-colors hover:bg-white/25"
+                    >
+                      {tag.label}
+                    </motion.span>
+                  </Link>
                 ))}
               </motion.div>
 

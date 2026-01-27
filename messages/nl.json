@@ -115,6 +115,29 @@
             "title_highlight": "Volledige transparantie.",
             "description": "Voer uw afmetingen in en ontvang direct een eerlijke prijsindicatie. Geen verrassingen, alles inbegrepen inclusief montageservice.",
             "badge_inclusive": "All-inclusive service",
+            "houten_jaloezieen": {
+                "lamel_50": "50mm Lamel",
+                "lamel_63": "63mm Lamel",
+                "bamboe": "Bamboe",
+                "basswood": "Basswood",
+                "zwart": "Zwart",
+                "wit": "Wit"
+            },
+            "gordijnen_main": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "transparant": "Transparant",
+                "overgordijnen": "Overgordijnen",
+                "inbetween": "Inbetween",
+                "vitrages": "Vitrages",
+                "rails_roedes": "Rails & Roedes"
+            },
+            "duo_rolgordijnen": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "op_maat": "Op maat",
+                "kant_klaar": "Kant en klaar"
+            },
             "badges": {
                 "delivery": "Gratis bezorging",
                 "warranty": "5 Jaar Garantie",
@@ -258,6 +281,16 @@
             "window": "Window",
             "specialist": "Specialist"
         },
+        "service_items": {
+            "contact": "Contact",
+            "over_ons": "Over ons",
+            "bezorging": "Bezorging",
+            "afhalen": "Afhalen",
+            "montage": "Montage",
+            "blogs": "Blogs",
+            "betaalmethoden": "Betaalmethoden",
+            "garantie": "Garantie"
+        },
         "search": {
             "open": "Open zoeken",
             "placeholder": "Zoeken..."
@@ -267,15 +300,28 @@
             "login_signup": "Inloggen / Registreren"
         },
         "nav": {
-            "horren": "Plissé Horren",
-            "gordijnen": "Plissé Gordijnen",
+            "horren": "Horren",
+            "gordijnen": "Gordijnen",
+            "houten_jaloezieen": "Houten Jaloezieën",
+            "plisse_gordijnen": "Plisségordijnen",
+            "rolgordijnen": "Rolgordijnen",
+            "duo_rolgordijnen": "Duo rolgordijnen",
+            "vouwgordijnen": "Vouwgordijnen",
+            "lamellen": "Lamellen",
+            "elektrisch": "Elektrische raamdecoratie",
             "configurator": "Configurator",
             "meetgids": "Meetgids",
             "tools": "Tools",
             "showcase": "Componenten",
             "over_ons": "Over Ons",
+            "service_contact": "Service & Contact",
             "view_all_horren": "Alle horren bekijken",
             "view_all_gordijnen": "Alle gordijnen bekijken",
+            "view_all_plisse_gordijnen": "Alle plisségordijnen bekijken",
+            "view_all_houten_jaloezieen": "Alle houten jaloezieën bekijken",
+            "view_all_rolgordijnen": "Alle rolgordijnen bekijken",
+            "view_all_duo_rolgordijnen": "Alle duo rolgordijnen bekijken",
+            "view_all_vouwgordijnen": "Alle vouwgordijnen bekijken",
             "custom_sizes_available": "Maatwerk en professionele montage beschikbaar.",
             "premium_fabrics": "Premium stoffen in meer dan 50+ kleuren.",
             "auth": {
@@ -283,27 +329,87 @@
                 "register": "Registreren"
             }
         },
+        "categories": {
+            "soort_stof": "Soort stof",
+            "lamelbreedte": "Lamelbreedte",
+            "materiaal": "Materiaal",
+            "kleur": "Kleur",
+            "collectie": "Collectie",
+            "rails_roedes": "Rails & Roedes",
+            "soort_hor": "Soort hor",
+            "type": "Type"
+        },
         "actions": {},
         "items": {
             "horren": {
-                "deur": "Plissé Hordeur",
-                "raam": "Plissé Raamhor",
-                "balkon": "Glazen Balkon Hor",
-                "vaste": "Vaste Plissé Hor",
-                "binnen": "Binnenmontage Hor",
-                "combi": "Hor + Gordijn Combi",
-                "drempel": "Drempelloze Hor"
+                "inzethorren": "Inzethorren",
+                "hordeuren": "Hordeuren",
+                "voorzethorren": "Voorzethorren",
+                "raamhorren": "Raamhorren",
+                "rolhorren": "Rolhorren",
+                "vliegengordijn": "Vliegengordijn",
+                "op_maat": "Op maat",
+                "kant_en_klaar": "Kant en klaar"
             },
             "gordijnen": {
-                "honeycomb": "Honeycomb / Duette",
-                "verduisterend": "Verduisterend Plissé",
-                "licht": "Lichtdoorlatend (70%)",
-                "kleur": "Kleuropties & Stalen"
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "transparant": "Transparant",
+                "overgordijnen": "Overgordijnen",
+                "inbetween": "Inbetween gordijnen",
+                "vitrages": "Vitrages",
+                "op_maat": "Op maat",
+                "gordijnrails": "Gordijnrails",
+                "gordijnroedes": "Gordijnroedes",
+                "railroedes": "Railroedes"
+            },
+            "plisse_gordijnen": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "transparant": "Transparant",
+                "op_maat": "Op maat",
+                "kant_en_klaar": "Kant en klaar"
+            },
+            "rolgordijnen": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "transparant": "Transparant",
+                "screen": "Screen",
+                "op_maat": "Op maat",
+                "kant_en_klaar": "Kant en klaar"
+            },
+            "duo_rolgordijnen": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "op_maat": "Op maat",
+                "kant_en_klaar": "Kant en klaar"
+            },
+            "houten_jaloezieen": {
+                "lamel_50": "50mm Lamel",
+                "lamel_63": "63mm Lamel",
+                "bamboe": "Bamboe",
+                "basswood": "Basswood",
+                "zwart": "Zwart",
+                "wit": "Wit"
+            },
+            "service_contact": {
+                "bezorging_montage": "Bezorging & Montage",
+                "faq": "Veelgestelde Vragen",
+                "contact": "Contact",
+                "over_ons": "Over Ons",
+                "blog": "Blog"
+            },
+            "vouwgordijnen": {
+                "verduisterend": "Verduisterend",
+                "lichtdoorlatend": "Lichtdoorlatend",
+                "inbetween": "Inbetween",
+                "linen": "Linen Look"
             }
         },
         "badges": {
             "populair": "Populair",
-            "bestseller": "Bestseller"
+            "bestseller": "Bestseller",
+            "nieuw": "Nieuw"
         }
     },
     "ProductConfigurator": {
