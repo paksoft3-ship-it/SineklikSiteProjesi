@@ -219,35 +219,51 @@ const Header = () => {
         {/* Row 2: Logo and Actions */}
         <div className="border-b border-gray-200 dark:border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-20">
-              <div className="lg:hidden flex items-center mr-4">
+            <div className="flex justify-between items-center h-16 lg:h-20">
+              {/* Mobile: Toggle (Left) */}
+              <div className="lg:hidden flex items-center">
                 <motion.button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none p-2"
                   whileTap={{ scale: 0.9 }}
                 >
                   <motion.i
-                    className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}
+                    className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}
                     animate={{ rotate: mobileMenuOpen ? 90 : 0 }}
                     transition={{ duration: durations.fast }}
                   />
                 </motion.button>
               </div>
 
-              {/* Logo (Left) with hover animation */}
+              {/* Logo (Center on mobile, Left on desktop) */}
               <motion.div
-                className="flex-shrink-0 flex items-center"
+                className="flex-shrink-0 flex items-center absolute left-1/2 transform -translate-x-1/2 lg:relative lg:left-0 lg:transform-none"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: durations.fast, ease: easings.smooth }}
               >
-                <Link href="/" className="bg-white p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
-                  <span className="font-display font-bold text-xl">
+                <Link href="/" className="bg-white p-1.5 lg:p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <span className="font-display font-bold text-lg lg:text-xl">
                     <span className="text-secondary">Window</span>
                     <span className="text-primary">Specialist</span>
                   </span>
                 </Link>
               </motion.div>
+
+              {/* Mobile: Cart (Right) */}
+              <div className="lg:hidden flex items-center">
+                <Link href="/cart" className="relative p-2 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
+                  <i className="fas fa-shopping-cart text-xl"></i>
+                  <motion.span
+                    className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center"
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 500 }}
+                  >
+                    0
+                  </motion.span>
+                </Link>
+              </div>
 
               {/* Actions (Right) */}
               <div className="flex items-center space-x-4">
