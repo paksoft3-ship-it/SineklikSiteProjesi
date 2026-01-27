@@ -302,6 +302,7 @@
         "nav": {
             "horren": "Horren",
             "gordijnen": "Gordijnen",
+            "gordijnen_main": "Gordijnen",
             "houten_jaloezieen": "Houten Jaloezieën",
             "plisse_gordijnen": "Plisségordijnen",
             "rolgordijnen": "Rolgordijnen",
@@ -317,6 +318,7 @@
             "service_contact": "Service & Contact",
             "view_all_horren": "Alle horren bekijken",
             "view_all_gordijnen": "Alle gordijnen bekijken",
+            "view_all_gordijnen_main": "Alle gordijnen bekijken",
             "view_all_plisse_gordijnen": "Alle plisségordijnen bekijken",
             "view_all_houten_jaloezieen": "Alle houten jaloezieën bekijken",
             "view_all_rolgordijnen": "Alle rolgordijnen bekijken",
