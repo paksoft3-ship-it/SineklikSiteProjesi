@@ -5,8 +5,7 @@ import { Inter, Outfit } from 'next/font/google';
 import '@/styles/globals.css';
 import '@/styles/animations.css';
 import { AuthProvider } from '@/context/AuthContext';
-import FloatingActionButtons from '@/components/ui/FloatingActionButtons';
-import TrustWidget from '@/components/ui/TrustWidget';
+import FloatingWidgets from '@/components/ui/FloatingWidgets';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -120,8 +119,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>
             {children}
-            <FloatingActionButtons />
-            <TrustWidget />
+            <FloatingWidgets />
           </AuthProvider>
         </NextIntlClientProvider>
       </body>
