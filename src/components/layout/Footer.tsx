@@ -310,19 +310,19 @@ const Footer = () => {
               transition={{ duration: durations.normal, delay: 0.5 }}
             >
               {/* Newsletter */}
-              <div className="bg-gray-800 dark:bg-gray-900 rounded-xl p-4 mb-4">
-                <h6 className="font-bold text-white text-sm mb-2">{tFooter('newsletter.title')}</h6>
-                <p className="text-gray-400 text-xs mb-3">{tFooter('newsletter.desc')}</p>
+              <div className="bg-gray-800 dark:bg-gray-900 rounded-xl p-3 sm:p-4 mb-4">
+                <h6 className="font-bold text-white text-xs sm:text-sm mb-1 sm:mb-2">{tFooter('newsletter.title')}</h6>
+                <p className="text-gray-400 text-[10px] sm:text-xs mb-2 sm:mb-3 leading-relaxed">{tFooter('newsletter.desc')}</p>
                 <div className="flex gap-2">
                   <input
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder={tFooter('newsletter.placeholder')}
-                    className="flex-1 px-3 py-2 bg-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="flex-1 min-w-0 px-2 sm:px-3 py-2 bg-gray-700 rounded-lg text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                   <motion.button
-                    className="px-4 py-2 bg-primary text-white rounded-lg text-sm font-semibold"
+                    className="w-10 h-10 sm:w-auto sm:h-auto sm:px-4 sm:py-2 bg-primary text-white rounded-lg text-xs sm:text-sm font-semibold flex-shrink-0 flex items-center justify-center"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
