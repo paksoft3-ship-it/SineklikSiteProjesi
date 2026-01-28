@@ -3,12 +3,13 @@
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { easings, durations } from '@/lib/animation-config';
 
 const HeroSection = () => {
   const t = useTranslations('HomePage.hero');
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [hoveredPanel, setHoveredPanel] = useState<string | null>(null);
 
   // Parallax scroll effect
   const { scrollYProgress } = useScroll({
@@ -121,20 +122,40 @@ const HeroSection = () => {
     },
   };
 
+  // Panel hover animation variants
+  const panelVariants = {
+    initial: {
+      scale: 1,
+      boxShadow: '0 0 0 0 rgba(0, 123, 255, 0)',
+    },
+    hover: {
+      scale: 1.02,
+      boxShadow: '0 0 40px 0 rgba(0, 123, 255, 0.3)',
+      transition: {
+        duration: 0.4,
+        ease: easings.smooth,
+      },
+    },
+  };
+
   return (
     <section ref={sectionRef} className="relative w-full overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 p-2 lg:p-4">
         {panels.map((panel, index) => (
           <motion.div
             key={panel.id}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
+            variants={panelVariants}
+            whileHover="hover"
+            onHoverStart={() => setHoveredPanel(panel.id)}
+            onHoverEnd={() => setHoveredPanel(null)}
             transition={{
               duration: durations.slow,
               delay: index * 0.2,
               ease: easings.premium,
             }}
-            className="relative group overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] border-4 border-white dark:border-gray-800 rounded-3xl"
+            className="relative group overflow-hidden min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] border-4 border-white dark:border-gray-800 rounded-3xl cursor-pointer"
           >
             {/* Background Image with Parallax */}
             <motion.div
@@ -144,20 +165,17 @@ const HeroSection = () => {
               <motion.img
                 src={panel.image}
                 alt={panel.title}
-                className="w-full h-full object-cover"
-                initial={{ scale: 1.1 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 1.5, ease: easings.smooth }}
-                whileHover={{ scale: 1.1 }}
+                className="w-full h-full object-cover transition-transform duration-700"
+                initial={{ scale: 1.05 }}
+                animate={{ scale: hoveredPanel === panel.id ? 1.15 : 1 }}
+                transition={{ duration: 0.7, ease: easings.smooth }}
               />
             </motion.div>
 
             {/* Blue Gradient Overlay with animation */}
             <motion.div
-              className="absolute inset-0"
-              initial={{ opacity: 0.7 }}
-              whileHover={{ opacity: 0.9 }}
-              transition={{ duration: durations.normal }}
+              className="absolute inset-0 transition-opacity duration-500"
+              animate={{ opacity: hoveredPanel === panel.id ? 0.85 : 0.7 }}
               style={{
                 background: `linear-gradient(
                   to top,
@@ -168,6 +186,52 @@ const HeroSection = () => {
                 )`
               }}
             />
+
+            {/* Hover Border Glow Effect */}
+            <motion.div
+              className="absolute inset-0 rounded-3xl pointer-events-none"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: hoveredPanel === panel.id ? 1 : 0 }}
+              transition={{ duration: 0.3 }}
+              style={{
+                boxShadow: 'inset 0 0 0 4px rgba(0, 123, 255, 0.5), inset 0 0 30px rgba(0, 123, 255, 0.2)',
+              }}
+            />
+
+            {/* Hover Arrow Indicator */}
+            <motion.div
+              className="absolute top-1/2 -translate-y-1/2 z-20 pointer-events-none"
+              style={{ [index === 0 ? 'right' : 'left']: '20px' }}
+              initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+              animate={{
+                opacity: hoveredPanel === panel.id ? 1 : 0,
+                x: hoveredPanel === panel.id ? 0 : (index === 0 ? -20 : 20)
+              }}
+              transition={{ duration: 0.3, ease: easings.snappy }}
+            >
+              <motion.div
+                className="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30"
+                animate={{
+                  scale: hoveredPanel === panel.id ? [1, 1.1, 1] : 1,
+                }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <i className={`fas fa-arrow-${index === 0 ? 'right' : 'left'} text-white text-lg`}></i>
+              </motion.div>
+            </motion.div>
+
+            {/* Pulse Ring Effect on Hover */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{
+                scale: hoveredPanel === panel.id ? [1, 2, 2.5] : 0,
+                opacity: hoveredPanel === panel.id ? [0.3, 0.1, 0] : 0
+              }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: 'easeOut' }}
+            >
+              <div className="w-32 h-32 rounded-full border-2 border-white/30" />
+            </motion.div>
 
             {/* Animated Divider Line Between Panels */}
             {index === 0 && (
@@ -265,14 +329,34 @@ const HeroSection = () => {
 
             {/* Hover shine effect */}
             <motion.div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none"
-              initial={{ x: '-100%' }}
-              whileHover={{ x: '100%' }}
+              className="absolute inset-0 pointer-events-none"
+              initial={{ x: '-100%', opacity: 0 }}
+              animate={{
+                x: hoveredPanel === panel.id ? '100%' : '-100%',
+                opacity: hoveredPanel === panel.id ? 1 : 0
+              }}
               transition={{ duration: 0.8, ease: 'easeInOut' }}
               style={{
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
               }}
             />
+
+            {/* Corner Badge on Hover */}
+            <motion.div
+              className="absolute top-6 right-6 z-20 pointer-events-none"
+              initial={{ opacity: 0, scale: 0.8, y: -10 }}
+              animate={{
+                opacity: hoveredPanel === panel.id ? 1 : 0,
+                scale: hoveredPanel === panel.id ? 1 : 0.8,
+                y: hoveredPanel === panel.id ? 0 : -10
+              }}
+              transition={{ duration: 0.3, ease: easings.snappy }}
+            >
+              <div className="px-4 py-2 bg-primary/90 backdrop-blur-sm rounded-full text-white text-sm font-semibold flex items-center gap-2 shadow-lg">
+                <i className="fas fa-eye"></i>
+                <span>{index === 0 ? 'Bekijk Horren' : 'Bekijk Gordijnen'}</span>
+              </div>
+            </motion.div>
           </motion.div>
         ))}
       </div>
