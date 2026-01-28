@@ -79,7 +79,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-secondary dark:bg-bg-dark-1">
+    <footer className="bg-secondary dark:bg-bg-dark-1 pb-20 md:pb-0">
       {/* Scrolling Trust Badges Marquee */}
       <div className="overflow-hidden bg-gray-800 dark:bg-gray-900 py-3 border-b border-gray-700">
         <motion.div

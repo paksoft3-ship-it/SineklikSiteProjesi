@@ -73,7 +73,7 @@ export default function QuizCTASection() {
           </div>
         </ScrollAnimation>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {tools.map((tool, idx) => {
             const badge = getBadge(tool.key);
             return (
@@ -86,17 +86,17 @@ export default function QuizCTASection() {
                     whileHover={{ y: -10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className={`h-full bg-gradient-to-br ${tool.color} rounded-2xl p-6 text-white relative overflow-hidden`}>
+                    <div className={`h-full min-h-[180px] sm:min-h-[200px] bg-gradient-to-br ${tool.color} rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 text-white relative overflow-hidden`}>
                       {/* Background Pattern */}
                       <div className="absolute inset-0 opacity-10">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                        <div className="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute bottom-0 left-0 w-16 sm:w-24 h-16 sm:h-24 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
                       </div>
 
                       {/* Badge */}
                       {badge && (
                         <motion.span
-                          className="absolute top-4 right-4 px-2 py-1 bg-white/20 backdrop-blur-sm text-xs font-bold rounded-full"
+                          className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 py-0.5 sm:py-1 bg-white/20 backdrop-blur-sm text-[10px] sm:text-xs font-bold rounded-full"
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: 0.3 }}
@@ -108,23 +108,23 @@ export default function QuizCTASection() {
                       {/* Content */}
                       <div className="relative z-10">
                         <motion.div
-                          className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center mb-4"
+                          className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4"
                           animate={{
                             scale: hoveredCard === tool.id ? 1.1 : 1,
                             rotate: hoveredCard === tool.id ? 5 : 0,
                           }}
                           transition={{ duration: 0.3 }}
                         >
-                          <i className={`fas ${tool.icon} text-2xl`}></i>
+                          <i className={`fas ${tool.icon} text-lg sm:text-xl lg:text-2xl`}></i>
                         </motion.div>
-                        <h3 className="font-bold text-lg mb-2">
+                        <h3 className="font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">
                           {t(`quizCTA.tools.${tool.key}.title`)}
                         </h3>
-                        <p className="text-white/80 text-sm mb-4">
+                        <p className="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-2">
                           {t(`quizCTA.tools.${tool.key}.desc`)}
                         </p>
                         <motion.div
-                          className="flex items-center gap-2 text-sm font-semibold"
+                          className="flex items-center gap-2 text-xs sm:text-sm font-semibold"
                           animate={{ x: hoveredCard === tool.id ? 5 : 0 }}
                           transition={{ duration: 0.3 }}
                         >
